@@ -79,7 +79,7 @@ public class Main : MonoBehaviour
 
     public void OnHistoryButtonClicked()
     {
-        _loading = SceneManager.LoadSceneAsync("Saved");
+        _loading = SceneManager.LoadSceneAsync("SavedGames");
         _loading.allowSceneActivation = false;
         _closing.Play("MenuClosing");
     }

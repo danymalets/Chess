@@ -33,9 +33,9 @@ public struct GameModel
         }
         DateTime now = DateTime.Now;
         Date = now.ToString("dd.MM.yyyy");
-        Time = now.ToString("hh:mm");
+        Time = now.ToString("HH:mm");
         Moves = controller.Game.StringMoves;
-        Debug.Log(Moves.Count);
+        Debug.Log("time " + Time);
     }
 }
 

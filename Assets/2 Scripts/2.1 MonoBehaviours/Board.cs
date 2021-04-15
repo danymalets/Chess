@@ -38,7 +38,7 @@ public class Board : BoardImage
 
     private List<Move> _promotionMoves;
 
-    public override void InitBoard()
+    private void Start()
     {
         base.InitBoard();
 

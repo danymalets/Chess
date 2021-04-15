@@ -26,7 +26,6 @@ public abstract class GameController
     {
         _ui = ui;
         _board = board;
-        _board.InitBoard();
         _ui.SetGameTitle(ToString());
     }
 

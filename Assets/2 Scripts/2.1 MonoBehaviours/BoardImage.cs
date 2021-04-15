@@ -34,7 +34,7 @@ public class BoardImage : MonoBehaviour
     protected Transform[,] _tiles = new Transform[Position.SIZE, Position.SIZE];
     protected Transform[,] _pieces = new Transform[Position.SIZE, Position.SIZE];
 
-    public virtual void InitBoard()
+    public void InitBoard()
     {
         _spritePack = _spriteManager.CurrentPack;
 
