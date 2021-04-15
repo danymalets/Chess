@@ -16,10 +16,12 @@ public class SavedGame : MonoBehaviour
     public event Action<GameModel> SavedGameDeleted;
     public event Action<GameModel> SavedGameSelected;
 
-    public void InitBoard(Position position)
+    public void Init(Position position, string type, string dateTime)
     {
         _board.InitBoard();
         _board.InitPieces(position);
+        _type.text = type;
+        _dateTime.text = dateTime;
     }
 
     public void Rotate()

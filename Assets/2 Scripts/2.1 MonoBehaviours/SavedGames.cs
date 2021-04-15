@@ -30,10 +30,39 @@ public class SavedGames : MonoBehaviour
             savedGame.GameModel = gameModel;
             savedGame.SavedGameDeleted += OnSavedGameDeleted;
             savedGame.SavedGameSelected += OnSavedGameSelected;
-            savedGame.InitBoard(controller.Game.Position);
+            
 
-            if (controller is SinglePlayer singlePlayer && singlePlayer.PlayerColor == Color.Black)
-                savedGame.Rotate();
+            if (controller is SinglePlayer singlePlayer)
+            {
+                if (singlePlayer.PlayerColor == Color.White)
+                {
+                    savedGame.Init(
+                        controller.Game.Position,
+                        $"За белых\n{singlePlayer.Level} уровень",
+                        $"{gameModel.Date}\n{gameModel.Time}");
+                }
+                else
+                {
+                    savedGame.Init(
+                        controller.Game.Position,
+                        $"За чёрных\n{singlePlayer.Level} уровень",
+                        $"{gameModel.Date}\n{gameModel.Time}");
+                    savedGame.Rotate();
+                }
+            }
+            else if (controller is TwoPlayers twoPlayers)
+            {
+                int min = twoPlayers.MoveDuration.Minutes;
+                int sec = twoPlayers.MoveDuration.Seconds;
+                string duration;
+                if (min == 0) duration = $"{sec} с.";
+                else if (sec == 0) duration = $"{min} м.";
+                else duration = $"{min} м. {sec} с.";
+                savedGame.Init(
+                    controller.Game.Position,
+                    $"Два игрока\nход: {duration}",
+                    $"{gameModel.Date}\n{gameModel.Time}");
+            }
         }
     }
 
@@ -50,14 +79,14 @@ public class SavedGames : MonoBehaviour
         GameController controller = GameController.GetGameController(gameModel);
         GameController.Singleton = controller;
 
-        _animation.Play("SavedLeftClosing");
+        _animation.Play("SavedGamesLeftClosing");
         _loading = SceneManager.LoadSceneAsync("Game");
         _loading.allowSceneActivation = false;
     }
 
     public void OnButtonExitClicked()
     {
-        _animation.Play("SavedRightClosing");
+        _animation.Play("SavedGamesRightClosing");
         _loading = SceneManager.LoadSceneAsync("Menu");
         _loading.allowSceneActivation = false;
     }
