@@ -20,27 +20,26 @@ public class SinglePlayer : GameController, ISave
         Level = level;
     }
 
-    public override void Init(UI ui, Board board, Field field)
+    public override void Init(UI ui, Board board)
     {
-        base.Init(ui, board, field);
+        base.Init(ui, board);
 
         _board.InitPieces(Game.Position);
-        _field.InitSquares(_board);
 
-        _field.MoveSelected += OnUserMoveSelected;
+        _board.MoveSelected += OnUserMoveSelected;
         _ui.MoveFound += OnMoveFound;
 
-        _ui.ChangeStatus(Game.GetStatus());
+        _ui.SetStatus(Game.GetStatus());
         if (!Game.IsEnd)
         {
             if (PlayerColor == Game.Position.WhoseMove)
             {
-                _field.MoveShown += OnUserMoveShown;
-                _field.EnableMoves();
+                _board.MoveShown += OnUserMoveShown;
+                _board.EnableMoves();
             }
             else
             {
-                _field.MoveShown += OnRivalMoveShown;
+                _board.MoveShown += OnRivalMoveShown;
                 _ui.StartSearchMove(Game, Level);
             }
 
@@ -58,31 +57,31 @@ public class SinglePlayer : GameController, ISave
 
     private void OnUserMoveShown()
     {
-        _field.MoveShown -= OnUserMoveShown;
+        _board.MoveShown -= OnUserMoveShown;
 
-        _ui.ChangeStatus(Game.GetStatus());
+        _ui.SetStatus(Game.GetStatus());
         if (!Game.IsEnd)
         {
             _ui.StartSearchMove(Game, Level);
-            _field.MoveShown += OnRivalMoveShown;
+            _board.MoveShown += OnRivalMoveShown;
         }
     }
 
     private void OnMoveFound(Move move)
     {
         Game.MakeMove(move);
-        _field.ShowMove(move);
+        _board.ShowMove(move);
     }
 
     private void OnRivalMoveShown()
     {
-        _field.MoveShown -= OnRivalMoveShown;
+        _board.MoveShown -= OnRivalMoveShown;
 
-        _ui.ChangeStatus(Game.GetStatus());
+        _ui.SetStatus(Game.GetStatus());
         if (!Game.IsEnd)
         {
-            _field.EnableMoves();
-            _field.MoveShown += OnUserMoveShown;
+            _board.EnableMoves();
+            _board.MoveShown += OnUserMoveShown;
         }
     }
 
@@ -91,21 +90,20 @@ public class SinglePlayer : GameController, ISave
         if (!Game.IsUndoAllowed()) return;
 
         _ui.Clear();
-        _field.Clear();
+        _board.Clear();
         Game.Undo();
 
         if (Game.Position.WhoseMove != PlayerColor) Game.Undo();
 
         _board.InitPieces(Game.Position);
-        _field.Init(_board);
-        _field.EnableMoves();
+        _board.EnableMoves();
 
-        _ui.ChangeStatus(Game.GetStatus());
+        _ui.SetStatus(Game.GetStatus());
 
-        _field.MoveShown -= OnUserMoveShown;
-        _field.MoveShown -= OnRivalMoveShown;
+        _board.MoveShown -= OnUserMoveShown;
+        _board.MoveShown -= OnRivalMoveShown;
 
-        _field.MoveShown += OnUserMoveShown;
+        _board.MoveShown += OnUserMoveShown;
     }
 
     public override string ToString()

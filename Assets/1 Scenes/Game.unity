@@ -365,6 +365,15 @@ MonoBehaviour:
     type: 3}
   _checkmateHighlightPrefab: {fileID: 6253655446291001942, guid: b26a78b88a2a7423ca743e2a8d8ae6cc,
     type: 3}
+  _selectedPieceHighlightPrefab: {fileID: 6253655446291001942, guid: 3100248d2fa7a46e1a0cdd7dbecdee4e,
+    type: 3}
+  _possibleMoveHighlightPrefab: {fileID: 6253655446291001942, guid: d1995766f899147da800f57190a0778d,
+    type: 3}
+  _movementDuration: 0.5
+  _movementFinalPart: 0.1
+  _pieceSelection: {fileID: 371631698}
+  _snap: {fileID: 1261549989}
+  _maxStereo: 0.6
 --- !u!1 &371631693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,7 +1236,6 @@ MonoBehaviour:
   _userTimerColor: {r: 0.6886792, g: 0.126691, b: 0.126691, a: 1}
   _rivalTimerColor: {r: 0.6886792, g: 0.49941525, b: 0.08770915, a: 1}
   _board: {fileID: 348077272}
-  _field: {fileID: 1634636748}
   _undo: {fileID: 2126131539}
   _title: {fileID: 148499062}
   _status: {fileID: 1835371790}
@@ -1964,19 +1972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785124c59a3c84a0882b318b1997ecdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boardTransform: {fileID: 348077269}
-  _fieldTransform: {fileID: 1634636747}
-  _tile: {fileID: 6733710029152727144, guid: ae590018b54524807b1d0131c5d2cc49, type: 3}
-  _piece: {fileID: 190978535898658590, guid: 3c7b2b428bb5d4e18b135182b581dad8, type: 3}
-  _selectedPieceHighlightPrefab: {fileID: 6253655446291001942, guid: 3100248d2fa7a46e1a0cdd7dbecdee4e,
-    type: 3}
-  _possibleMoveHighlightPrefab: {fileID: 6253655446291001942, guid: d1995766f899147da800f57190a0778d,
-    type: 3}
-  _movementDuration: 0.5
-  _movementFinalPart: 0.1
-  _pieceSelection: {fileID: 371631698}
-  _snap: {fileID: 1261549989}
-  _maxStereo: 0.6
 --- !u!114 &1634636749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2297,7 +2292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

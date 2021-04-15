@@ -16,14 +16,14 @@ public class MultiPlayer : GameController
         _moveDuration = moveDuration;
     }
 
-    public override void Init(UI ui, Board board, Field field)
+    public override void Init(UI ui, Board board)
     {
-        base.Init(ui, board, field);
+        base.Init(ui, board);
 
         _ui.UserTimeIsOver += OnUserTimeIsOver;
         _ui.RivalTimeIsOver += OnRivalTimeIsOver;
 
-        _field.MoveSelected += OnUserMoveSelected;
+        _board.MoveSelected += OnUserMoveSelected;
 
         _provider = _ui.GetNetworkProvider();
 
@@ -40,43 +40,42 @@ public class MultiPlayer : GameController
         _provider.Disconnected += OnDisconnected;
         _provider.RivalDisconnected += OnRivalDisconnected;
 
-        _ui.ChangeStatus("Подключение к серверу");
+        _ui.SetStatus("Подключение к серверу");
     }
 
-    private void OnConnectedToServer() => _ui.ChangeStatus("Проверка");
-    private void OnRoomCreated() => _ui.ChangeStatus("Ожидание соперника");
-    private void OnRivalFound() => _ui.ChangeStatus("Соперник найден");
+    private void OnConnectedToServer() => _ui.SetStatus("Проверка");
+    private void OnRoomCreated() => _ui.SetStatus("Ожидание соперника");
+    private void OnRivalFound() => _ui.SetStatus("Соперник найден");
 
     private void OnColorReceived(Color playerColor)
     {
         _playerColor = playerColor;
 
         _board.InitPieces(Game.Position);
-        _field.InitSquares(_board);
 
-        _ui.ChangeStatus(Game.GetStatus());
+        _ui.SetStatus(Game.GetStatus());
         if (_playerColor == Color.White)
         {
-            _field.EnableMoves();
+            _board.EnableMoves();
             _ui.StartUserTimer(_moveDuration);
 
-            _field.MoveShown += OnUserMoveShown;
+            _board.MoveShown += OnUserMoveShown;
         }
         else
         {
             _board.SetRotation(180);
             _ui.StartRivalTimer(_moveDuration);
 
-            _field.MoveShown += OnRivalMoveShown;
+            _board.MoveShown += OnRivalMoveShown;
         }
 
-        _ui.ChangeStatus(Game.GetStatus());
+        _ui.SetStatus(Game.GetStatus());
     }
 
     private void OnMoveReceived(Move move)
     {
         Game.MakeMove(move);
-        _field.ShowMove(move);
+        _board.ShowMove(move);
         _ui.CanselCoundown();
     }
 
@@ -85,42 +84,41 @@ public class MultiPlayer : GameController
         _provider.SendMove(move);
         Game.MakeMove(move);
         _ui.CanselCoundown();
-        Debug.Log("cansel");
     }
 
     private void OnUserTimeIsOver()
     {
         _provider.SendTimerIsOver();
         _provider.PreDisconnect();
-        _field.DisableMoves();
-        _ui.ChangeStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
+        _board.DisableMoves();
+        _ui.SetStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
     }
 
     private void OnRivalTimeIsOver()
     {
         _provider.Disconnect();
-        _ui.ChangeStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время (но это не точно)");
+        _ui.SetStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время (но это не точно)");
     }
 
     private void OnTimeIsOverReceived()
     {
         _provider.Disconnect();
         _ui.CanselCoundown();
-        _ui.ChangeStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
+        _ui.SetStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
     }
 
     private void OnUserMoveShown()
     {
-        _field.MoveShown -= OnUserMoveShown;
+        _board.MoveShown -= OnUserMoveShown;
 
         if (_rivalDisconnected) return;
 
-        _ui.ChangeStatus(Game.GetStatus());
+        _ui.SetStatus(Game.GetStatus());
         if (!Game.IsEnd)
         {
             _ui.StartRivalTimer(_moveDuration);
 
-            _field.MoveShown += OnRivalMoveShown;
+            _board.MoveShown += OnRivalMoveShown;
         }
         else
         {
@@ -131,17 +129,17 @@ public class MultiPlayer : GameController
 
     private void OnRivalMoveShown()
     {
-        _field.MoveShown -= OnRivalMoveShown;
+        _board.MoveShown -= OnRivalMoveShown;
 
         if (_rivalDisconnected) return;
 
-        _ui.ChangeStatus(Game.GetStatus());
+        _ui.SetStatus(Game.GetStatus());
         if (!Game.IsEnd)
         {
-            _field.EnableMoves();
+            _board.EnableMoves();
             _ui.StartUserTimer(_moveDuration);
 
-            _field.MoveShown += OnUserMoveShown;
+            _board.MoveShown += OnUserMoveShown;
         }
         else
         {
@@ -158,9 +156,9 @@ public class MultiPlayer : GameController
     private void OnRivalDisconnected()
     {
         _provider.Disconnect();
-        _ui.ChangeStatus($"{(_playerColor == Color.White ? "Чёрные" : "Белые")} сдались");
+        _ui.SetStatus($"{(_playerColor == Color.White ? "Чёрные" : "Белые")} сдались");
         _ui.Clear();
-        _field.DisableMoves();
+        _board.DisableMoves();
     }
 
     public override void Finish()

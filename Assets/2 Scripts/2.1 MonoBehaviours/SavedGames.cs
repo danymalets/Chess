@@ -30,14 +30,10 @@ public class SavedGames : MonoBehaviour
             savedGame.GameModel = gameModel;
             savedGame.SavedGameDeleted += OnSavedGameDeleted;
             savedGame.SavedGameSelected += OnSavedGameSelected;
+            savedGame.InitBoard(controller.Game.Position);
+
             if (controller is SinglePlayer singlePlayer && singlePlayer.PlayerColor == Color.Black)
-            {
-                savedGame.InitBoard(controller.Game.Position, true);
-            }
-            else
-            {
-                savedGame.InitBoard(controller.Game.Position, false);
-            }
+                savedGame.Rotate();
         }
     }
 

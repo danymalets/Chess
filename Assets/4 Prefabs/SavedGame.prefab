@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 6750667315493024854}
   - component: {fileID: 6750667315493024843}
   - component: {fileID: 6750667315493024852}
-  - component: {fileID: 6750667315493024853}
+  - component: {fileID: 5073258105455272784}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6750667315493024853
+--- !u!114 &5073258105455272784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6750667315493024855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85063be08f41c451bb1b68447b99bbc9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e3ffa0116e1a43edb56d3bf836dde02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteManager: {fileID: 11400000, guid: b80ca82500dc34583832db72ce46c8b1, type: 2}
@@ -721,9 +721,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c51c9aa22942378b1954b8f2821e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _board: {fileID: 6750667315493024853}
-  _type: {fileID: 0}
-  _dateTime: {fileID: 0}
+  _board: {fileID: 5073258105455272784}
+  _type: {fileID: 6750667315832856156}
+  _dateTime: {fileID: 6750667315187229074}
   GameModel:
     Type: 
     Level: 0

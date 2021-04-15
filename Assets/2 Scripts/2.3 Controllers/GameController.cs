@@ -9,7 +9,6 @@ public abstract class GameController
 
     protected UI _ui;
     protected Board _board;
-    protected Field _field;
 
     public Game Game;
 
@@ -23,18 +22,17 @@ public abstract class GameController
         Game = new Game(moves);
     }
 
-    public virtual void Init(UI ui, Board board, Field field)
+    public virtual void Init(UI ui, Board board)
     {
         _ui = ui;
         _board = board;
-        _field = field;
         _board.InitBoard();
         _ui.SetGameTitle(ToString());
     }
 
     public virtual void Finish()
     {
-        _field.Clear();
+        _board.Clear();
         _ui.Clear();
         if (this is ISave)
         {

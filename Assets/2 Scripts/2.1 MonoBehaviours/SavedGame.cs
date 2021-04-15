@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SavedGame : MonoBehaviour
 {
-    [SerializeField] private Board _board;
+    [SerializeField] private BoardImage _board;
 
     [SerializeField] private Text _type;
     [SerializeField] private Text _dateTime;
@@ -16,11 +16,15 @@ public class SavedGame : MonoBehaviour
     public event Action<GameModel> SavedGameDeleted;
     public event Action<GameModel> SavedGameSelected;
 
-    public void InitBoard(Position position, bool rotate)
+    public void InitBoard(Position position)
     {
         _board.InitBoard();
         _board.InitPieces(position);
-        _board.SetRotation(rotate ? 180 : 0);
+    }
+
+    public void Rotate()
+    {
+        _board.SetRotation(180);
     }
 
     public void OnDeleteButtonClicked()

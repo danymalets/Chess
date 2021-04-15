@@ -17,34 +17,33 @@ public class TwoPlayers : GameController, ISave
         MoveDuration = moveDuration;
     }
 
-    public override void Init(UI ui, Board board, Field field)
+    public override void Init(UI ui, Board board)
     {
-        base.Init(ui, board, field);
+        base.Init(ui, board);
 
         _ui.UserTimeIsOver += OnUserTimeIsOver;
 
         _board.InitPieces(Game.Position);
-        _field.InitSquares(_board);
 
-        _field.MoveShown += OnUserMoveShown;
-        _field.MoveSelected += OnUserMoveSelected;
+        _board.MoveShown += OnUserMoveShown;
+        _board.MoveSelected += OnUserMoveSelected;
 
         if (!Game.IsEnd)
         {
-            _field.EnableMoves();
+            _board.EnableMoves();
             _ui.StartUserTimer(MoveDuration);
             if (Game.Position.WhoseMove == Color.Black)
             {
                 _board.SetRotation(180);
             }
         }
-        _ui.ChangeStatus(Game.GetStatus());
+        _ui.SetStatus(Game.GetStatus());
     }
 
     private void OnUserTimeIsOver()
     {
-        _field.DisableMoves();
-        _ui.ChangeStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
+        _board.DisableMoves();
+        _ui.SetStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
     }
 
     private void OnUserMoveSelected(Move move)
@@ -55,11 +54,11 @@ public class TwoPlayers : GameController, ISave
 
     private void OnUserMoveShown()
     {
-        _ui.ChangeStatus(Game.GetStatus());
+        _ui.SetStatus(Game.GetStatus());
         if (!Game.IsEnd)
         {
             _board.SetRotation(Game.Position.WhoseMove == Color.White ? 0 : 180);
-            _field.EnableMoves();
+            _board.EnableMoves();
             _ui.StartUserTimer(MoveDuration);
         }
         else

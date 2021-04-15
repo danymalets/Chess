@@ -14,7 +14,6 @@ public class UI : MonoBehaviour
 
     [Header("Scene objects")]
     [SerializeField] private Board _board;
-    [SerializeField] private Field _field;
     [SerializeField] private Button _undo;
     [SerializeField] private Text _title;
     [SerializeField] private Text _status;
@@ -48,7 +47,7 @@ public class UI : MonoBehaviour
 
     public void OnOpeningAnimationPlayed()
     {
-        GameController.Singleton.Init(this, _board, _field);
+        GameController.Singleton.Init(this, _board);
     }
 
     public void SetGameTitle(string title)
@@ -56,7 +55,7 @@ public class UI : MonoBehaviour
         _title.text = title;
     }
 
-    public void ChangeStatus(string newStatus)
+    public void SetStatus(string newStatus)
     {
         _status.text = newStatus;
     }
