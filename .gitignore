@@ -1,5 +1,7 @@
-# General
+# Mac OS
 .DS_Store
+
+# Visual Studio
 .vsconfig
 
 # This .gitignore file should be placed at the root of your Unity project directory
