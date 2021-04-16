@@ -19,7 +19,7 @@ public class SavedGames : MonoBehaviour
     {
         _animation.Play();
 #if DEBUG
-        if (!Main.IsGameLoaded) { SceneManager.LoadScene("Menu"); return; }
+        if (!MenuUI.IsGameLoaded) { SceneManager.LoadScene("Menu"); return; }
 #endif
         gameModels = Prefs.GetGameModels();
         foreach (GameModel gameModel in gameModels)

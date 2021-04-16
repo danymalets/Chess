@@ -5,13 +5,25 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class Main : MonoBehaviour
+public class MenuUI : MonoBehaviour
 {
+    private static TimeSpan[] _moveDurations = new TimeSpan[6]
+    {
+        new TimeSpan(0, 0, 10),
+        new TimeSpan(0, 0, 30),
+        new TimeSpan(0, 1, 0),
+        new TimeSpan(0, 2, 0),
+        new TimeSpan(0, 5, 0),
+        new TimeSpan(0, 10, 0)
+    };
+
+
     [SerializeField] private SpriteManager _spriteManager;
 
-    [SerializeField] private GameObject _background;
+    [SerializeField] private Slider _level;
+    [SerializeField] private Slider _moveDuration;
 
-    [SerializeField] private Slider _slider;
+    [SerializeField] private InputField _roomNumber;
 
     [SerializeField] private Animation _closing;
 
@@ -21,7 +33,6 @@ public class Main : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 60;
         if (IsGameLoaded)
         {
             _closing.Play("MenuOpening");
@@ -29,17 +40,27 @@ public class Main : MonoBehaviour
         else
         {
             IsGameLoaded = true;
+
+            Application.targetFrameRate = 60;
+        }
+    }
+
+    public void OnRoomNumberEditingEnd()
+    {
+        while (_roomNumber.text.Length < 3)
+        {
+            _roomNumber.text = "0" + _roomNumber.text;
         }
     }
 
     public void OnWhiteButtonClicked()
     {
-        LoadChessGame(new SinglePlayer(Color.White, (int)_slider.value));
+        LoadChessGame(new SinglePlayer(Color.White, (int)_level.value));
     }
 
     public void OnBlackButtonClicked()
     {
-        LoadChessGame(new SinglePlayer(Color.Black, (int)_slider.value));
+        LoadChessGame(new SinglePlayer(Color.Black, (int)_level.value));
     }
 
     public void OnRandomButtonClicked()
@@ -56,6 +77,13 @@ public class Main : MonoBehaviour
 
     public void OnTwoPlayersButtonClicked()
     {
+        TimeSpan moveDuration = _moveDurations[(int)_moveDuration.value - 1];
+        LoadChessGame(new TwoPlayers(moveDuration));
+    }
+
+    public void OnNetwokFriendButtonClicked()
+    {
+        TimeSpan moveDuration = _moveDurations[(int)_moveDuration.value - 1];
         LoadChessGame(new TwoPlayers(new TimeSpan(0, 2, 0)));
     }
 
@@ -66,7 +94,7 @@ public class Main : MonoBehaviour
 
     public void OnBotVsBotButtonClicked()
     {
-        LoadChessGame(new BotVsBot((int)_slider.value));
+        LoadChessGame(new BotVsBot((int)_level.value));
     }
 
     private void LoadChessGame(GameController controller)
