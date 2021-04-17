@@ -90,7 +90,7 @@ public class UI : MonoBehaviour
         MoveFound?.Invoke(bestMove);
     }
 
-    public NetworkProvider GetNetworkProvider() => gameObject.AddComponent<NetworkProvider>();
+    public NetworkRivalProvider GetNetworkProvider() => gameObject.AddComponent<NetworkRivalProvider>();
 
     public void StartUserTimer(TimeSpan duration) =>
         _countdown = StartCoroutine(Countdown(duration, true));
@@ -126,6 +126,11 @@ public class UI : MonoBehaviour
             _textTimer.text = "время вышло";
             RivalTimeIsOver?.Invoke();
         }
+    }
+
+    public void SetTimeIsOver()
+    {
+        _textTimer.text = "время вышло";
     }
 
     public void CanselCoundown() => StopCoroutine(_countdown);

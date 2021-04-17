@@ -5,59 +5,38 @@ using Photon.Realtime;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class NetworkProvider : MonoBehaviourPunCallbacks, IOnEventCallback
+public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEventCallback
 {
-    static RaiseEventOptions options = new RaiseEventOptions { Receivers = ReceiverGroup.Others };
+    static protected RaiseEventOptions eventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.Others };
+    static protected RoomOptions roomOptions = new RoomOptions { MaxPlayers = 2 };
 
-    enum PhotonEvent : byte
+    protected enum PhotonEvent : byte
     {
         Order = 1,
+        MoveDuration,
         Move,
         TimeIsOver
     }
 
-    public event Action ConnectedToServer;
-    public event Action Disconnected;
-    public event Action RoomCreated;
-    public event Action RivalFound;
-    public event Action RivalDisconnected;
+    public Action ConnectedToServer;
+    public Action Disconnected;
+    public Action RoomCreated;
+    public Action RivalFound;
+    public Action RivalDisconnected;
 
-    public event Action<Color> ColorReceived;
-    public event Action<Move> MoveReceived;
-    public event Action TimeIsOverReceived;
-
-    public void ConnectToServer()
-    {
-        PhotonNetwork.GameVersion = "1";
-        PhotonNetwork.ConnectUsingSettings();
-    }
-
-    public override void OnConnectedToMaster()
-    {
-        PhotonNetwork.JoinRandomRoom();
-        ConnectedToServer?.Invoke();
-    }
-
-    public override void OnJoinRandomFailed(short returnCode, string message)
-    {
-        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 2 });
-    }
+    public Action<Color> ColorReceived;
+    public Action<Move> MoveReceived;
+    public Action TimeIsOverReceived;
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         Debug.Log("player entered");
+        PhotonNetwork.CurrentRoom.IsOpen = false;
         RivalFound?.Invoke();
-        if (Random.Range(0, 2) == 0)
-        {
-            ColorReceived?.Invoke(Color.White);
-            SendColor(Color.Black);
-        }
-        else
-        {
-            ColorReceived?.Invoke(Color.Black);
-            SendColor(Color.White);
-        }
+        StartGame();
     }
+
+    protected abstract void StartGame();
 
     public override void OnCreatedRoom()
     {
@@ -66,7 +45,7 @@ public class NetworkProvider : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public override void OnJoinedRoom()
     {
-        Debug.Log("player joined");
+        Debug.Log("on joined");
         if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;
@@ -102,30 +81,32 @@ public class NetworkProvider : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public void SendTimerIsOver()
     {
-        PhotonNetwork.RaiseEvent((byte)PhotonEvent.TimeIsOver, null, options, SendOptions.SendReliable);
+        PhotonNetwork.RaiseEvent((byte)PhotonEvent.TimeIsOver, null, eventOptions, SendOptions.SendReliable);
     }
 
-    public void SendColor(Color playerColor)
+    protected void SendColor(Color playerColor)
     {
         Debug.Log("send order " + playerColor);
-        PhotonNetwork.RaiseEvent((byte)PhotonEvent.Order, (int)playerColor, options, SendOptions.SendReliable);
+        PhotonNetwork.RaiseEvent((byte)PhotonEvent.Order, (int)playerColor, eventOptions, SendOptions.SendReliable);
     }
+
 
     public void SendMove(Move move)
     {
         Debug.Log("send move " + move);
-        PhotonNetwork.RaiseEvent((byte)PhotonEvent.Move, move.ToString(), options, SendOptions.SendReliable);
+        PhotonNetwork.RaiseEvent((byte)PhotonEvent.Move, move.ToString(), eventOptions, SendOptions.SendReliable);
     }
 
-    public void OnEvent(EventData photonEvent)
+    public virtual void OnEvent(EventData photonEvent)
     {
         byte code = photonEvent.Code;
         switch ((PhotonEvent)code)
         {
             case PhotonEvent.Order:
                 {
-                    int content = (int)photonEvent.CustomData;
-                    ColorReceived?.Invoke((Color)content);
+                    Debug.Log("ord r");
+                    int order = (int)photonEvent.CustomData;
+                    ColorReceived?.Invoke((Color)order);
                 }
                 break;
             case PhotonEvent.Move:
@@ -142,13 +123,6 @@ public class NetworkProvider : MonoBehaviourPunCallbacks, IOnEventCallback
         }
     }
 
-    public override void OnEnable()
-    {
-        PhotonNetwork.AddCallbackTarget(this);
-    }
-
-    public override void OnDisable()
-    {
-        PhotonNetwork.RemoveCallbackTarget(this);
-    }
+    public override void OnEnable() => PhotonNetwork.AddCallbackTarget(this);
+    public override void OnDisable() => PhotonNetwork.RemoveCallbackTarget(this);
 }

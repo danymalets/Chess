@@ -230,6 +230,10 @@ public class Board : BoardImage
 
     public void Clear()
     {
+        if (_stalemateHighlight != null) Destroy(_stalemateHighlight);
+        else if (_checkmateHighlight != null) Destroy(_checkmateHighlight);
+        else if (_checkHighlight != null) Destroy(_checkHighlight);
+
         if (_isSquareSelected) Deselect();
 
         StopAllCoroutines();

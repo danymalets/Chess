@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.46818262, g: 0.5646556, b: 0.5943396, a: 1}
+  m_Color: {r: 0.35604307, g: 0.5365708, b: 0.5943396, a: 0.6313726}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -796,8 +796,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 835037612}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: OnMultiPlayerButtonClicked
+        m_TargetAssemblyTypeName: MenuUI, Assembly-CSharp
+        m_MethodName: OnNetworkRandomRivalButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1476,8 +1476,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 835037612}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: OnTwoPlayersButtonClicked
+        m_TargetAssemblyTypeName: MenuUI, Assembly-CSharp
+        m_MethodName: OnBotVsBotButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1844,8 +1844,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteManager: {fileID: 11400000, guid: b80ca82500dc34583832db72ce46c8b1, type: 2}
-  _background: {fileID: 0}
-  _slider: {fileID: 696543845}
+  _level: {fileID: 696543845}
+  _moveDuration: {fileID: 1232488212}
+  _roomNumber: {fileID: 405910592}
   _closing: {fileID: 835037609}
 --- !u!1 &842493087
 GameObject:
@@ -2468,7 +2469,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 835037612}
         m_TargetAssemblyTypeName: Main, Assembly-CSharp
-        m_MethodName: OnHistoryButtonClicked
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3975,7 +3976,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 835037612}
         m_TargetAssemblyTypeName: Main, Assembly-CSharp
-        m_MethodName: OnHistoryButtonClicked
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4107,8 +4108,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 835037612}
-        m_TargetAssemblyTypeName: Main, Assembly-CSharp
-        m_MethodName: OnHistoryButtonClicked
+        m_TargetAssemblyTypeName: MenuUI, Assembly-CSharp
+        m_MethodName: OnNetworkFriendButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4452,8 +4453,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 835037612}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: OnBotVsBotButtonClicked
+        m_TargetAssemblyTypeName: MenuUI, Assembly-CSharp
+        m_MethodName: OnTwoPlayersButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4775,7 +4776,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 835037612}
-        m_TargetAssemblyTypeName: Main, Assembly-CSharp
+        m_TargetAssemblyTypeName: MenuUI, Assembly-CSharp
         m_MethodName: OnHistoryButtonClicked
         m_Mode: 1
         m_Arguments:

@@ -17,7 +17,6 @@ public class MenuUI : MonoBehaviour
         new TimeSpan(0, 10, 0)
     };
 
-
     [SerializeField] private SpriteManager _spriteManager;
 
     [SerializeField] private Slider _level;
@@ -63,7 +62,7 @@ public class MenuUI : MonoBehaviour
         LoadChessGame(new SinglePlayer(Color.Black, (int)_level.value));
     }
 
-    public void OnRandomButtonClicked()
+    public void OnRandomColorButtonClicked()
     {
         if (Random.Range(0, 2) == 0)
         {
@@ -81,15 +80,16 @@ public class MenuUI : MonoBehaviour
         LoadChessGame(new TwoPlayers(moveDuration));
     }
 
-    public void OnNetwokFriendButtonClicked()
+    public void OnNetworkFriendButtonClicked()
     {
         TimeSpan moveDuration = _moveDurations[(int)_moveDuration.value - 1];
-        LoadChessGame(new TwoPlayers(new TimeSpan(0, 2, 0)));
+        string roomName = _roomNumber.text;
+        LoadChessGame(new NetworkFriend(moveDuration, roomName));
     }
 
-    public void OnMultiPlayerButtonClicked()
+    public void OnNetworkRandomRivalButtonClicked()
     {
-        LoadChessGame(new MultiPlayer(new TimeSpan(0, 2, 0)));
+        LoadChessGame(new NetworkRandomRival());
     }
 
     public void OnBotVsBotButtonClicked()

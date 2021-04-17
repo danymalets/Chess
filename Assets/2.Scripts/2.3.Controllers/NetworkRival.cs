@@ -3,15 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MultiPlayer : GameController
+public abstract class NetworkRival : GameController
 {
     private Color _playerColor;
-    private NetworkProvider _provider;
-    private TimeSpan _moveDuration;
+    protected NetworkRivalProvider _provider;
+    protected TimeSpan _moveDuration;
 
-    private bool _rivalDisconnected = false;
-
-    public MultiPlayer(TimeSpan moveDuration): base()
+    public NetworkRival(TimeSpan moveDuration) : base()
     {
         _moveDuration = moveDuration;
     }
@@ -20,34 +18,35 @@ public class MultiPlayer : GameController
     {
         base.Init(ui, board);
 
-        _ui.UserTimeIsOver += OnUserTimeIsOver;
-        _ui.RivalTimeIsOver += OnRivalTimeIsOver;
-
-        _board.MoveSelected += OnUserMoveSelected;
-
-        _provider = _ui.GetNetworkProvider();
-
-        _provider.ConnectToServer();
+        ConnectToServer();
 
         _provider.ConnectedToServer += OnConnectedToServer;
         _provider.RoomCreated += OnRoomCreated;
         _provider.RivalFound += OnRivalFound;
 
-        _provider.ColorReceived += OnColorReceived;
+        _provider.ColorReceived += OnGameStarted;
+
         _provider.MoveReceived += OnMoveReceived;
         _provider.TimeIsOverReceived += OnTimeIsOverReceived;
 
         _provider.Disconnected += OnDisconnected;
         _provider.RivalDisconnected += OnRivalDisconnected;
 
-        _ui.SetStatus("Подключение к серверу");
+        _ui.UserTimeIsOver += OnUserTimeIsOver;
+        _ui.RivalTimeIsOver += OnRivalTimeIsOver;
+
+        _board.MoveSelected += OnUserMoveSelected;
+
+        _ui.SetStatus("Подключение");
     }
+
+    protected abstract void ConnectToServer();
 
     private void OnConnectedToServer() => _ui.SetStatus("Проверка");
     private void OnRoomCreated() => _ui.SetStatus("Ожидание соперника");
     private void OnRivalFound() => _ui.SetStatus("Соперник найден");
 
-    private void OnColorReceived(Color playerColor)
+    protected void OnGameStarted(Color playerColor)
     {
         _playerColor = playerColor;
 
@@ -102,6 +101,7 @@ public class MultiPlayer : GameController
 
     private void OnTimeIsOverReceived()
     {
+        _ui.SetTimeIsOver();
         _provider.Disconnect();
         _ui.CanselCoundown();
         _ui.SetStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
@@ -110,8 +110,6 @@ public class MultiPlayer : GameController
     private void OnUserMoveShown()
     {
         _board.MoveShown -= OnUserMoveShown;
-
-        if (_rivalDisconnected) return;
 
         _ui.SetStatus(Game.GetStatus());
         if (!Game.IsEnd)
@@ -130,8 +128,6 @@ public class MultiPlayer : GameController
     private void OnRivalMoveShown()
     {
         _board.MoveShown -= OnRivalMoveShown;
-
-        if (_rivalDisconnected) return;
 
         _ui.SetStatus(Game.GetStatus());
         if (!Game.IsEnd)
