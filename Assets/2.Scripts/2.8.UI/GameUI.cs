@@ -170,7 +170,10 @@ public class GameUI : MonoBehaviour
     {
         if (_loading == null)
         {
-            Prefs.AddGameModel(new GameModel(_controller));
+            if (_controller is ISave)
+            {
+                Prefs.AddGameModel(new GameModel(_controller));
+            }
         }
     }
 }
