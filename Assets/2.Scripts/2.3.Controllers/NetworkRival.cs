@@ -14,7 +14,7 @@ public abstract class NetworkRival : GameController
         _moveDuration = moveDuration;
     }
 
-    public override void Init(UI ui, Board board)
+    public override void Init(GameUI ui, Board board)
     {
         base.Init(ui, board);
 

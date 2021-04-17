@@ -7,7 +7,7 @@ public abstract class GameController
 {
     public static GameController Singleton { get; set; }
 
-    protected UI _ui;
+    protected GameUI _ui;
     protected Board _board;
 
     public Game Game;
@@ -22,7 +22,7 @@ public abstract class GameController
         Game = new Game(moves);
     }
 
-    public virtual void Init(UI ui, Board board)
+    public virtual void Init(GameUI ui, Board board)
     {
         _ui = ui;
         _board = board;

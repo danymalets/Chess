@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SavedGames : MonoBehaviour
+public class SavedGamesUI : MonoBehaviour
 {
     [SerializeField] private Animation _animation;
 

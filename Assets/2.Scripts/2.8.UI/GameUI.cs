@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UI : MonoBehaviour
+public class GameUI : MonoBehaviour
 {
     [Header("Line colors")]
     [SerializeField] private UnityEngine.Color _brainColor;
@@ -34,12 +34,15 @@ public class UI : MonoBehaviour
     public event Action UserTimeIsOver;
     public event Action RivalTimeIsOver;
 
+    private GameController _controller;
+
     private void Start()
     {
+        _controller = GameController.Singleton;
 #if DEBUG
-        if (GameController.Singleton == null) { SceneManager.LoadScene("Menu"); return; }
+        if (!MenuUI.IsGameLoaded) { SceneManager.LoadScene("Menu"); return; }
 #endif
-        if (!(GameController.Singleton is SinglePlayer))
+        if (!(_controller is SinglePlayer))
         {
             Destroy(_undo.gameObject);
         }
@@ -47,7 +50,7 @@ public class UI : MonoBehaviour
 
     public void OnOpeningAnimationPlayed()
     {
-        GameController.Singleton.Init(this, _board);
+        _controller.Init(this, _board);
     }
 
     public void SetGameTitle(string title)
@@ -152,7 +155,7 @@ public class UI : MonoBehaviour
 
     public void OnExit()
     {
-        GameController.Singleton.Finish();
+        _controller.Finish();
         _loading = SceneManager.LoadSceneAsync("Menu");
         _animation.Play("GameClosing");
         _loading.allowSceneActivation = false;
@@ -167,7 +170,7 @@ public class UI : MonoBehaviour
     {
         if (_loading == null)
         {
-            GameController.Singleton.Finish();
+            Prefs.AddGameModel(new GameModel(_controller));
         }
     }
 }

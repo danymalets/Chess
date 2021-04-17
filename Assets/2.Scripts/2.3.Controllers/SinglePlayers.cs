@@ -20,7 +20,7 @@ public class SinglePlayer : GameController, ISave
         Level = level;
     }
 
-    public override void Init(UI ui, Board board)
+    public override void Init(GameUI ui, Board board)
     {
         base.Init(ui, board);
 

@@ -16,7 +16,7 @@ public class MenuUI : MonoBehaviour
         new TimeSpan(0, 5, 0),
         new TimeSpan(0, 10, 0)
     };
-
+    
     [SerializeField] private SpriteManager _spriteManager;
 
     [SerializeField] private Slider _level;
@@ -24,31 +24,23 @@ public class MenuUI : MonoBehaviour
 
     [SerializeField] private InputField _roomNumber;
 
-    [SerializeField] private Animation _closing;
+    [SerializeField] private Animation _animation;
 
     private AsyncOperation _loading;
 
     public static bool IsGameLoaded = false;
 
-    void Start()
+    private void Start()
     {
         if (IsGameLoaded)
         {
-            _closing.Play("MenuOpening");
+            _animation.Play("MenuOpening");
         }
         else
         {
             IsGameLoaded = true;
 
             Application.targetFrameRate = 60;
-        }
-    }
-
-    public void OnRoomNumberEditingEnd()
-    {
-        while (_roomNumber.text.Length < 3)
-        {
-            _roomNumber.text = "0" + _roomNumber.text;
         }
     }
 
@@ -80,6 +72,14 @@ public class MenuUI : MonoBehaviour
         LoadChessGame(new TwoPlayers(moveDuration));
     }
 
+    public void OnRoomNumberEditingEnd()
+    {
+        while (_roomNumber.text.Length < 3)
+        {
+            _roomNumber.text = "0" + _roomNumber.text;
+        }
+    }
+
     public void OnNetworkFriendButtonClicked()
     {
         TimeSpan moveDuration = _moveDurations[(int)_moveDuration.value - 1];
@@ -87,14 +87,14 @@ public class MenuUI : MonoBehaviour
         LoadChessGame(new NetworkFriend(moveDuration, roomName));
     }
 
-    public void OnNetworkRandomRivalButtonClicked()
-    {
-        LoadChessGame(new NetworkRandomRival());
-    }
-
     public void OnBotVsBotButtonClicked()
     {
         LoadChessGame(new BotVsBot((int)_level.value));
+    }
+
+    public void OnNetworkRandomRivalButtonClicked()
+    {
+        LoadChessGame(new NetworkRandomRival());
     }
 
     private void LoadChessGame(GameController controller)
@@ -102,14 +102,21 @@ public class MenuUI : MonoBehaviour
         GameController.Singleton = controller;
         _loading = SceneManager.LoadSceneAsync("Game");
         _loading.allowSceneActivation = false;
-        _closing.Play("MenuClosing");
+        _animation.Play("MenuClosing");
+    }
+
+    public void OnSettingsButtonClicked()
+    {
+        _loading = SceneManager.LoadSceneAsync("Settings");
+        _loading.allowSceneActivation = false;
+        _animation.Play("MenuClosing");
     }
 
     public void OnHistoryButtonClicked()
     {
         _loading = SceneManager.LoadSceneAsync("SavedGames");
         _loading.allowSceneActivation = false;
-        _closing.Play("MenuClosing");
+        _animation.Play("MenuClosing");
     }
 
     public void OnClosingAnimationPlayed()
