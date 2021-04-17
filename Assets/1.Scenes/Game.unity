@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 148499063}
   - component: {fileID: 148499062}
   m_Layer: 0
-  m_Name: GameTitle
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1134,7 +1134,7 @@ GameObject:
   - component: {fileID: 1057751300}
   - component: {fileID: 1057751299}
   - component: {fileID: 1057751298}
-  - component: {fileID: 1057751302}
+  - component: {fileID: 1057751301}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -1220,7 +1220,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057751296}
   m_CullTransparentMesh: 1
---- !u!114 &1057751302
+--- !u!114 &1057751301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1229,12 +1229,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1057751296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04f5a190aaf9c47c1a9d2ab00dfb6698, type: 3}
+  m_Script: {fileID: 11500000, guid: cf4397ece43e94064bdcf34de2198a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _brainColor: {r: 0.11372549, g: 0.18431373, b: 0.5294118, a: 1}
-  _userTimerColor: {r: 0.6886792, g: 0.126691, b: 0.126691, a: 1}
-  _rivalTimerColor: {r: 0.6886792, g: 0.49941525, b: 0.08770915, a: 1}
+  _brainColor: {r: 0.08726415, g: 0.105610475, b: 0.5, a: 1}
+  _userTimerColor: {r: 0.5283019, g: 0.09718762, b: 0.09718762, a: 1}
+  _rivalTimerColor: {r: 0.43193647, g: 0.06452473, b: 0.5471698, a: 1}
   _board: {fileID: 348077272}
   _undo: {fileID: 2126131539}
   _title: {fileID: 148499062}
@@ -1452,8 +1452,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1057751302}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1057751301}
+        m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
         m_MethodName: OnExit
         m_Mode: 1
         m_Arguments:
@@ -2886,8 +2886,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1057751302}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1057751301}
+        m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
         m_MethodName: OnUndoButtonClicked
         m_Mode: 1
         m_Arguments:
