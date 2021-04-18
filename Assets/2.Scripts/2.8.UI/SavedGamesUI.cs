@@ -11,7 +11,7 @@ public class SavedGamesUI : MonoBehaviour
 
     [SerializeField] private GameObject _savedGamePanelPrefab;
 
-    private List<GameModel> gameModels;
+    private List<GameController> gameControllers;
 
     private AsyncOperation _loading;
 
@@ -21,62 +21,26 @@ public class SavedGamesUI : MonoBehaviour
 #if DEBUG
         if (!MenuUI.IsGameLoaded) { SceneManager.LoadScene("Menu"); return; }
 #endif
-        gameModels = Prefs.GetGameModels();
-        foreach (GameModel gameModel in gameModels)
+        gameControllers = Prefs.GetGameControllers();
+        foreach (GameController controller in gameControllers)
         {
-            GameController controller = GameController.GetGameController(gameModel);
-            GameObject _savedGamePanel = Instantiate(_savedGamePanelPrefab, _savedGamesTransform);
-            SavedGame savedGame = _savedGamePanel.GetComponent<SavedGame>();
-            savedGame.GameModel = gameModel;
+            SavedGame savedGame = Instantiate(_savedGamePanelPrefab, _savedGamesTransform).GetComponent<SavedGame>();
+            savedGame.Init(controller);
             savedGame.SavedGameDeleted += OnSavedGameDeleted;
             savedGame.SavedGameSelected += OnSavedGameSelected;
-            
-
-            if (controller is SinglePlayer singlePlayer)
-            {
-                if (singlePlayer.PlayerColor == Color.White)
-                {
-                    savedGame.Init(
-                        controller.Game.Position,
-                        $"За белых\n{singlePlayer.Level} уровень",
-                        $"{gameModel.Date}\n{gameModel.Time}");
-                }
-                else
-                {
-                    savedGame.Init(
-                        controller.Game.Position,
-                        $"За чёрных\n{singlePlayer.Level} уровень",
-                        $"{gameModel.Date}\n{gameModel.Time}");
-                    savedGame.Rotate();
-                }
-            }
-            else if (controller is TwoPlayers twoPlayers)
-            {
-                int min = twoPlayers.MoveDuration.Minutes;
-                int sec = twoPlayers.MoveDuration.Seconds;
-                string duration;
-                if (min == 0) duration = $"{sec} с.";
-                else if (sec == 0) duration = $"{min} м.";
-                else duration = $"{min} м. {sec} с.";
-                savedGame.Init(
-                    controller.Game.Position,
-                    $"Два игрока\nход: {duration}",
-                    $"{gameModel.Date}\n{gameModel.Time}");
-            }
         }
     }
 
-    private void OnSavedGameDeleted(GameModel gameModel)
+    private void OnSavedGameDeleted(GameController controller)
     {
-        gameModels.Remove(gameModel);
-        Prefs.SetGameModels(gameModels);
+        gameControllers.Remove(controller);
+        Prefs.SetGameControllers(gameControllers);
     }
 
-    private void OnSavedGameSelected(GameModel gameModel)
+    private void OnSavedGameSelected(GameController controller)
     {
-        gameModels.Remove(gameModel);
-        Prefs.SetGameModels(gameModels);
-        GameController controller = GameController.GetGameController(gameModel);
+        gameControllers.Remove(controller);
+        Prefs.SetGameControllers(gameControllers);
         GameController.Singleton = controller;
 
         _animation.Play("SavedGamesLeftClosing");

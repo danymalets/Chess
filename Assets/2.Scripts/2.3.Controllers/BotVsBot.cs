@@ -16,6 +16,8 @@ public class BotVsBot : GameController
     {
         base.Init(ui, board);
 
+        _ui.SetTitle($"Бот против бота, {_level} уровень");
+
         _board.InitPieces(Game.Position);
 
         _ui.MoveFound += OnMoveFound;
@@ -38,10 +40,5 @@ public class BotVsBot : GameController
         {
             _ui.StartSearchMove(Game, _level);
         }
-    }
-
-    public override string ToString()
-    {
-        return $"Бот против бота, {_level} уровень";
     }
 }

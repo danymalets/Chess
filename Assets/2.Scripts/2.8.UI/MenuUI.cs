@@ -39,9 +39,12 @@ public class MenuUI : MonoBehaviour
         else
         {
             IsGameLoaded = true;
-
             Application.targetFrameRate = 60;
         }
+
+        _level.value = Prefs.LevelSlider;
+        _moveDuration.value = Prefs.LevelSlider;
+        _roomNumber.text = Prefs.RoomName;
     }
 
     public void OnWhiteButtonClicked()
@@ -66,6 +69,11 @@ public class MenuUI : MonoBehaviour
         }
     }
 
+    public void OnLevelSliderValueChanged()
+    {
+
+    }
+
     public void OnTwoPlayersButtonClicked()
     {
         TimeSpan moveDuration = _moveDurations[(int)_moveDuration.value - 1];
@@ -78,6 +86,7 @@ public class MenuUI : MonoBehaviour
         {
             _roomNumber.text = "0" + _roomNumber.text;
         }
+        Prefs.RoomName = _roomNumber.text;
     }
 
     public void OnNetworkFriendButtonClicked()

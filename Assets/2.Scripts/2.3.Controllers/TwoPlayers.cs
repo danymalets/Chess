@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class TwoPlayers : GameController, ISave
 {
-    public TimeSpan MoveDuration;
+    public static string Title = "TwoPlayers";
+
+    public TimeSpan MoveDuration { get; private set; }
+
+    public string StartDate { get; private set; }
+    public string StartTime { get; private set; }
 
     public TwoPlayers(TimeSpan moveDuration) : base()
     {
@@ -19,7 +24,13 @@ public class TwoPlayers : GameController, ISave
 
     public override void Init(GameUI ui, Board board)
     {
+        DateTime now = DateTime.Now;
+        StartDate = now.ToString("dd.MM.yyyy");
+        StartTime = now.ToString("HH:mm");
+
         base.Init(ui, board);
+
+        _ui.SetTitle("Два игрока");
 
         _ui.UserTimeIsOver += OnUserTimeIsOver;
 
@@ -67,8 +78,15 @@ public class TwoPlayers : GameController, ISave
         }
     }
 
-    public override string ToString()
+    public GameModel GetGameModel()
     {
-        return "Два игрока";
+        return new GameModel(
+            Title,
+            -1,
+            -1,
+            (int)MoveDuration.TotalSeconds,
+            Game.StringMoves,
+            StartDate,
+            StartTime);
     }
 }

@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class SinglePlayer : GameController, ISave
 {
+    public static string Title = "SinglePlayer";
+
     public Color PlayerColor { get; private set; }
     public int Level { get; private set; }
+
+    public string StartDate { get; private set; }
+    public string StartTime { get; private set; }
 
     public SinglePlayer(Color playerColor, int level) : base()
     {
@@ -22,7 +27,13 @@ public class SinglePlayer : GameController, ISave
 
     public override void Init(GameUI ui, Board board)
     {
+        DateTime now = DateTime.Now;
+        StartDate = now.ToString("dd.MM.yyyy");
+        StartTime = now.ToString("HH:mm");
+
         base.Init(ui, board);
+
+        _ui.SetTitle($"Один игрок, {Level} уровень, за {(PlayerColor == Color.White ? "белых" : "чёрных")}");
 
         _board.InitPieces(Game.Position);
 
@@ -106,8 +117,15 @@ public class SinglePlayer : GameController, ISave
         _board.MoveShown += OnUserMoveShown;
     }
 
-    public override string ToString()
+    public GameModel GetGameModel()
     {
-        return $"Один игрок, {Level} уровень, за {(PlayerColor == Color.White ? "белых" : "чёрных")}";
+        return new GameModel(
+            Title,
+            (int)PlayerColor,
+            Level,
+            -1,
+            Game.StringMoves,
+            StartDate,
+            StartTime);
     }
 }

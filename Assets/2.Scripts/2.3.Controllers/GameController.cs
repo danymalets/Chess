@@ -7,10 +7,10 @@ public abstract class GameController
 {
     public static GameController Singleton { get; set; }
 
+    public Game Game { get; private set; }
+
     protected GameUI _ui;
     protected Board _board;
-
-    public Game Game;
 
     public GameController()
     {
@@ -26,7 +26,6 @@ public abstract class GameController
     {
         _ui = ui;
         _board = board;
-        _ui.SetGameTitle(ToString());
     }
 
     public virtual void Finish()
@@ -35,27 +34,26 @@ public abstract class GameController
         _ui.Clear();
         if (this is ISave)
         {
-            Prefs.AddGameModel(new GameModel(this));
+            Prefs.AddGameController(this);
         }
     }
 
-    public static GameController GetGameController(GameModel gameModel)
+    public static GameController FromGameModel(GameModel gameModel)
     {
-        if (gameModel.Type == "white")
+        if (gameModel.Title == typeof(SinglePlayer).Name)
         {
-            return new SinglePlayer(Color.White, gameModel.Level, gameModel.Moves);
+            return new SinglePlayer(
+                (Color)gameModel.PlayerColor,
+                gameModel.Level,
+                gameModel.Moves);
         }
-        else if (gameModel.Type == "black")
+        else if (gameModel.Title == typeof(SinglePlayer).Name)
         {
-            return new SinglePlayer(Color.Black, gameModel.Level, gameModel.Moves);
-        }
-        else if (gameModel.Type == "two")
-        {
-            return new TwoPlayers(new TimeSpan(0, 0, gameModel.MoveDuration), gameModel.Moves);
+            return new TwoPlayers(new TimeSpan(0, 0, gameModel.MoveDuration));
         }
         else
         {
-            throw new ArgumentException($"Type {gameModel.Type} not found");
+            throw new ArgumentException($"Type {gameModel.Title} not found");
         }
     }
 }

@@ -13,7 +13,7 @@ public class NetworkFriend : NetworkRival
     }
 
     protected override void ConnectToServer()
-    {
+    { 
         var provider = _ui.gameObject.AddComponent<NetworkFriendProvider>();
         provider.ConnectToServer(_roomName, _moveDuration);
         provider.MoveDurationReceived += MoveDurationReceived;
@@ -23,5 +23,10 @@ public class NetworkFriend : NetworkRival
     private void MoveDurationReceived(TimeSpan moveDuration)
     {
         _moveDuration = moveDuration;
+    }
+
+    public override string ToString()
+    {
+        return $"Комната {_roomName}";
     }
 }

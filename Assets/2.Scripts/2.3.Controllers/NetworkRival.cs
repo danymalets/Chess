@@ -18,6 +18,8 @@ public abstract class NetworkRival : GameController
     {
         base.Init(ui, board);
 
+        _ui.SetTitle(ToString());
+
         ConnectToServer();
 
         _provider.ConnectedToServer += OnConnectedToServer;
@@ -48,6 +50,8 @@ public abstract class NetworkRival : GameController
 
     protected void OnGameStarted(Color playerColor)
     {
+        _ui.SetTitle($"{ToString()}, за {(playerColor == Color.White ? "белых" : "чёрных")}");
+
         _playerColor = playerColor;
 
         _board.InitPieces(Game.Position);
@@ -163,8 +167,5 @@ public abstract class NetworkRival : GameController
         _provider.Disconnect();
     }
 
-    public override string ToString()
-    {
-        return "Мультиплеер"; //!
-    }
+    public abstract override string ToString();
 }

@@ -15,4 +15,9 @@ public class NetworkRandomRival : NetworkRival
         provider.ConnectToServer();
         _provider = provider;
     }
+
+    public override string ToString()
+    {
+        return $"Случайный соперник";
+    }
 }

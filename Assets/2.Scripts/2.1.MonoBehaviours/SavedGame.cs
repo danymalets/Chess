@@ -8,20 +8,34 @@ public class SavedGame : MonoBehaviour
 {
     [SerializeField] private BoardImage _board;
 
-    [SerializeField] private Text _type;
+    [SerializeField] private Text _title;
+    [SerializeField] private Text _info;
     [SerializeField] private Text _dateTime;
 
-    public GameModel GameModel;
+    private GameController _gameController;
 
-    public event Action<GameModel> SavedGameDeleted;
-    public event Action<GameModel> SavedGameSelected;
+    public event Action<GameController> SavedGameDeleted;
+    public event Action<GameController> SavedGameSelected;
 
-    public void Init(Position position, string type, string dateTime)
+    public void Init(GameController controller)
     {
+        _gameController = controller;
+
         _board.InitBoard();
-        _board.InitPieces(position);
-        _type.text = type;
-        _dateTime.text = dateTime;
+        _board.InitPieces(controller.Game.Position);
+
+        if (controller is SinglePlayer singlePlayer)
+        {
+            _title.text = $"Один игрок\nза {(singlePlayer.PlayerColor)}";
+        }
+        else if (controller is TwoPlayers twoPlayers)
+        {
+            
+        }
+        else
+        {
+            throw new ArgumentException($"{controller.GetType()} ???");
+        }
     }
 
     public void Rotate()
@@ -32,11 +46,11 @@ public class SavedGame : MonoBehaviour
     public void OnDeleteButtonClicked()
     {
         Destroy(gameObject);
-        SavedGameDeleted?.Invoke(GameModel);
+        SavedGameDeleted?.Invoke(_gameController);
     }
 
     public void OnSelectionButtonClicked()
     {
-        SavedGameSelected?.Invoke(GameModel);
+        SavedGameSelected?.Invoke(_gameController);
     }
 }

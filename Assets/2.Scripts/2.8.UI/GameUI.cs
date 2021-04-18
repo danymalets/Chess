@@ -53,7 +53,7 @@ public class GameUI : MonoBehaviour
         _controller.Init(this, _board);
     }
 
-    public void SetGameTitle(string title)
+    public void SetTitle(string title)
     {
         _title.text = title;
     }
@@ -170,9 +170,9 @@ public class GameUI : MonoBehaviour
     {
         if (_loading == null)
         {
-            if (_controller is ISave)
+            if (this is ISave)
             {
-                Prefs.AddGameModel(new GameModel(_controller));
+                Prefs.AddGameController(_controller);
             }
         }
     }
