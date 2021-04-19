@@ -249,7 +249,6 @@ public class Position: IEquatable<Position>, IEqualityComparer<Position>
             for (int y = 0; y < SIZE; y++)
             {
                 hash = hash * 13 + (Board[x, y] == null ? 0 : Board[x, y].GetHashCode());
-                if (Board[x, y] != null) Debug.Log("h " + Board[x, y].GetHashCode());
             }
         }
         hash = hash * 2 + (KingsideCastling[Color.White] ? 1 : 0);

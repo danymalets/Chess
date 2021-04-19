@@ -1,20 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public static class AI 
 {
+    private static Random random = new Random();
+
     const int INF = (int)2e9;
     const int CHECK_MATE = (int)1e9;
     const int CHECK_MATE_HEIGHT = (int)1e8;
 
+    private static int Count;
+    private static int MaxCount;
 
-    public static IEnumerable<(Move, float)> GetMove(
+    public static Position Position;
+    public static int Level;
+    public static List<Position> ProhibitedPositions;
+
+    public static bool Solved;
+    public static Move Move;
+
+    private static Dictionary<Position, (Move, int)>[] _solvedPositions;
+
+    public static void StartSearchMove()
+    {
+        _solvedPositions = new Dictionary<Position, (Move, int)>[10];
+        for (int i = 0; i < 10; i++)
+        {
+            _solvedPositions[i] = new Dictionary<Position, (Move, int)>();
+        }
+        Move = GetMove();
+        Solved = true;
+    }
+
+    public static Move GetMove()
+    {
+        Move move;
+        int maxHight = Level;
+        move = TryGetMove(Position, 1, ProhibitedPositions);
+        Count = 0;
+        MaxCount = 1_000_000_000;
+        for (int level = 1; level <= 4; level++)
+        {
+            move = TryGetMove(Position, maxHight, ProhibitedPositions);
+        }
+        if (move == null) Debug.Log("error");
+        Debug.Log("count " + Count);
+        return move;
+    }
+
+    private static Move TryGetMove(
         Position position,
-        int level,
+        int maxHight,
         List<Position> prohibitedPositions)
     {
-
         List<Move> moves = position.GetPossibleMoves();
         int bestValue = -INF;
         Move bestMove = null;
@@ -28,36 +68,44 @@ public static class AI
             (Move childBestMove, int value) = Solve(
                 newPosition,
                 1,
-                level,
+                maxHight,
                 bestValue,
                 childrenBestMoves,
                 prohibitedPositions);
-            childrenBestMoves.Add(childBestMove);
+
+            if (childBestMove != null)
+            {
+                childrenBestMoves.Add(childBestMove);
+            }
+
             if (-value > bestValue)
             {
                 bestValue = -value;
                 bestMove = move;
             }
             part += 1f / moves.Count;
-            yield return (bestMove, part);
         }
+        return bestMove;
     }
 
     private static (Move, int) Solve(
         Position position,
         int height,
-        int level,
+        int maxHeight,
         int breakPoint,
         List<Move> maybeBestMoves,
         List<Position> prohibitedPositions)
     {
+        if (Count++ == MaxCount) return (null, 0);
         if (position.IsOpponentInCheck()) return (null, INF);
         if (height <= 4)
+        {
             foreach (Position other in prohibitedPositions)
             {
                 if (position.Equals(other)) return (null, -19);
             }
-        if (height == level) return (null, GetValue(position));
+        }
+        if (height == maxHeight) return (null, GetValue(position));
         List<Move> moves = position.GetPossibleMoves();
         int bestValue = -INF;
         Move bestMove = null;
@@ -84,12 +132,16 @@ public static class AI
             (childBestMove, value) = Solve(
                 newPosition,
                 height + 1,
-                level,
+                maxHeight,
                 bestValue,
                 childrenBestMoves,
                 prohibitedPositions);
 
-            childrenBestMoves.Add(childBestMove);
+            if (childBestMove != null)
+            {
+                childrenBestMoves.Add(childBestMove);
+            }
+
             if (-value > bestValue)
             {
                 bestValue = -value;
@@ -121,7 +173,7 @@ public static class AI
     {
         for (int i = 1; i < moves.Count; i++)
         {
-            int j = Random.Range(0, i + 1);
+            int j = random.Next(0, i);
             (moves[i], moves[j]) = (moves[j], moves[i]);
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -74,6 +75,7 @@ public class GameUI : MonoBehaviour
         _textTimer.text = "00:00.00";
         _lineTimer.fillAmount = 0f;
         yield return null;
+        /*
         foreach ((Move currentBestMove, float part) in AI.GetMove(game.Position, level, game.RepeatingPositions))
         {
             TimeSpan elapsedTime = DateTime.UtcNow - startTime;
@@ -89,7 +91,33 @@ public class GameUI : MonoBehaviour
             yield return null;
             bestMove = currentBestMove;
         }
-        yield return null;
+        */
+
+        AI.Position = game.Position;
+        AI.Level = level;
+        AI.ProhibitedPositions = game.RepeatingPositions;
+        AI.Solved = false;
+        Thread myThread = new Thread(new ThreadStart(AI.StartSearchMove));
+        myThread.Start();
+
+        while (true)
+        {
+            yield return null;
+            TimeSpan elapsedTime = DateTime.UtcNow - startTime;
+            if (elapsedTime.TotalHours >= 1)
+            {
+                _textTimer.text = "> 1 часа";
+            }
+            else
+            {
+                _textTimer.text = elapsedTime.ToString(@"mm\:ss\.ff");
+            }
+            if (AI.Solved)
+            {
+                bestMove = AI.Move;
+                break;
+            }
+        }
         MoveFound?.Invoke(bestMove);
     }
 
