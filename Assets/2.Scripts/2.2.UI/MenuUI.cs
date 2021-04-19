@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,6 +31,7 @@ public class MenuUI : MonoBehaviour
 
     public static bool IsGameLoaded = false;
 
+
     private void Start()
     {
         if (IsGameLoaded)
@@ -43,7 +45,7 @@ public class MenuUI : MonoBehaviour
         }
 
         _level.value = Prefs.LevelSlider;
-        _moveDuration.value = Prefs.LevelSlider;
+        _moveDuration.value = Prefs.MoveDurationSlider;
         _roomNumber.text = Prefs.RoomName;
     }
 
@@ -71,7 +73,7 @@ public class MenuUI : MonoBehaviour
 
     public void OnLevelSliderValueChanged()
     {
-
+        Prefs.LevelSlider = (int)_level.value;
     }
 
     public void OnTwoPlayersButtonClicked()
@@ -94,6 +96,11 @@ public class MenuUI : MonoBehaviour
         TimeSpan moveDuration = _moveDurations[(int)_moveDuration.value - 1];
         string roomName = _roomNumber.text;
         LoadChessGame(new NetworkFriend(moveDuration, roomName));
+    }
+
+    public void OnMoveDurationSliderValueChanged()
+    {
+        Prefs.MoveDurationSlider = (int)_moveDuration.value;
     }
 
     public void OnBotVsBotButtonClicked()

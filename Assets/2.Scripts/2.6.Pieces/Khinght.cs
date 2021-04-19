@@ -68,4 +68,6 @@ public class Knight : Piece
 
     public override int GetMainValue() => VALUE + GetValue(MAIN);
     public override int GetEndgameValue() => VALUE + GetValue(END_GAME);
+
+    public override int GetNumber() => 2;
 }

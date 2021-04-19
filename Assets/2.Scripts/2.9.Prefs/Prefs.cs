@@ -8,23 +8,20 @@ public static class Prefs
 {
     const string ROOM_NAME = "RoomName";
     const string LEVEL_SLIDER = "LevelSlider";
-    const string DURATION_SLIDER = "DurationSlider";
+    const string MOVE_DURATION_SLIDER = "MoveDurationSlider";
     const string HISTORY = "History";
 
     public static string RoomName
     {
         get
         {
-            if (PlayerPrefs.HasKey(ROOM_NAME))
+            if (!PlayerPrefs.HasKey(ROOM_NAME))
             {
-                return PlayerPrefs.GetString(ROOM_NAME);
+                RoomName = Random.Range(0, 10).ToString()
+                         + Random.Range(0, 10).ToString()
+                         + Random.Range(0, 10).ToString();
             }
-            else
-            {
-                return Random.Range(0, 10).ToString()
-                    + Random.Range(0, 10).ToString()
-                    + Random.Range(0, 10).ToString();
-            }
+            return PlayerPrefs.GetString(ROOM_NAME);
         }
         set
         {
@@ -42,7 +39,7 @@ public static class Prefs
             }
             else
             {
-                return 3;
+                return 4;
             }
         }
         set
@@ -51,22 +48,22 @@ public static class Prefs
         }
     }
 
-    public static int DurationSlider
+    public static int MoveDurationSlider
     {
         get
         {
-            if (PlayerPrefs.HasKey(DURATION_SLIDER))
+            if (PlayerPrefs.HasKey(MOVE_DURATION_SLIDER))
             {
-                return PlayerPrefs.GetInt(DURATION_SLIDER);
+                return PlayerPrefs.GetInt(MOVE_DURATION_SLIDER);
             }
             else
             {
-                return 3;
+                return 4;
             }
         }
         set
         {
-            PlayerPrefs.SetInt(DURATION_SLIDER, value);
+            PlayerPrefs.SetInt(MOVE_DURATION_SLIDER, value);
         }
     }
 

@@ -18,14 +18,14 @@ public class King : Piece
 
     static readonly int[,] END_GAME = new int[,]
     {
-        {   0,   2,   2,   2,   2,   2,   2,   0 },
-        {   2,   3,   3,   3,   3,   3,   3,   2 },
-        {   2,   3,   3,   3,   3,   3,   3,   2 },
+        {   1,   2,   2,   2,   2,   2,   2,   1 },
+        {   2,   2,   2,   2,   2,   2,   2,   2 },
         {   2,   2,   2,   2,   2,   2,   2,   2 },
         {   2,   2,   2,   2,   2,   2,   2,   2 },
         {   1,   1,   1,   1,   1,   1,   1,   1 },
+        {   1,   1,   1,   1,   1,   1,   1,   1 },
         {   0,   0,   0,   0,   0,   0,   0,   0 },
-        {   0,   0,   0,   0,   0,   0,   0,   0 }
+        {   0,   0,   0,   0,   0,   0,   0,   0 },
     };
 
     public King(Position position, Vector2Int location, Color color)
@@ -97,4 +97,6 @@ public class King : Piece
     public override int GetMainValue() => GetValue(MAIN);
 
     public override int GetEndgameValue() => GetValue(END_GAME);
+
+    public override int GetNumber() => 6;
 }

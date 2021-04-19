@@ -14,7 +14,7 @@ public class Pawn : Piece
         {   2,   2,   4,   6,   6,   4,   2,   2 },
         {   1,   1,   2,   5,   5,   2,   1,   1 },
         {   0,   0,   0,   4,   4,   0,   0,   0 },
-        {   1,  -1,  -2,   0,   0,  -2,  -1,   1 },
+        {   1,   0,  -2,   0,   0,  -2,   0,   1 },
         {   1,   2,   2,  -4,  -4,   2,   2,   1 },
         {   0,   0,   0,   0,   0,   0,   0,   0 }
     };
@@ -33,10 +33,10 @@ public class Pawn : Piece
 
     private static Type[] _newPieces = new Type[]
     {
-        typeof(Knight),
-        typeof(Bishop),
+        typeof(Queen),
         typeof(Rook),
-        typeof(Queen)
+        typeof(Bishop),
+        typeof(Knight)
     };
 
     private static int[] _offsets = new int[] { -1, 0, 1 };
@@ -139,4 +139,6 @@ public class Pawn : Piece
     public override int GetMainValue() => VALUE + GetValue(MAIN);
 
     public override int GetEndgameValue() => VALUE + GetValue(END_GAME);
+
+    public override int GetNumber() => 1;
 }

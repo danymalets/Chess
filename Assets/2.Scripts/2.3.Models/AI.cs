@@ -8,13 +8,13 @@ public static class AI
     const int CHECK_MATE = (int)1e9;
     const int CHECK_MATE_HEIGHT = (int)1e8;
 
-    static public bool nw = false;
 
     public static IEnumerable<(Move, float)> GetMove(
         Position position,
         int level,
         List<Position> prohibitedPositions)
     {
+
         List<Move> moves = position.GetPossibleMoves();
         int bestValue = -INF;
         Move bestMove = null;

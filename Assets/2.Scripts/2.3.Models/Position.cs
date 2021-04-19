@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Position: IEquatable<Position>
+public class Position: IEquatable<Position>, IEqualityComparer<Position>
 {
     public const int SIZE = 8;
 
@@ -131,9 +131,9 @@ public class Position: IEquatable<Position>
 
     public Vector2Int GetKingSquare(Color color)
     {
-        for (int x = 0; x < 8; x++)
+        for (int x = 0; x < SIZE; x++)
         {
-            for (int y = 0; y < 8; y++)
+            for (int y = 0; y < SIZE; y++)
             {
                 if (Board[x, y] is King && Board[x, y].Color == color)
                 {
@@ -213,28 +213,60 @@ public class Position: IEquatable<Position>
     public bool Equals(Position other)
     {
         if (WhoseMove != other.WhoseMove) return false;
+
         for (int x = 0; x < SIZE; x++)
         {
             for (int y = 0; y < SIZE; y++)
             {
-                if ((Board[x, y] == null) != (other.Board[x, y] == null)) return false;
-                if (Board[x, y] != null && (Board[x, y].GetType() != other.Board[x, y].GetType()
-                    || Board[x, y].Color != other.Board[x, y].Color)) return false;
+                if (Board[x, y] == null)
+                {
+                    if (other.Board[x, y] != null) return false;
+                }
+                else
+                {
+                    if (other.Board[x, y] == null) return false;
+                    if (!Board[x, y].Equals(other.Board[x, y])) return false;
+                }
             }
         }
-        if (EnPassantAvailable == other.EnPassantAvailable
-            && QueensideCastling[WhoseMove] == other.QueensideCastling[WhoseMove]
-            && KingsideCastling[WhoseMove] == other.KingsideCastling[WhoseMove]) return true;
 
-        List<Move> moves = GetSmartMoves();
-        List<Move> otherMoves = other.GetSmartMoves();
-        if (moves.Count != otherMoves.Count) return false;
-        for (int i = 0; i < moves.Count; i++)
-        {
-            if (moves[i].GetType() != otherMoves[i].GetType()) return false;
-        }
+        if (!KingsideCastling[Color.White].Equals(other.KingsideCastling[Color.White])) return false;
+        if (!KingsideCastling[Color.Black].Equals(other.KingsideCastling[Color.Black])) return false;
+        if (!QueensideCastling[Color.White].Equals(other.QueensideCastling[Color.White])) return false;
+        if (!QueensideCastling[Color.Black].Equals(other.QueensideCastling[Color.Black])) return false;
+
+        if (!EnPassantAvailable.Equals(other.EnPassantAvailable)) return false;
+        if (EnPassantAvailable && other.EnPassantAvailable && !PawnLine.Equals(other.PawnLine)) return false;
+
         return true;
     }
 
-    
+    public override int GetHashCode()
+    {
+        int hash = WhoseMove == Color.White ? 0 : 1;
+        for (int x = 0; x < SIZE; x++)
+        {
+            for (int y = 0; y < SIZE; y++)
+            {
+                hash = hash * 13 + (Board[x, y] == null ? 0 : Board[x, y].GetHashCode());
+                if (Board[x, y] != null) Debug.Log("h " + Board[x, y].GetHashCode());
+            }
+        }
+        hash = hash * 2 + (KingsideCastling[Color.White] ? 1 : 0);
+        hash = hash * 2 + (KingsideCastling[Color.Black] ? 1 : 0);
+        hash = hash * 2 + (QueensideCastling[Color.White] ? 1 : 0);
+        hash = hash * 2 + (QueensideCastling[Color.Black] ? 1 : 0);
+        hash = hash * 9 + (EnPassantAvailable ? PawnLine : SIZE);
+        return hash;
+    }
+
+    public bool Equals(Position x, Position y)
+    {
+        return x.Equals(y);
+    }
+
+    public int GetHashCode(Position position)
+    {
+        return position.GetHashCode();
+    }
 }

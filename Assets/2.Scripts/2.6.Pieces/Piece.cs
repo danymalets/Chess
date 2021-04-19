@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Piece: ICloneable
+public abstract class Piece: ICloneable, IEquatable<Piece>
 {
     public Position Position;
     public Vector2Int Square;
@@ -60,5 +60,14 @@ public abstract class Piece: ICloneable
         {
             return values[Position.SIZE - 1 - Square.x, Square.y];
         }
+    }
+
+    public override int GetHashCode() => (Color == Color.White ? 0 : 6) + GetNumber();
+
+    public abstract int GetNumber();
+
+    public bool Equals(Piece other)
+    {
+        return GetType().Equals(other.GetType()) && Color.Equals(other.Color);
     }
 }
