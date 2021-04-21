@@ -36,4 +36,23 @@ public class SettingsUI : MonoBehaviour
     {
         _loading.allowSceneActivation = true;
     }
+
+    public void OnLeftButtomClicked()
+    {
+        _spriteManager.Prev();
+        Redraw();
+    }
+
+    public void OnRightButtomClicked()
+    {
+        _spriteManager.Next();
+        Redraw();
+    }
+
+    private void Redraw()
+    {
+        _board.Clear();
+        _board.Draw();
+        _board.InitPieces(new Position());
+    }
 }

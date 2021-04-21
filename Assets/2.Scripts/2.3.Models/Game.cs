@@ -6,15 +6,16 @@ using UnityEngine;
 public class Game
 {
     public Position Position;
-    public List<Position> RepeatingPositions = new List<Position>();
+    public Dictionary<Position, int> History = new Dictionary<Position, int>();
+
     public List<string> StringMoves;
     public bool IsEnd = false;
+
+    private bool _tripleRepetition = false;
 
     private List<Position> _positions;
 
     private List<Move> _moves;
-
-    private Position _tripleRepetition = null;
 
     public Game()
     {
@@ -22,7 +23,10 @@ public class Game
         StringMoves = new List<string>();
 
         Position = new Position();
-        _positions = new List<Position>() { new Position(Position) };
+
+        Position copy = new Position(Position);
+        _positions = new List<Position>() { copy };
+        History[copy] = 1;
     }
 
     public Game(List<string> moves)
@@ -30,7 +34,11 @@ public class Game
         _moves = new List<Move>();
         StringMoves = moves;
         Position = new Position();
-        _positions = new List<Position>() { new Position(Position) };
+
+        Position copy = new Position(Position);
+        _positions = new List<Position>() { copy };
+        History[copy] = 1;
+
         foreach (string sMove in moves)
         {
             Move move = Move.FromString(sMove);
@@ -53,7 +61,7 @@ public class Game
             IsEnd = true;
             return $"Ничья. Пат {(Position.WhoseMove == Color.White ? "белым" : "чёрным")}";
         }
-        if (_tripleRepetition != null)
+        if (_tripleRepetition)
         {
             IsEnd = true;
             return "Ничья. Позиция была повторена трижды";
@@ -101,21 +109,20 @@ public class Game
     public void MakeMove(Move move)
     {
         move.Make(Position);
-        foreach (Position other in RepeatingPositions)
+        Position copy = new Position(Position);
+        if (!History.ContainsKey(copy))
         {
-            if (Position.Equals(other))
+            History[copy] = 1;
+        }
+        else
+        {
+            History[copy]++;
+            if (History[copy] == 3)
             {
-                _tripleRepetition = other;
+                _tripleRepetition = true;
             }
         }
-        foreach (Position other in _positions)
-        {
-            if (Position.Equals(other))
-            {
-                RepeatingPositions.Add(other);
-            }
-        }
-        _positions.Add(new Position(Position));
+        _positions.Add(copy);
         _moves.Add(move);
         StringMoves.Add(move.ToString());
     }
@@ -123,14 +130,18 @@ public class Game
     public void Undo()
     {
         IsEnd = false;
-        Position last = _positions[_positions.Count - 1];
-        if (last == _tripleRepetition)
+        if (History[Position] == 3)
         {
-            _tripleRepetition = null;
+            _tripleRepetition = false;
+        }
+        int count = History[Position];
+        if (count == 1)
+        {
+            History.Remove(Position);
         }
         else
         {
-            RepeatingPositions.Remove(last);
+            History[Position] = count - 1;
         }
         _positions.RemoveAt(_positions.Count - 1);
         _moves.RemoveAt(_moves.Count - 1);

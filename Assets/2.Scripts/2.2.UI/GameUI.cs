@@ -37,6 +37,8 @@ public class GameUI : MonoBehaviour
 
     private GameController _controller;
 
+    private AI _ai;
+
     private void Start()
     {
         _controller = GameController.Singleton;
@@ -64,41 +66,19 @@ public class GameUI : MonoBehaviour
         _status.text = newStatus;
     }
 
-    public void StartSearchMove(Game game, int level) => StartCoroutine(SearchMove(game, level));
+    public void StartSearchMove(AI ai) => StartCoroutine(SearchMove(ai));
 
-    private IEnumerator SearchMove(Game game, int level)
+    private IEnumerator SearchMove(AI ai)
     {
+        _ai = ai;
         _lineTimer.color = _brainColor;
 
-        Move bestMove = null;
+        _ai.StartSolving();
+
         DateTime startTime = DateTime.UtcNow;
         _textTimer.text = "00:00.00";
         _lineTimer.fillAmount = 0f;
         yield return null;
-        /*
-        foreach ((Move currentBestMove, float part) in AI.GetMove(game.Position, level, game.RepeatingPositions))
-        {
-            TimeSpan elapsedTime = DateTime.UtcNow - startTime;
-            if (elapsedTime.TotalHours >= 1)
-            {
-                _textTimer.text = "> 1 часа";
-            }
-            else
-            {
-                _textTimer.text = elapsedTime.ToString(@"mm\:ss\.ff");
-            }
-            _lineTimer.fillAmount = part;
-            yield return null;
-            bestMove = currentBestMove;
-        }
-        */
-
-        AI.Position = game.Position;
-        AI.Level = level;
-        AI.ProhibitedPositions = game.RepeatingPositions;
-        AI.Solved = false;
-        Thread myThread = new Thread(new ThreadStart(AI.StartSearchMove));
-        myThread.Start();
 
         while (true)
         {
@@ -112,13 +92,13 @@ public class GameUI : MonoBehaviour
             {
                 _textTimer.text = elapsedTime.ToString(@"mm\:ss\.ff");
             }
-            if (AI.Solved)
+            _lineTimer.fillAmount = ai.GetPart();
+            if (ai.IsSolved(out Move move))
             {
-                bestMove = AI.Move;
+                MoveFound?.Invoke(move);
                 break;
             }
         }
-        MoveFound?.Invoke(bestMove);
     }
 
     public NetworkRivalProvider GetNetworkProvider() => gameObject.AddComponent<NetworkRivalProvider>();
@@ -176,6 +156,10 @@ public class GameUI : MonoBehaviour
 
     public void Clear()
     {
+        if (_ai != null)
+        {
+            _ai.Abort();
+        }
         StopAllCoroutines();
         _textTimer.text = "00:00.00";
         _lineTimer.fillAmount = 0f;
@@ -183,6 +167,10 @@ public class GameUI : MonoBehaviour
 
     public void OnExit()
     {
+        if (_ai != null)
+        {
+            _ai.Abort();
+        }
         _controller.Finish();
         _loading = SceneManager.LoadSceneAsync("Menu");
         _animation.Play("GameClosing");
@@ -196,12 +184,13 @@ public class GameUI : MonoBehaviour
 
     public void OnApplicationQuit()
     {
+        if (_ai != null)
+        {
+            _ai.Abort();
+        }
         if (_loading == null)
         {
-            if (this is ISave)
-            {
-                Prefs.AddGameController(_controller);
-            }
+            _controller.Finish();
         }
     }
 }

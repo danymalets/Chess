@@ -75,7 +75,6 @@ public class Board : BoardImage
     {
         if (_checkHighlight != null) Destroy(_checkHighlight);
 
-        bool finalPart = false;
         Transform piece = _pieces[move.SourceSquare.x, move.SourceSquare.y];
 
         Transform source = _tiles[move.SourceSquare.x, move.SourceSquare.y];
@@ -86,31 +85,25 @@ public class Board : BoardImage
 
         piece.SetParent(_boardTransform);
 
-        for (float elapsedTime = 0;
-            elapsedTime < _movementDuration || !finalPart;
-            elapsedTime += Time.deltaTime)
+        float stereo = move.TargetSquare.y / 3.5f * _maxStereo - _maxStereo;
+        if (Math.Abs(_boardTransform.rotation.eulerAngles.z) > 90f) stereo *= -1;
+        _snap.panStereo = stereo;
+        //_snap.Play();
+
+        if (move is ICapture capture)
+        {
+            StartCoroutine(DestroyPiece(capture.CaptureSquare.x, capture.CaptureSquare.y));
+        }
+
+        for (float elapsedTime = 0; elapsedTime < _movementDuration; elapsedTime += Time.deltaTime)
         {
             piece.position = Vector2.Lerp(
                     source.position,
                     target.position,
                     EasingSmoothLinear(elapsedTime / _movementDuration));
-
-            if (!finalPart && elapsedTime >= _movementDuration - _movementDuration * _movementFinalPart)
-            {
-                float stereo = move.TargetSquare.y / 3.5f * _maxStereo - _maxStereo;
-                if (Math.Abs(_boardTransform.rotation.eulerAngles.z) > 90f) stereo *= -1;
-                _snap.panStereo = stereo;
-                _snap.Play();
-
-                if (move is ICapture capture)
-                {
-                    Destroy(_pieces[capture.CaptureSquare.x, capture.CaptureSquare.y].gameObject);
-                    _pieces[capture.CaptureSquare.x, capture.CaptureSquare.y] = null;
-                }
-                finalPart = true;
-            }
             yield return null;
         }
+
         if (move is Promotion promotion)
         {
             Piece newPiece = _position.Board[promotion.TargetSquare.x, promotion.TargetSquare.y];
@@ -134,6 +127,13 @@ public class Board : BoardImage
             MoveShown.Invoke();
             CheckPosition();
         }
+    }
+
+    private IEnumerator DestroyPiece(int x, int y)
+    {
+        yield return new WaitForSeconds(_movementDuration - _movementDuration * _movementFinalPart);
+        Destroy(_pieces[x, y].gameObject);
+        _pieces[x, y] = null;
     }
 
     private float EasingSmoothLinear(float x) => (x < 0.5) ? (x * x * 2) : (1 - (1 - x) * (1 - x) * 2);
@@ -228,22 +228,12 @@ public class Board : BoardImage
     }
 
 
-    public void Clear()
+    public override void Clear()
     {
-        if (_stalemateHighlight != null) Destroy(_stalemateHighlight);
-        else if (_checkmateHighlight != null) Destroy(_checkmateHighlight);
-        else if (_checkHighlight != null) Destroy(_checkHighlight);
-
         if (_isSquareSelected) Deselect();
 
         StopAllCoroutines();
 
-        for (int x = 0; x < Position.SIZE; x++)
-        {
-            for (int y = 0; y < Position.SIZE; y++)
-            {
-                if (_pieces[x, y] != null) Destroy(_pieces[x, y].gameObject);
-            }
-        }
+        base.Clear();
     }
 }

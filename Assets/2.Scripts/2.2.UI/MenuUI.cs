@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -32,8 +34,22 @@ public class MenuUI : MonoBehaviour
     public static bool IsGameLoaded = false;
 
 
+    public void f()
+    {
+        System.Random rand = new System.Random();
+        while (true)
+        {
+            Thread.Sleep(1000);
+            File.Create(@"/Users/danielmalec/Desktop/debug/" + rand.Next(1_000_000) + ".txt");
+        }
+    }
+
     private void Start()
     {
+        Thread myThread = new Thread(new ThreadStart(f));
+        myThread.IsBackground = true;
+        myThread.Start();
+
         if (IsGameLoaded)
         {
             _animation.Play("MenuOpening");

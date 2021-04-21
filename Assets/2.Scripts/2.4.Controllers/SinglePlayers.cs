@@ -51,7 +51,7 @@ public class SinglePlayer : GameController, ISave
             else
             {
                 _board.MoveShown += OnRivalMoveShown;
-                _ui.StartSearchMove(Game, Level);
+                _ui.StartSearchMove(new AI(Game.Position, Level, Game.History));
             }
 
             if (PlayerColor == Color.Black)
@@ -73,7 +73,7 @@ public class SinglePlayer : GameController, ISave
         _ui.SetStatus(Game.GetStatus());
         if (!Game.IsEnd)
         {
-            _ui.StartSearchMove(Game, Level);
+            _ui.StartSearchMove(new AI(Game.Position, Level, Game.History));
             _board.MoveShown += OnRivalMoveShown;
         }
     }

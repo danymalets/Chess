@@ -24,7 +24,7 @@ public class BotVsBot : GameController
         _board.MoveShown += OnRivalMoveShown;
 
         _ui.SetStatus(Game.GetStatus());
-        _ui.StartSearchMove(Game, _level);
+        _ui.StartSearchMove(new AI(Game.Position, _level, Game.History));
     }
 
     private void OnMoveFound(Move move)
@@ -38,7 +38,7 @@ public class BotVsBot : GameController
         _ui.SetStatus(Game.GetStatus());
         if (!Game.IsEnd)
         {
-            _ui.StartSearchMove(Game, _level);
+            _ui.StartSearchMove(new AI(Game.Position, _level, Game.History));
         }
     }
 }

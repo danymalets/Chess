@@ -6,10 +6,23 @@ using Random = UnityEngine.Random;
 
 public static class Prefs
 {
-    const string ROOM_NAME = "RoomName";
-    const string LEVEL_SLIDER = "LevelSlider";
-    const string MOVE_DURATION_SLIDER = "MoveDurationSlider";
-    const string HISTORY = "History";
+    private const string SPRITE_PACK = "SpritePack";
+    private const string ROOM_NAME = "RoomName";
+    private const string LEVEL_SLIDER = "LevelSlider";
+    private const string MOVE_DURATION_SLIDER = "MoveDurationSlider";
+    private const string HISTORY = "History";
+
+    public static string SpritePack
+    {
+        get
+        {
+            return PlayerPrefs.GetString(SPRITE_PACK);
+        }
+        set
+        {
+            PlayerPrefs.SetString(SPRITE_PACK, value);
+        }
+    }
 
     public static string RoomName
     {

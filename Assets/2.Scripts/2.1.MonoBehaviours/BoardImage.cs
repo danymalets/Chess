@@ -36,6 +36,19 @@ public class BoardImage : MonoBehaviour
 
     public void InitBoard()
     {
+        for (int x = 0; x < Position.SIZE; x++)
+        {
+            for (int y = 0; y < Position.SIZE; y++)
+            {
+                _tiles[x, y] = Instantiate(_tile, _fieldTransform).transform;
+            }
+        }
+
+        Draw();
+    }
+
+    public void Draw()
+    {
         _spritePack = _spriteManager.CurrentPack;
 
         GetComponent<Image>().sprite = _spritePack.GetBoard();
@@ -47,9 +60,7 @@ public class BoardImage : MonoBehaviour
         {
             for (int y = 0; y < Position.SIZE; y++)
             {
-                _tile.GetComponent<Image>().sprite = x % 2 == y % 2 ? white : black;
-
-                _tiles[x, y] = Instantiate(_tile, _fieldTransform).transform;
+                _tiles[x, y].GetComponent<Image>().sprite = x % 2 == y % 2 ? white : black;
             }
         }
     }
@@ -58,7 +69,6 @@ public class BoardImage : MonoBehaviour
     {
         _position = position;
 
-        Debug.Log("Y " + _position.Board[4, 4]);
         for (int x = 0; x < Position.SIZE; x++)
         {
             for (int y = 0; y < Position.SIZE; y++)
@@ -72,6 +82,7 @@ public class BoardImage : MonoBehaviour
                 }
             }
         }
+
         CheckPosition();
     }
 
@@ -104,6 +115,21 @@ public class BoardImage : MonoBehaviour
             for (int y = 0; y < Position.SIZE; y++)
             {
                 _tiles[x, y].localRotation = Quaternion.Euler(0, 0, angle);
+            }
+        }
+    }
+
+    public virtual void Clear()
+    {
+        if (_stalemateHighlight != null) Destroy(_stalemateHighlight);
+        else if (_checkmateHighlight != null) Destroy(_checkmateHighlight);
+        else if (_checkHighlight != null) Destroy(_checkHighlight);
+
+        for (int x = 0; x < Position.SIZE; x++)
+        {
+            for (int y = 0; y < Position.SIZE; y++)
+            {
+                if (_pieces[x, y] != null) Destroy(_pieces[x, y].gameObject);
             }
         }
     }

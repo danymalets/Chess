@@ -1,112 +1,133 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using Random = System.Random;
 
-public static class AI 
+public class AI 
 {
     private static Random random = new Random();
+
+    private static int[] COUNTS = new int[]
+    {
+        25,
+        290,
+        5000,
+        20000,
+        350000,
+        1000000
+    };
 
     const int INF = (int)2e9;
     const int CHECK_MATE = (int)1e9;
     const int CHECK_MATE_HEIGHT = (int)1e8;
 
-    private static int Count;
-    private static int MaxCount;
+    private int _level;
 
-    public static Position Position;
-    public static int Level;
-    public static List<Position> ProhibitedPositions;
+    private int _count = 0;
+    private int _maxCount;
 
-    public static bool Solved;
-    public static Move Move;
+    private Position _position;
+    private Dictionary<Position, int> _history;
 
-    private static Dictionary<Position, (Move, int)>[] _solvedPositions;
+    private bool _solved = false;
+    private Move _move;
 
-    public static void StartSearchMove()
+    private bool _mandatoryCompletion = true;
+
+    public AI(Position position, int level, Dictionary<Position, int> history)
     {
-        _solvedPositions = new Dictionary<Position, (Move, int)>[10];
-        for (int i = 0; i < 10; i++)
+        _level = level;
+        _position = position;
+        _maxCount = COUNTS[level - 1];
+
+        _history = new Dictionary<Position, int>();
+        foreach (var temp in history)
         {
-            _solvedPositions[i] = new Dictionary<Position, (Move, int)>();
+            _history[temp.Key] = temp.Value;
         }
-        Move = GetMove();
-        Solved = true;
     }
 
-    public static Move GetMove()
+    public void StartSolving()
     {
-        Move move;
-        int maxHight = Level;
-        move = TryGetMove(Position, 1, ProhibitedPositions);
-        Count = 0;
-        MaxCount = 1_000_000_000;
-        for (int level = 1; level <= 4; level++)
-        {
-            move = TryGetMove(Position, maxHight, ProhibitedPositions);
-        }
-        if (move == null) Debug.Log("error");
-        Debug.Log("count " + Count);
-        return move;
+        Thread thread = new Thread(new ThreadStart(Solving));
+        thread.Start();
     }
 
-    private static Move TryGetMove(
-        Position position,
-        int maxHight,
-        List<Position> prohibitedPositions)
+    private void Solving()
     {
-        List<Move> moves = position.GetPossibleMoves();
-        int bestValue = -INF;
-        Move bestMove = null;
-        List<Move> childrenBestMoves = new List<Move>();
-        Shuffle(moves);
-        float part = 0f;
-        foreach (Move move in moves)
-        {
-            Position newPosition = new Position(position);
-            move.Make(newPosition);
-            (Move childBestMove, int value) = Solve(
-                newPosition,
-                1,
-                maxHight,
-                bestValue,
-                childrenBestMoves,
-                prohibitedPositions);
+        _move = GetMove();
+        _solved = true;
+    }
 
-            if (childBestMove != null)
+    public bool IsSolved(out Move move)
+    {
+        if (_solved)
+        {
+            move = _move;
+            return true;
+        }
+        else
+        {
+            move = null;
+            return false;
+        }
+    }
+
+    public float GetPart()
+    {
+        return (float)_count / _maxCount;
+    }
+
+    public void Abort()
+    {
+        _mandatoryCompletion = false;
+        _maxCount = 0;
+    }
+
+    private Move GetMove()
+    {
+        _count = 0;
+        Move bestMove = Solve(_position, _level, true);
+        Debug.Log(_count);
+        _mandatoryCompletion = false;
+        while (true)
+        {
+            Move move = Solve(_position, ++_level, false);
+            if (move == null)
             {
-                childrenBestMoves.Add(childBestMove);
+                break;
             }
-
-            if (-value > bestValue)
+            else
             {
-                bestValue = -value;
                 bestMove = move;
             }
-            part += 1f / moves.Count;
         }
+        Debug.Log("level " + (_level - 1));
         return bestMove;
     }
 
-    private static (Move, int) Solve(
+    private Move Solve(Position position, int maxHeight, bool mandatoryCompetion) =>
+        Solve(position, 0, maxHeight, -INF-1, new List<Move>()).Item1;
+
+    private (Move, int) Solve(
         Position position,
         int height,
         int maxHeight,
         int breakPoint,
-        List<Move> maybeBestMoves,
-        List<Position> prohibitedPositions)
+        List<Move> maybeBestMoves)
     {
-        if (Count++ == MaxCount) return (null, 0);
-        if (position.IsOpponentInCheck()) return (null, INF);
-        if (height <= 4)
+        _count++;
+        if (!_mandatoryCompletion)
         {
-            foreach (Position other in prohibitedPositions)
-            {
-                if (position.Equals(other)) return (null, -19);
-            }
+            if (_count >= _maxCount) return (null, 0);
         }
+        if (position.IsOpponentInCheck()) return (null, INF);
+
         if (height == maxHeight) return (null, GetValue(position));
         List<Move> moves = position.GetPossibleMoves();
+        if (height == 0) Shuffle(moves);
+
         int bestValue = -INF;
         Move bestMove = null;
         List<Move> childrenBestMoves = new List<Move>();
@@ -129,13 +150,47 @@ public static class AI
             move.Make(newPosition);
             Move childBestMove;
             int value;
-            (childBestMove, value) = Solve(
-                newPosition,
-                height + 1,
-                maxHeight,
-                bestValue,
-                childrenBestMoves,
-                prohibitedPositions);
+
+            int count;
+            if (_history.ContainsKey(newPosition))
+            {
+                count = _history[newPosition];
+            }
+            else
+            {
+                count = 0;
+            }
+
+            _history[newPosition] = count + 1;
+
+            if (count == 2)
+            {
+                childBestMove = null;
+                value = -19;
+            }
+            else
+            {
+                (childBestMove, value) = Solve(
+                    newPosition,
+                    height + 1,
+                    maxHeight,
+                    bestValue,
+                    childrenBestMoves);
+            }
+
+            if (count == 0)
+            {
+                _history.Remove(newPosition);
+            }
+            else
+            {
+                _history[newPosition] = count;
+            }
+
+            if (!_mandatoryCompletion)
+            {
+                if (_count >= _maxCount) return (null, 0);
+            }
 
             if (childBestMove != null)
             {
@@ -169,7 +224,7 @@ public static class AI
         }
     }
 
-    private static void Shuffle(List<Move> moves)
+    private void Shuffle(List<Move> moves)
     {
         for (int i = 1; i < moves.Count; i++)
         {
@@ -178,7 +233,7 @@ public static class AI
         }
     }
 
-    private static int GetValue(Position position)
+    private int GetValue(Position position)
     {
         int count = 0;
         for (int x = 0; x < Position.SIZE; x++)
