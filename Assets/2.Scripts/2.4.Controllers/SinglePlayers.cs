@@ -3,47 +3,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SinglePlayer : GameController, ISave
+public class SinglePlayer : GameController, IStorable, IUndoable
 {
-    public static string Title = "SinglePlayer";
+    private Color _playerColor;
+    private int _level;
 
-    public Color PlayerColor { get; private set; }
-    public int Level { get; private set; }
-
-    public string StartDate { get; private set; }
-    public string StartTime { get; private set; }
+    private AI _ai;
 
     public SinglePlayer(Color playerColor, int level) : base()
     {
-        PlayerColor = playerColor;
-        Level = level;
+        _playerColor = playerColor;
+        _level = level;
     }
 
-    public SinglePlayer(Color playerColor, int level, List<string> moves) : base(moves)
+    public SinglePlayer(
+        Color playerColor,
+        int level,
+        Game game)
     {
-        PlayerColor = playerColor;
-        Level = level;
+        _game = game;
+        _playerColor = playerColor;
+        _level = level;
     }
 
     public override void Init(GameUI ui, Board board)
     {
-        DateTime now = DateTime.Now;
-        StartDate = now.ToString("dd.MM.yyyy");
-        StartTime = now.ToString("HH:mm");
-
         base.Init(ui, board);
 
-        _ui.SetTitle($"Один игрок, {Level} уровень, за {(PlayerColor == Color.White ? "белых" : "чёрных")}");
+        _ai = new AI(_game, _level);
 
-        _board.InitPieces(Game.Position);
+        _ui.SetTitle($"Один игрок, {_level} уровень, за {(_playerColor == Color.White ? "белых" : "чёрных")}");
+
+        _board.InitPieces(_game.Position);
 
         _board.MoveSelected += OnUserMoveSelected;
         _ui.MoveFound += OnMoveFound;
 
-        _ui.SetStatus(Game.GetStatus());
-        if (!Game.IsEnd)
+        _ui.SetStatus(_game.GetStatus());
+        if (!_game.IsEnd)
         {
-            if (PlayerColor == Game.Position.WhoseMove)
+            if (_playerColor == _game.Position.WhoseMove)
             {
                 _board.MoveShown += OnUserMoveShown;
                 _board.EnableMoves();
@@ -51,10 +50,10 @@ public class SinglePlayer : GameController, ISave
             else
             {
                 _board.MoveShown += OnRivalMoveShown;
-                _ui.StartSearchMove(new AI(Game.Position, Level, Game.History));
+                _ui.StartSearchMove(_ai);
             }
 
-            if (PlayerColor == Color.Black)
+            if (_playerColor == Color.Black)
             {
                 _board.SetRotation(180);
             }
@@ -63,24 +62,25 @@ public class SinglePlayer : GameController, ISave
 
     private void OnUserMoveSelected(Move move)
     {
-        Game.MakeMove(move);
+        _game.MakeMove(move);
     }
 
     private void OnUserMoveShown()
     {
         _board.MoveShown -= OnUserMoveShown;
 
-        _ui.SetStatus(Game.GetStatus());
-        if (!Game.IsEnd)
+        _ui.SetStatus(_game.GetStatus());
+        if (!_game.IsEnd)
         {
-            _ui.StartSearchMove(new AI(Game.Position, Level, Game.History));
+            Debug.Log("R " + _game.Position.WhoseMove);
+            _ui.StartSearchMove(_ai);
             _board.MoveShown += OnRivalMoveShown;
         }
     }
 
     private void OnMoveFound(Move move)
     {
-        Game.MakeMove(move);
+        _game.MakeMove(move);
         _board.ShowMove(move);
     }
 
@@ -88,8 +88,8 @@ public class SinglePlayer : GameController, ISave
     {
         _board.MoveShown -= OnRivalMoveShown;
 
-        _ui.SetStatus(Game.GetStatus());
-        if (!Game.IsEnd)
+        _ui.SetStatus(_game.GetStatus());
+        if (!_game.IsEnd)
         {
             _board.EnableMoves();
             _board.MoveShown += OnUserMoveShown;
@@ -98,18 +98,19 @@ public class SinglePlayer : GameController, ISave
 
     public void Undo()
     {
-        if (!Game.IsUndoAllowed()) return;
+        if (!IsUndoAllowed()) return;
 
+        _ai.Stop();
         _ui.Clear();
         _board.Clear();
-        Game.Undo();
+        _game.Undo();
 
-        if (Game.Position.WhoseMove != PlayerColor) Game.Undo();
+        if (_game.Position.WhoseMove != _playerColor) _game.Undo();
 
-        _board.InitPieces(Game.Position);
+        _board.InitPieces(_game.Position);
         _board.EnableMoves();
 
-        _ui.SetStatus(Game.GetStatus());
+        _ui.SetStatus(_game.GetStatus());
 
         _board.MoveShown -= OnUserMoveShown;
         _board.MoveShown -= OnRivalMoveShown;
@@ -117,15 +118,30 @@ public class SinglePlayer : GameController, ISave
         _board.MoveShown += OnUserMoveShown;
     }
 
-    public GameModel GetGameModel()
+    private bool IsUndoAllowed()
     {
-        return new GameModel(
-            Title,
-            (int)PlayerColor,
-            Level,
-            -1,
-            Game.StringMoves,
-            StartDate,
-            StartTime);
+        if (_playerColor == Color.White)
+        {
+            return _game.GetPositionsCount() >= 2;
+        }
+        else
+        {
+            return _game.GetPositionsCount() >= 3;
+        }
+    }
+
+    public StoredGame GetStoredGame()
+    {
+        return new StoredGame(StoredType.SinglePlayer, _game.StringMoves)
+        {
+            PlayerColor = (int)_playerColor,
+            Level = _level
+        };
+    }
+
+    public override void Finish()
+    {
+        _ai.Stop();
+        base.Finish();
     }
 }

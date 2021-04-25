@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISave
+public enum StoredType
 {
-    public GameModel GetGameModel();
+    SinglePlayer,
+    TwoPlayers
 }

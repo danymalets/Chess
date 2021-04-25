@@ -46,8 +46,9 @@ public class Game
             move.Make(Position);
             _positions.Add(new Position(Position));
         }
-        Debug.Log(Position.Board[4, 4]);
     }
+
+    public int GetPositionsCount() => _positions.Count;
 
     public string GetStatus()
     {
@@ -69,7 +70,7 @@ public class Game
         if (UselessMoves() == 50)
         {
             IsEnd = true;
-            return "Ничья. 50 бесполезных ходов";
+            return "Ничья. 50 ходов без взятий и движения пешки";
         }
         if (!CanWin(Color.White) && !CanWin(Color.Black))
         {
@@ -130,10 +131,7 @@ public class Game
     public void Undo()
     {
         IsEnd = false;
-        if (History[Position] == 3)
-        {
-            _tripleRepetition = false;
-        }
+        _tripleRepetition = false;
         int count = History[Position];
         if (count == 1)
         {
@@ -148,8 +146,6 @@ public class Game
         StringMoves.RemoveAt(StringMoves.Count - 1);
         Position = new Position(_positions[_positions.Count - 1]);
     }
-
-    public bool IsUndoAllowed() => _moves.Count >= 2;
 
     private bool CanWin(Color color)
     {

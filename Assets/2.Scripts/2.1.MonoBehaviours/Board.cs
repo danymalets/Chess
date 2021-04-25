@@ -22,6 +22,7 @@ public class Board : BoardImage
     [SerializeField] private AudioSource _snap;
     [Range(0f, 1f)]
     [SerializeField] private float _maxStereo;
+    [SerializeField] private AudioSource _start;
 
     private GameObject _selectedPieceHighlight;
     private List<GameObject> _possibleMoveHighlights = new List<GameObject>();
@@ -40,7 +41,7 @@ public class Board : BoardImage
 
     private void Start()
     {
-        base.InitBoard();
+        InitBoard();
 
         _pieceSelection.PieceSelected += OnPieceSelected;
 
@@ -55,6 +56,12 @@ public class Board : BoardImage
                 tile.Click += () => OnClick(square);
             }
         }
+    }
+
+    public void InitPiecesWithSound(Position position)
+    {
+        _start.Play();
+        InitPieces(position);
     }
 
     public void EnableMoves()
@@ -88,7 +95,7 @@ public class Board : BoardImage
         float stereo = move.TargetSquare.y / 3.5f * _maxStereo - _maxStereo;
         if (Math.Abs(_boardTransform.rotation.eulerAngles.z) > 90f) stereo *= -1;
         _snap.panStereo = stereo;
-        //_snap.Play();
+        _snap.PlayDelayed(_movementDuration - _snap.clip.length);
 
         if (move is ICapture capture)
         {

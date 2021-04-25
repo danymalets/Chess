@@ -7,19 +7,14 @@ public abstract class GameController
 {
     public static GameController Singleton { get; set; }
 
-    public Game Game { get; private set; }
+    public Game _game;
 
     protected GameUI _ui;
     protected Board _board;
 
     public GameController()
     {
-        Game = new Game();
-    }
-
-    public GameController(List<string> moves)
-    {
-        Game = new Game(moves);
+        _game = new Game();
     }
 
     public virtual void Init(GameUI ui, Board board)
@@ -32,28 +27,9 @@ public abstract class GameController
     {
         _board.Clear();
         _ui.Clear();
-        if (this is ISave)
+        if (this is IStorable save)
         {
-            Prefs.AddGameController(this);
-        }
-    }
-
-    public static GameController FromGameModel(GameModel gameModel)
-    {
-        if (gameModel.Title == typeof(SinglePlayer).Name)
-        {
-            return new SinglePlayer(
-                (Color)gameModel.PlayerColor,
-                gameModel.Level,
-                gameModel.Moves);
-        }
-        else if (gameModel.Title == typeof(SinglePlayer).Name)
-        {
-            return new TwoPlayers(new TimeSpan(0, 0, gameModel.MoveDuration));
-        }
-        else
-        {
-            throw new ArgumentException($"Type {gameModel.Title} not found");
+            Prefs.AddGameController(save);
         }
     }
 }

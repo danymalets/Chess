@@ -83,65 +83,44 @@ public static class Prefs
     [Serializable]
     public struct History
     {
-        public List<GameModel> GameModels;
+        public List<StoredGame> StoredGames;
 
-        public History(List<GameModel> gameModels)
+        public History(List<StoredGame> storedGames)
         {
-            GameModels = gameModels;
+            StoredGames = storedGames;
         }
     }
-
-    public static List<GameController> GetGameControllers()
+    
+    public static void AddGameController(IStorable controller)
     {
-        List<GameModel> models = GetGameModels();
-        List<GameController> controllers = new List<GameController>();
-        foreach (GameModel model in models)
-        {
-            controllers.Add(GameController.FromGameModel(model));
-        }
-        return controllers;
+        AddStoredGame(controller.GetStoredGame());
     }
 
-    public static void SetGameControllers(List<GameController> controllers)
-    {
-        List<GameModel> models = new List<GameModel>();
-        foreach (GameController controller in controllers)
-        {
-            models.Add(((ISave)controller).GetGameModel());
-        }
-        SetGameModels(models);
-    }
-
-    public static void AddGameController(GameController controller)
-    {
-        AddGameModel(((ISave)controller).GetGameModel());
-    }
-
-    private static List<GameModel> GetGameModels()
+    public static List<StoredGame> GetStoredGames()
     {
         if (PlayerPrefs.HasKey(HISTORY))
         {
             string json = PlayerPrefs.GetString(HISTORY);
             History history = JsonUtility.FromJson<History>(json);
-            return history.GameModels;
+            return history.StoredGames;
         }
         else
         {
-            return new List<GameModel>();
+            return new List<StoredGame>();
         }
     }
 
-    private static void SetGameModels(List<GameModel> gameModels)
+    public static void SetStoredGames(List<StoredGame> StoredGames)
     {
-        History history = new History(gameModels);
+        History history = new History(StoredGames);
         string json = JsonUtility.ToJson(history);
         PlayerPrefs.SetString(HISTORY, json);
     }
 
-    private static void AddGameModel(GameModel gameModel)
+    private static void AddStoredGame(StoredGame StoredGame)
     {
-        List<GameModel> gameModels = GetGameModels();
-        gameModels.Add(gameModel);
-        SetGameModels(gameModels);
+        List<StoredGame> StoredGames = GetStoredGames();
+        StoredGames.Add(StoredGame);
+        SetStoredGames(StoredGames);
     }
 }

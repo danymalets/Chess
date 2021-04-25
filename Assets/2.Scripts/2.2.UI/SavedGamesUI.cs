@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SavedGamesUI : MonoBehaviour
 {
+    [SerializeField] private DeleteConfirmation _deleteConfirmation;
+
     [SerializeField] private Animation _animation;
 
     [SerializeField] private Transform _savedGamesTransform;
 
     [SerializeField] private GameObject _savedGamePanelPrefab;
 
-    private List<GameController> gameControllers;
+    private List<StoredGame> _storedGames;
 
     private AsyncOperation _loading;
 
@@ -21,27 +23,35 @@ public class SavedGamesUI : MonoBehaviour
 #if DEBUG
         if (!MenuUI.IsGameLoaded) { SceneManager.LoadScene("Menu"); return; }
 #endif
-        gameControllers = Prefs.GetGameControllers();
-        foreach (GameController controller in gameControllers)
+        _storedGames = Prefs.GetStoredGames();
+        foreach (StoredGame storedGame in _storedGames)
         {
-            SavedGame savedGame = Instantiate(_savedGamePanelPrefab, _savedGamesTransform).GetComponent<SavedGame>();
-            savedGame.Init(controller);
-            savedGame.SavedGameDeleted += OnSavedGameDeleted;
-            savedGame.SavedGameSelected += OnSavedGameSelected;
+            SavedGamePanel savedGame = Instantiate(_savedGamePanelPrefab, _savedGamesTransform).GetComponent<SavedGamePanel>();
+            savedGame.Init(storedGame);
+            savedGame.DeleteButtonClicked += OnDeleteButtonClicked;
+            savedGame.RunButtonClicked += OnRunButtonClicked;
         }
+
+        _deleteConfirmation.ConfirmDeleteButtonClicked += OnConfirmDeleteButtonClicked;
     }
 
-    private void OnSavedGameDeleted(GameController controller)
+    private void OnDeleteButtonClicked(SavedGamePanel savedGame)
     {
-        gameControllers.Remove(controller);
-        Prefs.SetGameControllers(gameControllers);
+        _deleteConfirmation.Open(savedGame);
     }
 
-    private void OnSavedGameSelected(GameController controller)
+    private void OnConfirmDeleteButtonClicked(SavedGamePanel savedGame)
     {
-        gameControllers.Remove(controller);
-        Prefs.SetGameControllers(gameControllers);
-        GameController.Singleton = controller;
+        savedGame.Destroy();
+        _storedGames.Remove(savedGame.StoredGame);
+        Prefs.SetStoredGames(_storedGames);
+    }
+
+    private void OnRunButtonClicked(StoredGame storedGame)
+    {
+        _storedGames.Remove(storedGame);
+        Prefs.SetStoredGames(_storedGames);
+        GameController.Singleton = storedGame.ToGameController();
 
         _animation.Play("SavedGamesLeftClosing");
         _loading = SceneManager.LoadSceneAsync("Game");

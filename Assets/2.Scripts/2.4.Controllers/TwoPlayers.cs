@@ -3,74 +3,68 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TwoPlayers : GameController, ISave
+public class TwoPlayers : GameController, IStorable
 {
-    public static string Title = "TwoPlayers";
-
-    public TimeSpan MoveDuration { get; private set; }
-
-    public string StartDate { get; private set; }
-    public string StartTime { get; private set; }
+    private TimeSpan _moveDuration;
 
     public TwoPlayers(TimeSpan moveDuration) : base()
     {
-        MoveDuration = moveDuration;
+        _moveDuration = moveDuration;
     }
 
-    public TwoPlayers(TimeSpan moveDuration, List<string> moves) : base(moves)
+    public TwoPlayers(
+        TimeSpan moveDuration,
+        Game game)
     {
-        MoveDuration = moveDuration;
+        _game = game;
+        _moveDuration = moveDuration;
     }
 
     public override void Init(GameUI ui, Board board)
     {
-        DateTime now = DateTime.Now;
-        StartDate = now.ToString("dd.MM.yyyy");
-        StartTime = now.ToString("HH:mm");
-
         base.Init(ui, board);
 
         _ui.SetTitle("Два игрока");
 
         _ui.UserTimeIsOver += OnUserTimeIsOver;
 
-        _board.InitPieces(Game.Position);
+        _board.InitPieces(_game.Position);
 
         _board.MoveShown += OnUserMoveShown;
         _board.MoveSelected += OnUserMoveSelected;
 
-        if (!Game.IsEnd)
+        if (!_game.IsEnd)
         {
             _board.EnableMoves();
-            _ui.StartUserTimer(MoveDuration);
-            if (Game.Position.WhoseMove == Color.Black)
+            _ui.StartUserTimer(_moveDuration);
+            if (_game.Position.WhoseMove == Color.Black)
             {
                 _board.SetRotation(180);
             }
         }
-        _ui.SetStatus(Game.GetStatus());
+        _ui.SetStatus(_game.GetStatus());
     }
 
     private void OnUserTimeIsOver()
     {
         _board.DisableMoves();
-        _ui.SetStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
+        _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
     }
 
     private void OnUserMoveSelected(Move move)
     {
-        Game.MakeMove(move);
+        _game.MakeMove(move);
         _ui.CanselCoundown();
     }
 
     private void OnUserMoveShown()
     {
-        _ui.SetStatus(Game.GetStatus());
-        if (!Game.IsEnd)
+        _ui.SetStatus(_game.GetStatus());
+        if (!_game.IsEnd)
         {
-            _board.SetRotation(Game.Position.WhoseMove == Color.White ? 0 : 180);
+            _board.SetRotation(_game.Position.WhoseMove == Color.White ? 0 : 180);
             _board.EnableMoves();
-            _ui.StartUserTimer(MoveDuration);
+            _ui.StartUserTimer(_moveDuration);
         }
         else
         {
@@ -78,15 +72,11 @@ public class TwoPlayers : GameController, ISave
         }
     }
 
-    public GameModel GetGameModel()
+    public StoredGame GetStoredGame()
     {
-        return new GameModel(
-            Title,
-            -1,
-            -1,
-            (int)MoveDuration.TotalSeconds,
-            Game.StringMoves,
-            StartDate,
-            StartTime);
+        return new StoredGame(StoredType.TwoPlayers, _game.StringMoves)
+        {
+            MoveDuration = (int)_moveDuration.TotalSeconds
+        };
     }
 }

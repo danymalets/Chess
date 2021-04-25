@@ -54,9 +54,9 @@ public abstract class NetworkRival : GameController
 
         _playerColor = playerColor;
 
-        _board.InitPieces(Game.Position);
+        _board.InitPiecesWithSound(_game.Position);
 
-        _ui.SetStatus(Game.GetStatus());
+        _ui.SetStatus(_game.GetStatus());
         if (_playerColor == Color.White)
         {
             _board.EnableMoves();
@@ -72,12 +72,12 @@ public abstract class NetworkRival : GameController
             _board.MoveShown += OnRivalMoveShown;
         }
 
-        _ui.SetStatus(Game.GetStatus());
+        _ui.SetStatus(_game.GetStatus());
     }
 
     private void OnMoveReceived(Move move)
     {
-        Game.MakeMove(move);
+        _game.MakeMove(move);
         _board.ShowMove(move);
         _ui.CanselCoundown();
     }
@@ -85,7 +85,7 @@ public abstract class NetworkRival : GameController
     private void OnUserMoveSelected(Move move)
     {
         _provider.SendMove(move);
-        Game.MakeMove(move);
+        _game.MakeMove(move);
         _ui.CanselCoundown();
     }
 
@@ -94,13 +94,13 @@ public abstract class NetworkRival : GameController
         _provider.SendTimerIsOver();
         _provider.PreDisconnect();
         _board.DisableMoves();
-        _ui.SetStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
+        _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
     }
 
     private void OnRivalTimeIsOver()
     {
         _provider.Disconnect();
-        _ui.SetStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время (но это не точно)");
+        _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время (но это не точно)");
     }
 
     private void OnTimeIsOverReceived()
@@ -108,15 +108,15 @@ public abstract class NetworkRival : GameController
         _ui.SetTimeIsOver();
         _provider.Disconnect();
         _ui.CanselCoundown();
-        _ui.SetStatus($"У {(Game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
+        _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
     }
 
     private void OnUserMoveShown()
     {
         _board.MoveShown -= OnUserMoveShown;
 
-        _ui.SetStatus(Game.GetStatus());
-        if (!Game.IsEnd)
+        _ui.SetStatus(_game.GetStatus());
+        if (!_game.IsEnd)
         {
             _ui.StartRivalTimer(_moveDuration);
 
@@ -133,8 +133,8 @@ public abstract class NetworkRival : GameController
     {
         _board.MoveShown -= OnRivalMoveShown;
 
-        _ui.SetStatus(Game.GetStatus());
-        if (!Game.IsEnd)
+        _ui.SetStatus(_game.GetStatus());
+        if (!_game.IsEnd)
         {
             _board.EnableMoves();
             _ui.StartUserTimer(_moveDuration);

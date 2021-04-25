@@ -37,15 +37,13 @@ public class GameUI : MonoBehaviour
 
     private GameController _controller;
 
-    private AI _ai;
-
     private void Start()
     {
         _controller = GameController.Singleton;
 #if DEBUG
         if (!MenuUI.IsGameLoaded) { SceneManager.LoadScene("Menu"); return; }
 #endif
-        if (!(_controller is SinglePlayer))
+        if (!(_controller is IUndoable))
         {
             Destroy(_undo.gameObject);
         }
@@ -70,21 +68,19 @@ public class GameUI : MonoBehaviour
 
     private IEnumerator SearchMove(AI ai)
     {
-        _ai = ai;
         _lineTimer.color = _brainColor;
 
-        _ai.StartSolving();
+        ai.StartSolving();
 
         DateTime startTime = DateTime.UtcNow;
         _textTimer.text = "00:00.00";
         _lineTimer.fillAmount = 0f;
-        yield return null;
 
         while (true)
         {
             yield return null;
             TimeSpan elapsedTime = DateTime.UtcNow - startTime;
-            if (elapsedTime.TotalHours >= 1)
+            if (elapsedTime.TotalHours >= 1f)
             {
                 _textTimer.text = "> 1 часа";
             }
@@ -101,7 +97,6 @@ public class GameUI : MonoBehaviour
         }
     }
 
-    public NetworkRivalProvider GetNetworkProvider() => gameObject.AddComponent<NetworkRivalProvider>();
 
     public void StartUserTimer(TimeSpan duration) =>
         _countdown = StartCoroutine(Countdown(duration, true));
@@ -156,10 +151,6 @@ public class GameUI : MonoBehaviour
 
     public void Clear()
     {
-        if (_ai != null)
-        {
-            _ai.Abort();
-        }
         StopAllCoroutines();
         _textTimer.text = "00:00.00";
         _lineTimer.fillAmount = 0f;
@@ -167,10 +158,6 @@ public class GameUI : MonoBehaviour
 
     public void OnExit()
     {
-        if (_ai != null)
-        {
-            _ai.Abort();
-        }
         _controller.Finish();
         _loading = SceneManager.LoadSceneAsync("Menu");
         _animation.Play("GameClosing");
@@ -184,10 +171,6 @@ public class GameUI : MonoBehaviour
 
     public void OnApplicationQuit()
     {
-        if (_ai != null)
-        {
-            _ai.Abort();
-        }
         if (_loading == null)
         {
             _controller.Finish();

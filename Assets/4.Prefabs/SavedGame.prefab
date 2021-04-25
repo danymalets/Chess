@@ -32,10 +32,10 @@ RectTransform:
   m_Father: {fileID: 47199477906430634}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0010376, y: -100}
-  m_SizeDelta: {x: 534.31, y: 100}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -0.0010375977, y: -86}
+  m_SizeDelta: {x: 2.3099976, y: 86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8854252491194445993
 CanvasRenderer:
@@ -72,7 +72,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 60
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -213,10 +213,10 @@ RectTransform:
   m_Father: {fileID: 47199477906430634}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0010376, y: 0}
-  m_SizeDelta: {x: 534.31, y: 99.1003}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -0.0010375977, y: 0}
+  m_SizeDelta: {x: 2.3099976, y: 86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6750667315187229073
 CanvasRenderer:
@@ -394,10 +394,10 @@ RectTransform:
   m_Father: {fileID: 47199477906430634}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0010375977, y: 99.77507}
-  m_SizeDelta: {x: 0.3188, y: -199.55}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.60184, y: 86}
+  m_SizeDelta: {x: 533.1042, y: 86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6750667315832856147
 CanvasRenderer:
@@ -434,7 +434,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 85
-    m_Alignment: 6
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -563,7 +563,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6750667316320486031}
         m_TargetAssemblyTypeName: SavedGame, Assembly-CSharp
-        m_MethodName: OnSelectionButtonClicked
+        m_MethodName: OnRunButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -836,10 +836,10 @@ RectTransform:
   m_Father: {fileID: 6750667315051043820}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 80.444, y: 0}
-  m_SizeDelta: {x: -515.68, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 77, y: 0}
+  m_SizeDelta: {x: 532.416, y: 258}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3086476557012471433
 CanvasRenderer:
