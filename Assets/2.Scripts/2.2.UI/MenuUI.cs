@@ -119,21 +119,22 @@ public class MenuUI : MonoBehaviour
     private void LoadChessGame(GameController controller)
     {
         GameController.Singleton = controller;
-        _loading = SceneManager.LoadSceneAsync("Game");
-        _loading.allowSceneActivation = false;
-        _animation.Play("MenuClosing");
+        LoadScene("Game");
     }
 
     public void OnSettingsButtonClicked()
     {
-        _loading = SceneManager.LoadSceneAsync("Settings");
-        _loading.allowSceneActivation = false;
-        _animation.Play("MenuClosing");
+        LoadScene("Settings");
     }
 
     public void OnHistoryButtonClicked()
     {
-        _loading = SceneManager.LoadSceneAsync("SavedGames");
+        LoadScene("SavedGames");
+    }
+
+    private void LoadScene(string scene)
+    {
+        _loading = SceneManager.LoadSceneAsync(scene);
         _loading.allowSceneActivation = false;
         _animation.Play("MenuClosing");
     }

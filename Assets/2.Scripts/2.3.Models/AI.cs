@@ -13,7 +13,7 @@ public class AI
     private static int[] COUNTS = new int[]
     {
         25,
-        290,
+        300,
         5000,
         25000,
         300000,
@@ -37,7 +37,7 @@ public class AI
 
     private Dictionary<Position, int> _tempHistory;
 
-    private bool _solved = false;
+    private bool _solved = true;
     private Move _move;
 
     private bool _mandatoryCompletion = true;

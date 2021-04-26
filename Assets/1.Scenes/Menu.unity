@@ -2013,7 +2013,7 @@ Animation:
   m_GameObject: {fileID: 835037607}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 2b0e34c7525374666a0e51658c91b5ea, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 7400000, guid: 2b0e34c7525374666a0e51658c91b5ea, type: 2}
   - {fileID: 7400000, guid: cffbe1fce426242bfa4f7c00c33c74fb, type: 2}

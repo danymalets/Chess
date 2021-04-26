@@ -45,6 +45,8 @@ public class BotVsBot : GameController
         }
     }
 
+    public override bool QuickExit() => true;
+
     public override void Finish()
     {
         _ai.Stop();

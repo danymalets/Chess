@@ -23,13 +23,23 @@ public abstract class GameController
         _board = board;
     }
 
+    public virtual bool QuickExit() => _game == null || _game.GetPositionsCount() == 1;
+
     public virtual void Finish()
     {
         _board.Clear();
         _ui.Clear();
-        if (this is IStorable save)
+    }
+
+    public void Save()
+    {
+        if (this is IStorable controller)
         {
-            Prefs.AddGameController(save);
+            Prefs.AddGameController(controller);
+        }
+        else
+        {
+            throw new InvalidOperationException($"Failed to save {GetType()}");
         }
     }
 }

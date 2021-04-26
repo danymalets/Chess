@@ -9,6 +9,9 @@ public abstract class NetworkRival : GameController
     protected NetworkRivalProvider _provider;
     protected TimeSpan _moveDuration;
 
+    private bool _isEnd = false;
+    private bool _gameStarted = false;
+
     public NetworkRival(TimeSpan moveDuration) : base()
     {
         _moveDuration = moveDuration;
@@ -50,6 +53,8 @@ public abstract class NetworkRival : GameController
 
     protected void OnGameStarted(Color playerColor)
     {
+        _gameStarted = true;
+
         _ui.SetTitle($"{ToString()}, за {(playerColor == Color.White ? "белых" : "чёрных")}");
 
         _playerColor = playerColor;
@@ -95,12 +100,14 @@ public abstract class NetworkRival : GameController
         _provider.PreDisconnect();
         _board.DisableMoves();
         _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
+        _isEnd = true;
     }
 
     private void OnRivalTimeIsOver()
     {
         _provider.Disconnect();
         _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время (но это не точно)");
+        _isEnd = true;
     }
 
     private void OnTimeIsOverReceived()
@@ -109,6 +116,7 @@ public abstract class NetworkRival : GameController
         _provider.Disconnect();
         _ui.CanselCoundown();
         _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
+        _isEnd = true;
     }
 
     private void OnUserMoveShown()
@@ -126,6 +134,8 @@ public abstract class NetworkRival : GameController
         {
             _ui.Clear();
             _provider.PreDisconnect();
+
+            _isEnd = true;
         }
     }
 
@@ -145,6 +155,8 @@ public abstract class NetworkRival : GameController
         {
             _ui.Clear();
             _provider.Disconnect();
+
+            _isEnd = true;
         }
     }
 
@@ -159,6 +171,13 @@ public abstract class NetworkRival : GameController
         _ui.SetStatus($"{(_playerColor == Color.White ? "Чёрные" : "Белые")} сдались");
         _ui.Clear();
         _board.DisableMoves();
+
+        _isEnd = true;
+    }
+
+    public override bool QuickExit()
+    {
+        return _isEnd || !_gameStarted;
     }
 
     public override void Finish()

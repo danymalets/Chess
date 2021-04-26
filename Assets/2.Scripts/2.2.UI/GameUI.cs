@@ -27,6 +27,10 @@ public class GameUI : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private Animation _animation;
 
+    [Header("Windows")]
+    [SerializeField] private Animation _exitWindow;
+    [SerializeField] private Animation _exitWindowWithSaving;
+
     private Coroutine _countdown;
 
     private AsyncOperation _loading;
@@ -143,6 +147,8 @@ public class GameUI : MonoBehaviour
 
     public void OnUndoButtonClicked()
     {
+        if (_loading != null) return;
+
         if (GameController.Singleton is SinglePlayer singlePlayer)
         {
             singlePlayer.Undo();
@@ -156,12 +162,43 @@ public class GameUI : MonoBehaviour
         _lineTimer.fillAmount = 0f;
     }
 
+    public void OnExitButtonClicked()
+    {
+        if (_loading != null) return;
+
+        if (_controller.QuickExit())
+        {
+            _controller.Finish();
+            _loading = SceneManager.LoadSceneAsync("Menu");
+            _animation.Play("GameClosing");
+            _loading.allowSceneActivation = false;
+        }
+        else
+        {
+            if (_controller is IStorable)
+            {
+                _exitWindowWithSaving.Play("WindowOpening");
+            }
+            else
+            {
+                _exitWindow.Play("WindowOpening");
+            }
+        }
+    }
+
     public void OnExit()
     {
+        CloseWindow();
         _controller.Finish();
         _loading = SceneManager.LoadSceneAsync("Menu");
         _animation.Play("GameClosing");
         _loading.allowSceneActivation = false;
+    }
+
+    public void OnExitWithSaving()
+    {
+        _controller.Save();
+        OnExit();
     }
 
     public void OnClosingAnimationPlayed()
@@ -169,10 +206,26 @@ public class GameUI : MonoBehaviour
         _loading.allowSceneActivation = true;
     }
 
+    public void CloseWindow()
+    {
+        if (_controller is IStorable)
+        {
+            _exitWindowWithSaving.Play("WindowClosing");
+        }
+        else
+        {
+            _exitWindow.Play("WindowClosing");
+        }
+    }
+
     public void OnApplicationQuit()
     {
         if (_loading == null)
         {
+            if (_controller is IStorable)
+            {
+                _controller.Save();
+            }
             _controller.Finish();
         }
     }
