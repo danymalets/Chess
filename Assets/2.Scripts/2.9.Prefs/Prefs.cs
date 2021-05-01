@@ -20,11 +20,21 @@ public static class Prefs
 
     public static string RoomName
     {
-        get => PlayerPrefs.GetString(
-            ROOM_NAME,
-            Random.Range(0, 10).ToString()
-            + Random.Range(0, 10).ToString()
-            + Random.Range(0, 10).ToString());
+        get
+        {
+            if (PlayerPrefs.HasKey(ROOM_NAME))
+            {
+                return PlayerPrefs.GetString(ROOM_NAME);
+            }
+            else
+            {
+                string name = Random.Range(0, 10).ToString()
+                            + Random.Range(0, 10).ToString()
+                            + Random.Range(0, 10).ToString();
+                PlayerPrefs.SetString(ROOM_NAME, name);
+                return name;
+            }
+        }
         set => PlayerPrefs.SetString(ROOM_NAME, value);
     }
 
