@@ -63,8 +63,16 @@ public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEvent
         RivalDisconnected = () => PhotonNetwork.Disconnect();
     }
 
-    public void OnApplicationStop() => Disconnect();
-    public void OnApplicationQuit() => Disconnect();
+    public void OnApplicationPause()
+    {
+        Disconnected?.Invoke(); 
+        Disconnect();
+    }
+
+    public void OnApplicationQuit()
+    {
+        Disconnect();
+    }
 
     public void Disconnect()
     {

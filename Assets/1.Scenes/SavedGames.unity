@@ -1217,8 +1217,8 @@ GameObject:
   - component: {fileID: 1057751297}
   - component: {fileID: 1057751300}
   - component: {fileID: 1057751299}
-  - component: {fileID: 1057751298}
   - component: {fileID: 1057751301}
+  - component: {fileID: 1057751298}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -1260,8 +1260,8 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 7bec03b8fe55c464a879c52608aed6b4, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 7bec03b8fe55c464a879c52608aed6b4, type: 2}
-  - {fileID: 7400000, guid: 0e828067a1b454c01a930aa3bcc1f5a3, type: 2}
-  - {fileID: 7400000, guid: 097e837af27084c4995e8bc4bb4e3d69, type: 2}
+  - {fileID: 7400000, guid: 665d1f38b7cc042339132795a5cb9503, type: 2}
+  - {fileID: 7400000, guid: 5af466bb380854124b36b24569417afa, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

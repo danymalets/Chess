@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -36,7 +37,6 @@ public class MenuUI : MonoBehaviour
 
     private void Start()
     {
-
         if (IsGameLoaded)
         {
             _animation.Play("MenuOpening");

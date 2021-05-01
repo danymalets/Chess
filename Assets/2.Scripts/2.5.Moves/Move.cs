@@ -70,6 +70,12 @@ public class Move : IEquatable<Move>
         position.WhoseMove = (Color)(-(int)position.WhoseMove);
     }
 
+    public virtual bool IsUselessMove(Position position)
+    {
+        Piece piece = position.Board[SourceSquare.x, SourceSquare.y];
+        return !(piece is Pawn);
+    }
+
     public virtual bool Equals(Move other)
     {
         return other != null && GetType().Equals(other.GetType())

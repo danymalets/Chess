@@ -21,6 +21,8 @@ public class Capture: Move, ICapture
         base.Make(position);
     }
 
+    public override bool IsUselessMove(Position position) => false;
+
     public override bool Equals(Move other)
     {
         return base.Equals(other) && CaptureSquare == ((Capture)other).CaptureSquare;

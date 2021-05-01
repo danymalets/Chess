@@ -14,70 +14,30 @@ public static class Prefs
 
     public static string SpritePack
     {
-        get
-        {
-            return PlayerPrefs.GetString(SPRITE_PACK);
-        }
-        set
-        {
-            PlayerPrefs.SetString(SPRITE_PACK, value);
-        }
+        get => PlayerPrefs.GetString(SPRITE_PACK, "default");
+        set => PlayerPrefs.SetString(SPRITE_PACK, value);
     }
 
     public static string RoomName
     {
-        get
-        {
-            if (!PlayerPrefs.HasKey(ROOM_NAME))
-            {
-                RoomName = Random.Range(0, 10).ToString()
-                         + Random.Range(0, 10).ToString()
-                         + Random.Range(0, 10).ToString();
-            }
-            return PlayerPrefs.GetString(ROOM_NAME);
-        }
-        set
-        {
-            PlayerPrefs.SetString(ROOM_NAME, value);
-        }
+        get => PlayerPrefs.GetString(
+            ROOM_NAME,
+            Random.Range(0, 10).ToString()
+            + Random.Range(0, 10).ToString()
+            + Random.Range(0, 10).ToString());
+        set => PlayerPrefs.SetString(ROOM_NAME, value);
     }
 
     public static int LevelSlider
     {
-        get
-        {
-            if (PlayerPrefs.HasKey(LEVEL_SLIDER))
-            {
-                return PlayerPrefs.GetInt(LEVEL_SLIDER);
-            }
-            else
-            {
-                return 4;
-            }
-        }
-        set
-        {
-            PlayerPrefs.SetInt(LEVEL_SLIDER, value);
-        }
+        get => PlayerPrefs.GetInt(LEVEL_SLIDER, 4);
+        set => PlayerPrefs.SetInt(LEVEL_SLIDER, value);
     }
 
     public static int MoveDurationSlider
     {
-        get
-        {
-            if (PlayerPrefs.HasKey(MOVE_DURATION_SLIDER))
-            {
-                return PlayerPrefs.GetInt(MOVE_DURATION_SLIDER);
-            }
-            else
-            {
-                return 4;
-            }
-        }
-        set
-        {
-            PlayerPrefs.SetInt(MOVE_DURATION_SLIDER, value);
-        }
+        get => PlayerPrefs.GetInt(MOVE_DURATION_SLIDER, 4);
+        set => PlayerPrefs.SetInt(MOVE_DURATION_SLIDER, value);
     }
 
     [Serializable]

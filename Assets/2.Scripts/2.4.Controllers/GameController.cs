@@ -25,6 +25,11 @@ public abstract class GameController
 
     public virtual bool QuickExit() => _game == null || _game.GetPositionsCount() == 1;
 
+    protected void GameOver()
+    {
+        _ui.PlayGameOver();
+    }
+
     public virtual void Finish()
     {
         _board.Clear();

@@ -43,6 +43,10 @@ public class BotVsBot : GameController
         {
             _ui.StartSearchMove(_ai);
         }
+        else
+        {
+            GameOver();
+        }
     }
 
     public override bool QuickExit() => true;

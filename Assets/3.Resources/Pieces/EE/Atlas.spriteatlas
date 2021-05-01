@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 47
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: Standalone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 12
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: WebGL
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 12
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 8f401d33cf5ac424485fffe2dcf318a9, type: 3}
+    - {fileID: 2800000, guid: 339d7250a95dd48ac870b0dfbda58800, type: 3}
+    - {fileID: 2800000, guid: d3cab611d80384d3fba215e754f3b093, type: 3}
+    - {fileID: 2800000, guid: 49cc6a960bbee4fc5b4574047a772d6a, type: 3}
+    - {fileID: 2800000, guid: 3c46a4c45af524a0d95410f05f4bd874, type: 3}
+    - {fileID: 2800000, guid: f3eec669769f347a6a0ad813e7ed2109, type: 3}
+    - {fileID: 2800000, guid: 73df35407164e4ddd85f49ef76373010, type: 3}
+    - {fileID: 2800000, guid: 63351703e50884dfcb743a2e9171b1f2, type: 3}
+    - {fileID: 2800000, guid: 32953947307aa4b9d8ca9bd31e556933, type: 3}
+    - {fileID: 2800000, guid: 96119745cdaaa4640b780a59dc143aaa, type: 3}
+    - {fileID: 2800000, guid: 3ac2080bf8561458d9694345536eaa8a, type: 3}
+    - {fileID: 2800000, guid: cb38d693b21ec427890a58b95c191b39, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 73df35407164e4ddd85f49ef76373010, type: 3}
+  - {fileID: 21300000, guid: 339d7250a95dd48ac870b0dfbda58800, type: 3}
+  - {fileID: 21300000, guid: d3cab611d80384d3fba215e754f3b093, type: 3}
+  - {fileID: 21300000, guid: 63351703e50884dfcb743a2e9171b1f2, type: 3}
+  - {fileID: 21300000, guid: 8f401d33cf5ac424485fffe2dcf318a9, type: 3}
+  - {fileID: 21300000, guid: cb38d693b21ec427890a58b95c191b39, type: 3}
+  - {fileID: 21300000, guid: 3c46a4c45af524a0d95410f05f4bd874, type: 3}
+  - {fileID: 21300000, guid: 96119745cdaaa4640b780a59dc143aaa, type: 3}
+  - {fileID: 21300000, guid: 49cc6a960bbee4fc5b4574047a772d6a, type: 3}
+  - {fileID: 21300000, guid: 32953947307aa4b9d8ca9bd31e556933, type: 3}
+  - {fileID: 21300000, guid: f3eec669769f347a6a0ad813e7ed2109, type: 3}
+  - {fileID: 21300000, guid: 3ac2080bf8561458d9694345536eaa8a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - putin
+  - volkov
+  - sw
+  - omon
+  - avtozak
+  - kaba
+  - shs
+  - navanaa
+  - skoraa
+  - o
+  - sb
+  - nava
+  m_RenderDataMap: {}
+  m_Tag: Atlas
+  m_IsVariant: 0

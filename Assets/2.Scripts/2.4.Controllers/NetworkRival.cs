@@ -101,6 +101,7 @@ public abstract class NetworkRival : GameController
         _board.DisableMoves();
         _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
         _isEnd = true;
+        GameOver();
     }
 
     private void OnRivalTimeIsOver()
@@ -108,6 +109,7 @@ public abstract class NetworkRival : GameController
         _provider.Disconnect();
         _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время (но это не точно)");
         _isEnd = true;
+        GameOver();
     }
 
     private void OnTimeIsOverReceived()
@@ -117,6 +119,7 @@ public abstract class NetworkRival : GameController
         _ui.CanselCoundown();
         _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
         _isEnd = true;
+        GameOver();
     }
 
     private void OnUserMoveShown()
@@ -136,6 +139,7 @@ public abstract class NetworkRival : GameController
             _provider.PreDisconnect();
 
             _isEnd = true;
+            GameOver();
         }
     }
 
@@ -157,12 +161,18 @@ public abstract class NetworkRival : GameController
             _provider.Disconnect();
 
             _isEnd = true;
+            GameOver();
         }
     }
 
     private void OnDisconnected()
     {
-        _ui.OnExit();
+        _provider.Disconnect();
+        _ui.SetStatus($"Техническое поражение. Запрещено выходить из приложения во время игры");
+        _ui.Clear();
+        _board.DisableMoves();
+        _isEnd = true;
+        GameOver();
     }
 
     private void OnRivalDisconnected()
@@ -173,6 +183,7 @@ public abstract class NetworkRival : GameController
         _board.DisableMoves();
 
         _isEnd = true;
+        GameOver();
     }
 
     public override bool QuickExit()

@@ -9,8 +9,8 @@ public class NetworkRandomRivalProvider : NetworkRivalProvider
 {
     public void ConnectToServer()
     {
-        PhotonNetwork.GameVersion = "1r";
         PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.GameVersion = "1r";
     }
 
     public override void OnConnectedToMaster()

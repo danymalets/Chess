@@ -76,6 +76,10 @@ public class SinglePlayer : GameController, IStorable, IUndoable
             _ui.StartSearchMove(_ai);
             _board.MoveShown += OnRivalMoveShown;
         }
+        else
+        {
+            GameOver();
+        }
     }
 
     private void OnMoveFound(Move move)
@@ -93,6 +97,10 @@ public class SinglePlayer : GameController, IStorable, IUndoable
         {
             _board.EnableMoves();
             _board.MoveShown += OnUserMoveShown;
+        }
+        else
+        {
+            GameOver();
         }
     }
 

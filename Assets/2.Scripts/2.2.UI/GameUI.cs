@@ -31,6 +31,9 @@ public class GameUI : MonoBehaviour
     [SerializeField] private Animation _exitWindow;
     [SerializeField] private Animation _exitWindowWithSaving;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioSource _gameOver;
+
     private Coroutine _countdown;
 
     private AsyncOperation _loading;
@@ -186,19 +189,26 @@ public class GameUI : MonoBehaviour
         }
     }
 
-    public void OnExit()
+    public void OnConfirmExitButtonClicked()
     {
         CloseWindow();
+        Exit();
+    }
+
+    public void Exit()
+    {
+        if (_loading != null) return;
+
         _controller.Finish();
         _loading = SceneManager.LoadSceneAsync("Menu");
         _animation.Play("GameClosing");
         _loading.allowSceneActivation = false;
     }
 
-    public void OnExitWithSaving()
+    public void OnExitWithSavingButtonClicked()
     {
         _controller.Save();
-        OnExit();
+        OnConfirmExitButtonClicked();
     }
 
     public void OnClosingAnimationPlayed()
@@ -228,5 +238,10 @@ public class GameUI : MonoBehaviour
             }
             _controller.Finish();
         }
+    }
+
+    public void PlayGameOver()
+    {
+        _gameOver.PlayDelayed(0.5f);
     }
 }

@@ -16,8 +16,8 @@ public class NetworkFriendProvider : NetworkRivalProvider
     {
         _moveDuration = moveDuration;
         _roomName = roomName;
-        PhotonNetwork.GameVersion = "1f";
         PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.GameVersion = "1f";
     }
 
     public override void OnConnectedToMaster()

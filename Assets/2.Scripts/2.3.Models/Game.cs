@@ -93,15 +93,14 @@ public class Game
         int i = _moves.Count - 1;
         while (i >= 0)
         {
-            Piece piece = _positions[i].Board[_moves[i].SourceSquare.x, _moves[i].SourceSquare.y];
-            if ((piece != null && piece is Pawn) || _moves[i] is ICapture)
-            {
-                break;
-            }
-            else
+            if (_moves[i].IsUselessMove(_positions[i]))
             {
                 count++;
                 i--;
+            }
+            else
+            {
+                break;
             }
         }
         return count;

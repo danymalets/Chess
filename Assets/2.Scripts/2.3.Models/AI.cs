@@ -8,41 +8,34 @@ using ThreadPriority = System.Threading.ThreadPriority;
 
 public class AI 
 {
-    private static Random random = new Random();
+    private static Random _random = new Random();
 
     private static int[] COUNTS = new int[]
     {
-        25,
-        300,
-        5000,
-        25000,
-        300000,
-        1000000
+        51,
+        377,
+        4444,
+        19853,
+        353128,
+        2043788
     };
 
     const int INF = (int)2e9;
     const int CHECK_MATE = (int)1e9;
     const int CHECK_MATE_HEIGHT = (int)1e7;
-    const int TRIPLE_REPETITION = -19;
-
-
-    private int _level;
-
-    private int _count = 0;
-    private int _maxCount;
-
-    private float _solvedPart;
+    const int DRAW = -19;
 
     private Game _game;
+    private int _level;
 
-    private Dictionary<Position, int> _tempHistory;
+    private float _solvedPart;
+    private int _count = 0;
+    private int _maxCount;
 
     private bool _solved = true;
     private Move _move;
 
     private bool _mandatoryCompletion = true;
-
-    private Thread _thread;
 
     public AI(Game game, int level)
     {
@@ -56,11 +49,11 @@ public class AI
         _count = 0;
         _solved = false;
         _maxCount = COUNTS[_level - 1];
-        _thread = new Thread(new ThreadStart(Solving))
+        Thread thread = new Thread(new ThreadStart(Solving))
         {
             Priority = ThreadPriority.Highest
         };
-        _thread.Start();
+        thread.Start();
     }
 
     private void Solving()
@@ -83,8 +76,6 @@ public class AI
         }
     }
 
-    private bool IsSolved() => IsSolved(out _);
-
     public float GetPart()
     {
         return Math.Min(_solvedPart, (float)_count / _maxCount);
@@ -94,26 +85,32 @@ public class AI
     {
         _mandatoryCompletion = false;
         _maxCount = 0;
-        while (!IsSolved())
+        while (!_solved)
         {
             Thread.Sleep(0);
         }
     }
 
+    static int mx=0;
+
     private Move GetMove(int level)
     {
-        _tempHistory = new Dictionary<Position, int>();
+        int uselessMoves = _game.UselessMoves();
+        var tempHistory = new Dictionary<Position, int>();
         foreach (var pair in _game.History)
         {
-            _tempHistory[pair.Key] = pair.Value;
+            tempHistory[pair.Key] = pair.Value;
         }
+        Debug.Log("u" + tempHistory[_game.Position]);
         _mandatoryCompletion = true;
-        Move bestMove = Solve(_game.Position, level);
+        Move bestMove = Solve(_game.Position, level, tempHistory, uselessMoves);
         Debug.Log("count = " + _count);
+        mx = Math.Max(_count, mx);
+        Debug.Log("max = " + mx);
         _mandatoryCompletion = false;
         while (true)
         {
-            Move move = Solve(_game.Position, ++level);
+            Move move = Solve(_game.Position, ++level, tempHistory, uselessMoves);
             if (move == null)
             {
                 break;
@@ -127,8 +124,24 @@ public class AI
         return bestMove;
     }
 
-    private Move Solve(Position position, int maxHeight) =>
-        Solve(position, 0, maxHeight, -INF-1, new List<Move>(), 1f).Item1;
+    private Move Solve(
+        Position position,
+        int maxHeight,
+        Dictionary<Position, int> history,
+        int uselessMoves)
+    {
+        var t =  Solve(
+            position,
+            0,
+            maxHeight,
+            -INF - 1,
+            new List<Move>(),
+            history,
+            uselessMoves,
+            1f);
+        Debug.Log("result = " + t.Item2);
+        return t.Item1;
+    }
 
     private (Move, int) Solve(
         Position position,
@@ -136,14 +149,10 @@ public class AI
         int maxHeight,
         int breakPoint,
         List<Move> maybeBestMoves,
+        Dictionary<Position, int> history,
+        int uselessMoves,
         float part)
     {
-        if (height == 3)
-        {
-            _solvedPart += part;
-            part = 0f;
-        }
-
         _count++;
         if (!_mandatoryCompletion)
         {
@@ -161,25 +170,41 @@ public class AI
             return (null, GetValue(position));
         }
         List<Move> moves = position.GetPossibleMoves();
-        if (height == 0) Shuffle(moves);
+       
 
         float childPart = part / moves.Count;
 
         int bestValue = -INF;
         Move bestMove = null;
         List<Move> childrenBestMoves = new List<Move>();
-        
+
+
         int j = 0;
-        for (int i = 0; i < moves.Count; i++)
+        if (height == 0)
         {
-            foreach (Move childBestMove in maybeBestMoves)
+            Shuffle(moves);
+        }
+        else
+        {
+            for (int i = 0; i < moves.Count; i++)
             {
-                if (moves[i].Equals(childBestMove))
+                foreach (Move childBestMove in maybeBestMoves)
                 {
-                    (moves[j], moves[i]) = (moves[i], moves[j]);
-                    j++;
-                    break;
+                    if (moves[i].Equals(childBestMove))
+                    {
+                        (moves[j], moves[i]) = (moves[i], moves[j]);
+                        j++;
+                        break;
+                    }
                 }
+            }
+        }
+        for (int i = j; i < moves.Count; i++)
+        {
+            if (moves[i] is ICapture || moves[i] is Promotion)
+            {
+                (moves[j], moves[i]) = (moves[i], moves[j]);
+                j++;
             }
         }
         foreach (Move move in moves)
@@ -190,22 +215,27 @@ public class AI
             int value;
 
             int count;
-            if (_tempHistory.ContainsKey(newPosition))
+            if (history.ContainsKey(newPosition))
             {
-                count = _tempHistory[newPosition];
+                count = history[newPosition];
             }
             else
             {
                 count = 0;
             }
 
-            _tempHistory[newPosition] = count + 1;
+            count++;
 
-            if (count == 2)
+
+            history[newPosition] = count;
+
+            if (move.IsUselessMove(position)) uselessMoves++;
+
+            if (count == 3 || uselessMoves >= 50)
             {
                 _solvedPart += childPart;
                 childBestMove = null;
-                value = TRIPLE_REPETITION;
+                value = -DRAW;
             }
             else
             {
@@ -215,18 +245,24 @@ public class AI
                     maxHeight,
                     bestValue,
                     childrenBestMoves,
+                    history,
+                    uselessMoves,
                     childPart);
             }
 
+            if (move.IsUselessMove(position)) uselessMoves--;
+
             part -= childPart;
+
+            count--;
 
             if (count == 0)
             {
-                _tempHistory.Remove(newPosition);
+                history.Remove(newPosition);
             }
             else
             {
-                _tempHistory[newPosition] = count;
+                history[newPosition] = count;
             }
 
             if (!_mandatoryCompletion)
@@ -258,7 +294,7 @@ public class AI
             }
             else
             {
-                return (null, 0);
+                return (null, DRAW);
             }
         }
         else
@@ -271,7 +307,7 @@ public class AI
     {
         for (int i = 1; i < moves.Count; i++)
         {
-            int j = random.Next(0, i);
+            int j = _random.Next(0, i);
             (moves[i], moves[j]) = (moves[j], moves[i]);
         }
     }
