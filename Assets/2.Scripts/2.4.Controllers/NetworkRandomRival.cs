@@ -11,7 +11,7 @@ public class NetworkRandomRival : NetworkRival
 
     protected override void ConnectToServer()
     {
-        var provider = _ui.gameObject.AddComponent<NetworkRandomRivalProvider>();
+        var provider = _ui.gameObject.AddComponent<NetworkRandomRivalFacade>();
         provider.ConnectToServer();
         _provider = provider;
     }

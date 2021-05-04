@@ -14,7 +14,7 @@ public class NetworkFriend : NetworkRival
 
     protected override void ConnectToServer()
     { 
-        var provider = _ui.gameObject.AddComponent<NetworkFriendProvider>();
+        var provider = _ui.gameObject.AddComponent<NetworkFriendFacade>();
         provider.ConnectToServer(_roomName, _moveDuration);
         provider.MoveDurationReceived += MoveDurationReceived;
         _provider = provider;

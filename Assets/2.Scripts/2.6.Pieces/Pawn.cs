@@ -44,7 +44,6 @@ public class Pawn : Piece
     public Pawn(Position position, Vector2Int square, Color color)
         : base(position, square, color) { }
 
-    public Pawn(Position position, Piece piece) : base(position, piece) { }
 
     public override List<Move> GetPossibleMoves()
     {

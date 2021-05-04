@@ -7,8 +7,10 @@ using Random = UnityEngine.Random;
 
 public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEventCallback
 {
-    static protected RaiseEventOptions eventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.Others };
-    static protected RoomOptions roomOptions = new RoomOptions { MaxPlayers = 2 };
+    protected const int VERSION = 1;
+
+    static protected RaiseEventOptions _eventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.Others };
+    static protected RoomOptions _roomOptions = new RoomOptions { MaxPlayers = 2 };
 
     protected enum PhotonEvent : byte
     {
@@ -89,20 +91,20 @@ public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEvent
 
     public void SendTimerIsOver()
     {
-        PhotonNetwork.RaiseEvent((byte)PhotonEvent.TimeIsOver, null, eventOptions, SendOptions.SendReliable);
+        PhotonNetwork.RaiseEvent((byte)PhotonEvent.TimeIsOver, null, _eventOptions, SendOptions.SendReliable);
     }
 
     protected void SendColor(Color playerColor)
     {
         Debug.Log("send order " + playerColor);
-        PhotonNetwork.RaiseEvent((byte)PhotonEvent.Order, (int)playerColor, eventOptions, SendOptions.SendReliable);
+        PhotonNetwork.RaiseEvent((byte)PhotonEvent.Order, (int)playerColor, _eventOptions, SendOptions.SendReliable);
     }
 
 
     public void SendMove(Move move)
     {
         Debug.Log("send move " + move);
-        PhotonNetwork.RaiseEvent((byte)PhotonEvent.Move, move.ToString(), eventOptions, SendOptions.SendReliable);
+        PhotonNetwork.RaiseEvent((byte)PhotonEvent.Move, move.ToString(), _eventOptions, SendOptions.SendReliable);
     }
 
     public virtual void OnEvent(EventData photonEvent)
@@ -112,7 +114,6 @@ public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEvent
         {
             case PhotonEvent.Order:
                 {
-                    Debug.Log("ord r");
                     int order = (int)photonEvent.CustomData;
                     ColorReceived?.Invoke((Color)order);
                 }

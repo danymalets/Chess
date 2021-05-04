@@ -5,24 +5,23 @@ using Photon.Realtime;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class NetworkRandomRivalProvider : NetworkRivalProvider
+public class NetworkRandomRivalFacade : NetworkRivalProvider
 {
     public void ConnectToServer()
     {
         PhotonNetwork.ConnectUsingSettings();
-        PhotonNetwork.GameVersion = "1r";
+        PhotonNetwork.GameVersion = VERSION.ToString() + "r";
     }
 
     public override void OnConnectedToMaster()
     {
         PhotonNetwork.JoinRandomRoom();
-        Debug.Log("join random");
         ConnectedToServer?.Invoke();
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        PhotonNetwork.CreateRoom(null, roomOptions);
+        PhotonNetwork.CreateRoom(null, _roomOptions);
     }
 
     protected override void StartGame()
@@ -42,7 +41,6 @@ public class NetworkRandomRivalProvider : NetworkRivalProvider
 
     public override void OnEvent(EventData photonEvent)
     {
-        Debug.Log("On Event " + photonEvent);
         byte code = photonEvent.Code;
         switch ((PhotonEvent)code)
         {

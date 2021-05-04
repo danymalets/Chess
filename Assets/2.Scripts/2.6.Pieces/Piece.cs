@@ -16,13 +16,6 @@ public abstract class Piece: ICloneable, IEquatable<Piece>
         Color = color;
     }
 
-    public Piece(Position position, Piece piece)
-    {
-        Position = position;
-        Square = piece.Square;
-        Color = piece.Color;
-    }
-
     public abstract List<Move> GetPossibleMoves();
 
     public List<Move> GetSmartMoves()

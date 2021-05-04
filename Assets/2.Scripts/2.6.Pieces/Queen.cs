@@ -33,8 +33,6 @@ public class Queen : Piece
     public Queen(Position position, Vector2Int location, Color color)
         : base(position, location, color) { }
 
-    public Queen(Position position, Piece piece) : base(position, piece) { }
-
     private static List<Vector2Int> _offsets = new List<Vector2Int>()
     {
         new Vector2Int(-1, 0),

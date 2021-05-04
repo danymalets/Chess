@@ -5,7 +5,7 @@ using Photon.Realtime;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class NetworkFriendProvider : NetworkRivalProvider
+public class NetworkFriendFacade : NetworkRivalProvider
 {
     public Action<TimeSpan> MoveDurationReceived;
 
@@ -17,18 +17,17 @@ public class NetworkFriendProvider : NetworkRivalProvider
         _moveDuration = moveDuration;
         _roomName = roomName;
         PhotonNetwork.ConnectUsingSettings();
-        PhotonNetwork.GameVersion = "1f";
+        PhotonNetwork.GameVersion = VERSION.ToString() + "f";
     }
 
     public override void OnConnectedToMaster()
     {
-        PhotonNetwork.JoinOrCreateRoom(_roomName, roomOptions, null);
+        PhotonNetwork.JoinOrCreateRoom(_roomName, _roomOptions, null);
         ConnectedToServer?.Invoke();
     }
 
     protected override void StartGame()
     {
-        Debug.Log("start" + _moveDuration);
         if (Random.Range(0, 2) == 0)
         {
             MoveDurationReceived?.Invoke(_moveDuration);
@@ -52,19 +51,17 @@ public class NetworkFriendProvider : NetworkRivalProvider
         PhotonNetwork.RaiseEvent(
             (byte)PhotonEvent.MoveDuration,
             (int)moveDuration.TotalSeconds,
-            eventOptions,
+            _eventOptions,
             SendOptions.SendReliable);
     }
 
     public override void OnEvent(EventData photonEvent)
     {
-        
         byte code = photonEvent.Code;
         switch ((PhotonEvent)code)
         {
             case PhotonEvent.MoveDuration:
                 {
-                    Debug.Log("dur r");
                     int duration = (int)photonEvent.CustomData;
                     MoveDurationReceived?.Invoke(new TimeSpan(0, 0, duration));
                 }

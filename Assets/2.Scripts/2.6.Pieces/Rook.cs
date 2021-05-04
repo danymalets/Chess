@@ -33,8 +33,6 @@ public class Rook : Piece
     public Rook(Position position, Vector2Int location, Color color)
         : base(position, location, color) { }
 
-    public Rook(Position position, Piece piece) : base(position, piece) { }
-
     public static List<Vector2Int> Offsets = new List<Vector2Int>()
     {
         new Vector2Int(-1, 0),
