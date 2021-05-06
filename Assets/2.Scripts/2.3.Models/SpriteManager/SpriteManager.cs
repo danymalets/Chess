@@ -7,9 +7,6 @@ public class SpriteManager : ScriptableObject
 {
     [SerializeField] private List<SpritePack> _spritePacks;
 
-    [SerializeField] private SpritePack EasterEgg;
-
-    //[HideInInspector]
     public SpritePack CurrentPack;
 
     private int _currentIndex = 0;
@@ -37,10 +34,5 @@ public class SpriteManager : ScriptableObject
         _currentIndex = (_currentIndex + 1) % _spritePacks.Count;
         CurrentPack = _spritePacks[_currentIndex];
         Prefs.SpritePack = CurrentPack.Name;
-    }
-
-    public void SetEasterEgg()
-    {
-        CurrentPack = EasterEgg;
     }
 }

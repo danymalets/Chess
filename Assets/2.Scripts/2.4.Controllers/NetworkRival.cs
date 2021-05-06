@@ -34,7 +34,8 @@ public abstract class NetworkRival : GameController
         _provider.MoveReceived += OnMoveReceived;
         _provider.TimeIsOverReceived += OnTimeIsOverReceived;
 
-        _provider.Disconnected += OnDisconnected;
+        _provider.UserLeft += UserLeft;
+        _provider.NetworkError += NetworkError;
         _provider.RivalDisconnected += OnRivalDisconnected;
 
         _ui.UserTimeIsOver += OnUserTimeIsOver;
@@ -165,10 +166,25 @@ public abstract class NetworkRival : GameController
         }
     }
 
-    private void OnDisconnected()
+    private void UserLeft()
     {
-        _provider.Disconnect();
         _ui.SetStatus($"Техническое поражение. Запрещено выходить из приложения во время игры");
+        _ui.Clear();
+        _board.DisableMoves();
+        _isEnd = true;
+        GameOver();
+    }
+
+    private void NetworkError()
+    {
+        if (_gameStarted && !_isEnd)
+        {
+            _ui.SetStatus($"Техническое поражение. Ошибка сети");
+        }
+        else if (!_isEnd)
+        {
+            _ui.SetStatus($"Ошибка сети");
+        }
         _ui.Clear();
         _board.DisableMoves();
         _isEnd = true;

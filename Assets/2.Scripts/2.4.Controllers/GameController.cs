@@ -5,7 +5,8 @@ using UnityEngine;
 
 public abstract class GameController
 {
-    public static GameController Singleton { get; set; }
+    public static GameController MainController { get; set; }
+    public static int TotalMovesCount { get; private set; }
 
     public Game _game;
 
@@ -32,6 +33,7 @@ public abstract class GameController
 
     public virtual void Finish()
     {
+        TotalMovesCount = _game.TotalMovesCount;
         _board.Clear();
         _ui.Clear();
     }

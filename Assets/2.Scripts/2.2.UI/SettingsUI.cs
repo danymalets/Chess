@@ -13,9 +13,6 @@ public class SettingsUI : MonoBehaviour
 
     [SerializeField] private BoardImage _board;
 
-    [SerializeField] private FunctionButton _left;
-    [SerializeField] private FunctionButton _right;
-
     private AsyncOperation _loading;
 
     private void Start()
@@ -42,15 +39,13 @@ public class SettingsUI : MonoBehaviour
 
     public void OnLeftButtomClicked()
     {
-        if (_right.IsPressed) _spriteManager.SetEasterEgg();
-        else _spriteManager.Prev();
+        _spriteManager.Prev();
         Redraw();
     }
 
     public void OnRightButtomClicked()
     {
-        if (_left.IsPressed) _spriteManager.SetEasterEgg();
-        else _spriteManager.Next();
+        _spriteManager.Next();
         Redraw();
     }
 

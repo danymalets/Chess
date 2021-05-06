@@ -8,9 +8,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using UnityEngine.Advertisements;
 
 public class MenuUI : MonoBehaviour
 {
+#if UNITY_ANDROID
+    public const string GAME_ID = "4115773";
+#elif UNITY_IOS
+    public const string GAME_ID = "4115772";
+#endif
+
     private static TimeSpan[] _moveDurations = new TimeSpan[6]
     {
         new TimeSpan(0, 0, 10),
@@ -44,6 +51,7 @@ public class MenuUI : MonoBehaviour
         else
         {
             IsGameLoaded = true;
+            Advertisement.Initialize(GAME_ID, false);
             Application.targetFrameRate = 60;
         }
 
@@ -118,7 +126,7 @@ public class MenuUI : MonoBehaviour
 
     private void LoadChessGame(GameController controller)
     {
-        GameController.Singleton = controller;
+        GameController.MainController = controller;
         LoadScene("Game");
     }
 
@@ -137,6 +145,25 @@ public class MenuUI : MonoBehaviour
         _loading = SceneManager.LoadSceneAsync(scene);
         _loading.allowSceneActivation = false;
         _animation.Play("MenuClosing");
+    }
+
+    public void OnOpeningAnimationPlayed()
+    {
+        if (GameController.TotalMovesCount >= 10)
+        {
+            if (Advertisement.IsReady())
+            {
+                Advertisement.Show();
+            }
+            else
+            {
+                Debug.Log("add not ready");
+            }
+        }
+        else
+        {
+            Debug.Log("total moves count = " + GameController.TotalMovesCount);
+        }
     }
 
     public void OnClosingAnimationPlayed()

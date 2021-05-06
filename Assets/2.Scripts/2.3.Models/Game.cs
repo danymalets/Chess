@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Game
 {
+    public int TotalMovesCount = 0;
     public Position Position;
     public Dictionary<Position, int> History = new Dictionary<Position, int>();
 
@@ -108,7 +109,10 @@ public class Game
 
     public void MakeMove(Move move)
     {
+        TotalMovesCount++;
+
         move.Make(Position);
+
         Position copy = new Position(Position);
         if (!History.ContainsKey(copy))
         {

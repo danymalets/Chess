@@ -10,7 +10,7 @@ public class NetworkRandomRivalFacade : NetworkRivalProvider
     public void ConnectToServer()
     {
         PhotonNetwork.ConnectUsingSettings();
-        PhotonNetwork.GameVersion = VERSION.ToString() + "r";
+        PhotonNetwork.GameVersion = VERSION + "r";
     }
 
     public override void OnConnectedToMaster()

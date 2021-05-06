@@ -17,7 +17,7 @@ public class NetworkFriendFacade : NetworkRivalProvider
         _moveDuration = moveDuration;
         _roomName = roomName;
         PhotonNetwork.ConnectUsingSettings();
-        PhotonNetwork.GameVersion = VERSION.ToString() + "f";
+        PhotonNetwork.GameVersion = VERSION + "f";
     }
 
     public override void OnConnectedToMaster()

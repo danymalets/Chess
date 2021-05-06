@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEventCallback
 {
-    protected const int VERSION = 1;
+    protected const string VERSION = "1.0";
 
     static protected RaiseEventOptions _eventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.Others };
     static protected RoomOptions _roomOptions = new RoomOptions { MaxPlayers = 2 };
@@ -21,10 +21,11 @@ public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEvent
     }
 
     public Action ConnectedToServer;
-    public Action Disconnected;
     public Action RoomCreated;
     public Action RivalFound;
     public Action RivalDisconnected;
+    public Action UserLeft;
+    public Action NetworkError;
 
     public Action<Color> ColorReceived;
     public Action<Move> MoveReceived;
@@ -67,7 +68,7 @@ public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEvent
 
     public void OnApplicationPause()
     {
-        Disconnected?.Invoke(); 
+        UserLeft?.Invoke(); 
         Disconnect();
     }
 
@@ -85,7 +86,7 @@ public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEvent
     {
         if (cause != DisconnectCause.DisconnectByClientLogic)
         {
-            Disconnected?.Invoke();
+            NetworkError?.Invoke();
         }
     }
 

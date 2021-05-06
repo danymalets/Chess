@@ -23,7 +23,9 @@ public class AI
     const int INF = (int)2e9;
     const int CHECK_MATE = (int)1e9;
     const int CHECK_MATE_HEIGHT = (int)1e7;
-    const int DRAW = -19;
+    const int TRIPLE_REPETITION = -19;
+    const int STALE_MATE = -19;
+    const int USELESS_MOVES = -19;
 
     private Game _game;
     private int _level;
@@ -51,7 +53,7 @@ public class AI
         _maxCount = COUNTS[_level - 1];
         Thread thread = new Thread(new ThreadStart(Solving))
         {
-            Priority = ThreadPriority.Highest
+            //Priority = ThreadPriority.Highest
         };
         thread.Start();
     }
@@ -231,11 +233,17 @@ public class AI
 
             if (move.IsUselessMove(position)) uselessMoves++;
 
-            if (count == 3 || uselessMoves >= 50)
+            if (count == 3)
             {
                 _solvedPart += childPart;
                 childBestMove = null;
-                value = -DRAW;
+                value = -TRIPLE_REPETITION;
+            }
+            else if (uselessMoves >= 50)
+            {
+                _solvedPart += childPart;
+                childBestMove = null;
+                value = -USELESS_MOVES - GetValue(newPosition) / 20;
             }
             else
             {
@@ -290,11 +298,11 @@ public class AI
         {
             if (position.IsInCheck())
             {
-                return (null, -CHECK_MATE + CHECK_MATE_HEIGHT * height);
+                return (null, -CHECK_MATE + CHECK_MATE_HEIGHT * height + GetValue(position));
             }
             else
             {
-                return (null, DRAW);
+                return (null, STALE_MATE);
             }
         }
         else

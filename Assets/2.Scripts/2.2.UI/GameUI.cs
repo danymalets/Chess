@@ -46,7 +46,7 @@ public class GameUI : MonoBehaviour
 
     private void Start()
     {
-        _controller = GameController.Singleton;
+        _controller = GameController.MainController;
 #if DEBUG
         if (!MenuUI.IsGameLoaded) { SceneManager.LoadScene("Menu"); return; }
 #endif
@@ -152,7 +152,7 @@ public class GameUI : MonoBehaviour
     {
         if (_loading != null) return;
 
-        if (GameController.Singleton is SinglePlayer singlePlayer)
+        if (GameController.MainController is SinglePlayer singlePlayer)
         {
             singlePlayer.Undo();
         }

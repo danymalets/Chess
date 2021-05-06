@@ -51,7 +51,7 @@ public class SavedGamesUI : MonoBehaviour
     {
         _storedGames.Remove(storedGame);
         Prefs.SetStoredGames(_storedGames);
-        GameController.Singleton = storedGame.ToGameController();
+        GameController.MainController = storedGame.ToGameController();
 
         _animation.Play("SavedGamesLeftClosing");
         _loading = SceneManager.LoadSceneAsync("Game");
