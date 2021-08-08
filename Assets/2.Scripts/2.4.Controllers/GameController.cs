@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class GameController
 {
     public static GameController MainController { get; set; }
-    public static int TotalMovesCount { get; private set; }
+    public static int TotalMovesCount { get; set; }
 
     public Game _game;
 

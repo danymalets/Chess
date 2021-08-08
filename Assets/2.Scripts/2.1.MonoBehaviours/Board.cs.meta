@@ -3,7 +3,21 @@ guid: 85063be08f41c451bb1b68447b99bbc9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _spriteManager: {instanceID: 0}
+  - _boardTransform: {instanceID: 0}
+  - _fieldTransform: {instanceID: 0}
+  - _tile: {instanceID: 0}
+  - _piece: {instanceID: 0}
+  - _lastMoveHighlightPrefab: {instanceID: 0}
+  - _checkHighlightPrefab: {instanceID: 0}
+  - _stalemateHighlightPrefab: {instanceID: 0}
+  - _checkmateHighlightPrefab: {instanceID: 0}
+  - _selectedPieceHighlightPrefab: {instanceID: 0}
+  - _possibleMoveHighlightPrefab: {instanceID: 0}
+  - _pieceSelection: {instanceID: 0}
+  - _snap: {instanceID: 0}
+  - _start: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

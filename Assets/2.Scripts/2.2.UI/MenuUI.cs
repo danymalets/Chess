@@ -153,7 +153,8 @@ public class MenuUI : MonoBehaviour
         {
             if (Advertisement.IsReady())
             {
-                Advertisement.Show();
+                //Advertisement.Show();
+                GameController.TotalMovesCount = 0;
             }
             else
             {

@@ -78,9 +78,10 @@ public class Move : IEquatable<Move>
 
     public virtual bool Equals(Move other)
     {
-        return other != null && GetType().Equals(other.GetType())
-            && SourceSquare == other.SourceSquare
-            && TargetSquare == other.TargetSquare;
+        return other != null 
+               && GetType() == other.GetType() 
+               && SourceSquare == other.SourceSquare
+               && TargetSquare == other.TargetSquare;
     }
 
     public override string ToString()
@@ -125,7 +126,6 @@ public class Move : IEquatable<Move>
                    StringToSquare(s.Substring(2, 2)), 
                    Promotion.StringToPiece(s[5].ToString()));
         }
-
         return null;
     }
 
