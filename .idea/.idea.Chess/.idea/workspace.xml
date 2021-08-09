@@ -2,12 +2,1239 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="672c5a90-b548-48af-bbe3-0145070c38b6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/Board.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/Board.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/MenuUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/MenuUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/Move.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/Move.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/5.Scriptable Objects/Packs/Wood.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/5.Scriptable Objects/Packs/Wood.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Chess/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chess/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.Scenes/Game.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.Scenes/Game.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.Scenes/Menu.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.Scenes/Menu.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.Scenes/SavedGames.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.Scenes/SavedGames.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.Scenes/Settings.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.Scenes/Settings.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/Board.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/Board.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/BoardImage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/BoardImage.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/DeleteConfirmation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/DeleteConfirmation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/PieceSelection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/PieceSelection.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/SavedGamePanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/SavedGamePanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/Tile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/Tile.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/Window.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.1.MonoBehaviours/Window.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/GameUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/GameUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/MenuUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/MenuUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/SavedGamesUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/SavedGamesUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/SettingsUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/SettingsUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.3.Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.3.Models/AI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.3.Models/AI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.3.Models/Game.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.3.Models/Game.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.3.Models/Position.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.3.Models/Position.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.3.Models/SpriteManager.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.3.Models/SpriteManager/SpriteManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.3.Models/SpriteManager/SpriteManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.3.Models/SpriteManager/SpritePack.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.3.Models/SpriteManager/SpritePack.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/BotVsBot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/BotVsBot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/GameController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/GameController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/IStorable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/IStorable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/IUndoable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/IUndoable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/NetworkFriend.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/NetworkFriend.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/NetworkRandomRival.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/NetworkRandomRival.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/NetworkRival.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/NetworkRival.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/SinglePlayers.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/SinglePlayers.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/TwoPlayers.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/TwoPlayers.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/Capture.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/Capture.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/Castling.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/Castling.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/ICapture.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/ICapture.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/Move.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/Move.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/Promotion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/Promotion.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/PromotionWithCapture.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/PromotionWithCapture.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Bishop.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Bishop.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Color.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Color.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Khinght.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Khinght.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/King.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/King.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Pawn.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Pawn.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Piece.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Piece.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Queen.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Queen.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Rook.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.6.Pieces/Rook.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.7.Networking.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.7.Networking/NetworkFriendFacade.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.7.Networking/NetworkFriendFacade.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.7.Networking/NetworkRandomRivalFacade.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.7.Networking/NetworkRandomRivalFacade.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.7.Networking/NetworkRivalFacade.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.7.Networking/NetworkRivalFacade.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.9.Prefs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.9.Prefs/Prefs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.9.Prefs/Prefs.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.9.Prefs/StoredGame.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.9.Prefs/StoredGame.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.9.Prefs/StoredType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/2.9.Prefs/StoredType.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Game.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Game/GameClosing.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Game/GameClosing.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Game/GameOpening.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Game/GameOpening.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Menu.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Menu/MenuClosing.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Menu/MenuClosing.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Menu/MenuOpening.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Menu/MenuOpening.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/SavedGames.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/SavedGames/SavedGamesLeftClosing.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/SavedGames/SavedGamesLeftClosing.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/SavedGames/SavedGamesOpening.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/SavedGames/SavedGamesOpening.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/SavedGames/SavedGamesRightClosing.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/SavedGames/SavedGamesRightClosing.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Settings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Settings/SettingsClosing.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Settings/SettingsClosing.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Settings/SettingsOpening.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Settings/SettingsOpening.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Window.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Window/WindowClosing.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Window/WindowClosing.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Window/WindowOpening.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Animations/Window/WindowOpening.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/back-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/back-arrow.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/bg.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/clear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/clear.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/exit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/exit.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/large buttom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/large buttom.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/left.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/mainicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/mainicon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/menu.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/point.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/point.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/right.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/run.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/run.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/s.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/settings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/settings.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/slider.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/slider.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/small buttom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/small buttom.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/trash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/trash.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/win.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Images/win.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/Atlas.spriteatlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/Atlas.spriteatlas.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black bishop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black bishop.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black king.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black king.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black knight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black knight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black pawn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black pawn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black queen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black queen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black rook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black rook.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black tile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/black tile.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/board.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/board.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white bishop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white bishop.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white king.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white king.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white knight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white knight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white pawn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white pawn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white queen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white queen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white rook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white rook.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white tile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Default/white tile.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/bg.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black bishop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black bishop.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black king.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black king.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black knight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black knight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black pawn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black pawn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black queen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black queen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black rook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black rook.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black tile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/black tile.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/pawn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/pawn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white bishop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white bishop.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white king.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white king.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white knight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white knight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white pawn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white pawn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white queen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white queen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white rook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white rook.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white tile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Pieces/Wood/white tile.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Sounds/gameover.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Sounds/gameover.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Sounds/melody.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Sounds/melody.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Sounds/snap.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Sounds/snap.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Sounds/start.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.Resources/Sounds/start.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights/CheckHighlight.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights/CheckHighlight.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights/CheckmateHighlight.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights/CheckmateHighlight.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights/LastMoveHighlight.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights/LastMoveHighlight.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights/PossibleMoveHighlight.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights/PossibleMoveHighlight.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights/SelectedPieceHighlight.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights/SelectedPieceHighlight.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights/StalemateHighlight.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Highlights/StalemateHighlight.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Piece.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Piece.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/SavedGame.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/SavedGame.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Tile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.Prefabs/Tile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5.Scriptable Objects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5.Scriptable Objects/Packs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5.Scriptable Objects/Packs/Default.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5.Scriptable Objects/Packs/Default.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5.Scriptable Objects/Packs/EE.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5.Scriptable Objects/Packs/EE.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5.Scriptable Objects/Packs/Wood.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5.Scriptable Objects/Packs/Wood.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5.Scriptable Objects/SpriteManager.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5.Scriptable Objects/SpriteManager.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChannelCreationOptions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChannelCreationOptions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChannelWellKnownProperties.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChannelWellKnownProperties.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatAppSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatAppSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatChannel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatChannel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatClient.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatClient.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatDisconnectCause.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatDisconnectCause.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatEventCode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatEventCode.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatOperationCode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatOperationCode.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatParameterCode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatParameterCode.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatPeer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatPeer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatUserStatus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/ChatUserStatus.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/IChatClientListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/IChatClientListener.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/PhotonChat.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/PhotonChat.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/changes-chat.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Code/changes-chat.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/Common.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/Common/EventSystemSpawner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/Common/EventSystemSpawner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/Common/OnStartDelete.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/Common/OnStartDelete.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/Common/TextButtonTransition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/Common/TextButtonTransition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/Common/TextToggleIsOnTransition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/Common/TextToggleIsOnTransition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/AppSettingsExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/AppSettingsExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/ChannelSelector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/ChannelSelector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/ChatAppIdCheckerUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/ChatAppIdCheckerUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/ChatGui.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/ChatGui.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/DemoChat-Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/DemoChat-Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/FriendItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/FriendItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/IgnoreUiRaycastWhenInactive.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/IgnoreUiRaycastWhenInactive.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/NamePickGui.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonChat/Demos/DemoChat/NamePickGui.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/Metro.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/Metro/Photon3Unity3D.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/Metro/Photon3Unity3D.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/Metro/Photon3Unity3D.pri" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/Metro/Photon3Unity3D.pri.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/Photon3Unity3D.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/Photon3Unity3D.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/Photon3Unity3D.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/Photon3Unity3D.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/WebSocket.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/WebSocket/SocketWebTcp.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/WebSocket/SocketWebTcp.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/WebSocket/WebSocket.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/WebSocket/WebSocket.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/WebSocket/WebSocket.jslib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/WebSocket/WebSocket.jslib.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/WebSocket/websocket-sharp.README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/WebSocket/websocket-sharp.README.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/WebSocket/websocket-sharp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/WebSocket/websocket-sharp.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/changes-library.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/changes-library.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/netstandard2.0.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.deps.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonNetworking-Documentation.chm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonNetworking-Documentation.chm.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonNetworking-Documentation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonNetworking-Documentation.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/AppSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/AppSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/ConnectionHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/ConnectionHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/CustomTypesUnity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/CustomTypesUnity.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Extensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Extensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/FriendInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/FriendInfo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/LoadBalancingClient.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/LoadBalancingClient.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/LoadbalancingPeer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/LoadbalancingPeer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/PhotonPing.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/PhotonPing.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/PhotonPingClasses.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/PhotonPingClasses.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/PhotonRealtime.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/PhotonRealtime.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Player.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Player.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Region.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Region.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/RegionHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/RegionHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Room.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Room.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/RoomInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/RoomInfo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/SupportLogger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/SupportLogger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Unity/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Unity/Editor/AccountService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Unity/Editor/AccountService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Unity/Editor/PhotonEditorUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Unity/Editor/PhotonEditorUtils.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Unity/PhotonAppSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/Unity/PhotonAppSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/WebRpc.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/WebRpc.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/changes-realtime.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Code/changes-realtime.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Demos.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Demos/DemoLoadBalancing.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Demos/DemoLoadBalancing/DemoLoadBalancing-Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Demos/DemoLoadBalancing/DemoLoadBalancing-Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Demos/DemoLoadBalancing/Jura-Medium-LB.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonRealtime/Demos/DemoLoadBalancing/Jura-Medium-LB.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/CustomTypes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/CustomTypes.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/CopyIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/CopyIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/CopyIconPro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/CopyIconPro.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PhotonEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PhotonEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PhotonGUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PhotonGUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PhotonUnityNetworking.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PhotonUnityNetworking.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PhotonViewHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PhotonViewHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PhotonViewInspector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PhotonViewInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PunGradient.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PunGradient.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettingsFile.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettingsFile.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettingsInspector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettingsInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/ReordableList.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/ReordableList/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/ReordableList/LICENSE.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/ReordableList/ReorderableListResources.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/ReordableList/ReorderableListResources.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/ServerSettingsInspector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/ServerSettingsInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views/MonoBehaviourPunEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views/MonoBehaviourPunEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonAnimatorViewEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonAnimatorViewEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonRigidbody2DViewEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonRigidbody2DViewEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonRigidbodyViewEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonRigidbodyViewEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonTransformViewClassicEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonTransformViewClassicEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonTransformViewEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/Views/PhotonTransformViewEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/help.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Editor/help.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Enums.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Enums.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Interfaces.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Interfaces/IPhotonViewCallbacks.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Interfaces/IPhotonViewCallbacks.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Interfaces/IPunCallbacks.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Interfaces/IPunCallbacks.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PhotonStreamQueue.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PhotonStreamQueue.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PhotonUnityNetworking.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PhotonUnityNetworking.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PhotonView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PhotonView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PunClasses.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/PunClasses.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/ServerSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/ServerSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Utilities.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Utilities/NestedComponentUtilities.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Utilities/NestedComponentUtilities.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Views.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Views/PhotonAnimatorView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Views/PhotonAnimatorView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Views/PhotonRigidbody2DView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Views/PhotonRigidbody2DView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Views/PhotonRigidbodyView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Views/PhotonRigidbodyView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformViewClassic.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformViewClassic.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Materials/FlyerAsteroid.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Materials/FlyerAsteroid.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Materials/FlyerPlayership.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Materials/FlyerPlayership.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Materials/ParticleAfterburner.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Materials/ParticleAfterburner.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Materials/WhiteSmooth.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Materials/WhiteSmooth.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Materials/WhiteUnlit.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Materials/WhiteUnlit.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Asteroid01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Asteroid01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/FlyerAsteroidB.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/FlyerAsteroidB.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/LaserBolt.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/LaserBolt.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Materials/Asteroid.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Materials/Asteroid.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Materials/FlyerAsteroid1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Materials/FlyerAsteroid1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Materials/SpaceshipGlow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Materials/SpaceshipGlow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Materials/SpaceshipHull.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Materials/SpaceshipHull.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Spaceship.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Spaceship.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Prefabs/Bullet.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Prefabs/Bullet.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Prefabs/PlayerListEntry.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Prefabs/PlayerListEntry.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Prefabs/PlayerOverviewEntry.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Prefabs/PlayerOverviewEntry.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Prefabs/RoomListEntry.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Prefabs/RoomListEntry.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Resources/BigAsteroid.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Resources/BigAsteroid.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Resources/SmallAsteroid.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Resources/SmallAsteroid.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Resources/Spaceship.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Resources/Spaceship.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scenes/DemoAsteroids-GameScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scenes/DemoAsteroids-GameScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scenes/DemoAsteroids-LobbyScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scenes/DemoAsteroids-LobbyScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/AsteroidsGame.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/AsteroidsGame.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Asteroid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Asteroid.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/AsteroidsGameManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/AsteroidsGameManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Bullet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Bullet.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/PlayerOverviewPanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/PlayerOverviewPanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Spaceship.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Spaceship.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/LobbyMainPanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/LobbyMainPanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/LobbyTopPanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/LobbyTopPanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/PlayerListEntry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/PlayerListEntry.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/RoomListEntry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/RoomListEntry.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Textures/FlyerAsteroidEmissive.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Textures/FlyerAsteroidEmissive.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Textures/FlyerPlayershipAlbedo.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Textures/FlyerPlayershipAlbedo.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Textures/FlyerPlayershipEmission.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Textures/FlyerPlayershipEmission.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Textures/FlyerPlayershipOcclusion.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Textures/FlyerPlayershipOcclusion.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/DemoHub-Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/DemoHub-Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Editor/PunDemos.DemoHubEditor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Editor/PunDemos.DemoHubEditor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Editor/PunStartup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Editor/PunStartup.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Scripts/DemoHubManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Scripts/DemoHubManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Scripts/ToDemoHubButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Scripts/ToDemoHubButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/Gradient.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/Gradient.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/OutlinedSquaredBox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/OutlinedSquaredBox.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/PunIcon-White-129.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/PunIcon-White-129.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/toHub.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/toHub.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/toHub.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoHub/toHub.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials/Black.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials/Black.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials/LightGreen.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials/LightGreen.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials/Orange.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials/Orange.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials/Red.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials/Red.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials/Yellow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials/Yellow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Procedural-Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Procedural-Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Block.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Block.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Cluster.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Cluster.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/IngameControlPanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/IngameControlPanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Noise.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Noise.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/ProceduralController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/ProceduralController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/WorldGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/WorldGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Copyrights.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Copyrights.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/_defaultMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/_defaultMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/bark.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/bark.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/grass.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/grass.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/grey.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/grey.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/red.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/red.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/road.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/road.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/tankco.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/tankco.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/wall.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/wall.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/white.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Materials/white.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Textures/tankco.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/Textures/tankco.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/billboardLower.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/billboardLower.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/flagGreen.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/flagGreen.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/rail.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/rail.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadCornerSmall.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadCornerSmall.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadCornerSmallBorder.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadCornerSmallBorder.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadRampLongCurvedWall.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadRampLongCurvedWall.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadStart.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadStart.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadStartPositions.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadStartPositions.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadStraight.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadStraight.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadStraightBridgeStart.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadStraightBridgeStart.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/11 - Default.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/11 - Default.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/13 - Default.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/13 - Default.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/13 - Default22662.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/13 - Default22662.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/13 - Default54.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/13 - Default54.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/20 - Default.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/20 - Default.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/22 - Default.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/22 - Default.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/24 - Default.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/24 - Default.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/No Name.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/No Name.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/car.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/car.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/ground_green.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/ground_green.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/ground_green232.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/ground_green232.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/insides_2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/insides_2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/insides_3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/insides_3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/leaves_palm_243.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/leaves_palm_243.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/roof.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/roof.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/tank.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/tank.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/windows_2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/windows_2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/bush1.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/bush1.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/car_1.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/car_1.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/car_3.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/car_3.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/car_4.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/car_4.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/hamvee.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/hamvee.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/tree_1.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/tree_1.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/tree_6.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Models/tree_6.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Prefabs/SlotCar_A.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Prefabs/SlotCar_A.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Prefabs/SlotCar_B.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Prefabs/SlotCar_B.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Prefabs/SlotCar_C.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Prefabs/SlotCar_C.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Prefabs/SlotCar_D.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Prefabs/SlotCar_D.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Resources/Player Controller.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Resources/Player Controller.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Bezier.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Bezier.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/BezierControlPointMode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/BezierControlPointMode.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/BezierCurve.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/BezierCurve.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/BezierSpline.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/BezierSpline.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/BezierCurveInspector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/BezierCurveInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/BezierSplineInspector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/BezierSplineInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/LineInspector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/LineInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/PunDemos.DemoSlotcarEditor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/PunDemos.DemoSlotcarEditor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Line.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Line.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/SplinePosition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/SplinePosition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/SplineWalker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/SplineWalker.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/PlayerControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/PlayerControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/SlotLanes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/SlotLanes.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/SlotRacerSplashScreen.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/SlotRacerSplashScreen.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/SlotCar-Scene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/SlotCar-Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/SlotCar-Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/SlotCar-Scene/LightingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/SlotCar-Scene/LightingData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/SlotCar-Scene/ReflectionProbe-0.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/SlotCar-Scene/ReflectionProbe-0.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PhotonUnityNetworking.Demos.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PhotonUnityNetworking.Demos.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Animator.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Animator/Kyle Robot.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Animator/Kyle Robot.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Materials/Red Beam.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Materials/Red Beam.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Materials/UnitTextureGreen12x.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Materials/UnitTextureGreen12x.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Materials/UnitTextureRed12x.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Materials/UnitTextureRed12x.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Materials/UnitTextureYellow12x.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Materials/UnitTextureYellow12x.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Prefabs/Demo Intro UI.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Prefabs/Demo Intro UI.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Prefabs/Game Manager.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Prefabs/Game Manager.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Prefabs/Player UI.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Prefabs/Player UI.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Prefabs/Quit Room Button.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Prefabs/Quit Room Button.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Resources/My Robot Kyle -done-.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Resources/My Robot Kyle -done-.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes/PunBasics-Launcher.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes/PunBasics-Launcher.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes/PunBasics-Room for 1.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes/PunBasics-Room for 1.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes/PunBasics-Room for 2.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes/PunBasics-Room for 2.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes/PunBasics-Room for 3.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes/PunBasics-Room for 3.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes/PunBasics-Room for 4.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes/PunBasics-Room for 4.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/CameraWork.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/CameraWork.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/GameManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/GameManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/Launcher.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/Launcher.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/LoaderAnime.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/LoaderAnime.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerAnimatorManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerAnimatorManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerNameInputField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerNameInputField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/ConnectToRegionUIForm.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/ConnectToRegionUIForm.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/CreateRoomUiForm.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/CreateRoomUiForm.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/LoadLevelUIForm.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/LoadLevelUIForm.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/SetRoomCustomPropertyUIForm.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/SetRoomCustomPropertyUIForm.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/UserIdUiForm.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Forms/UserIdUiForm.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Prefabs/Help Button.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Prefabs/Help Button.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Prefabs/Tab Toggle.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Prefabs/Tab Toggle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/PunCockpit-Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/PunCockpit-Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/PunCockpit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/PunCockpit.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/AutoSyncSceneToggle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/AutoSyncSceneToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/BackgroundTimeOutField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/BackgroundTimeOutField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CrcCheckToggle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CrcCheckToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CurrentRoom.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CurrentRoom/CurrentRoomIsOpenToggle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CurrentRoom/CurrentRoomIsOpenToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CurrentRoom/CurrentRoomIsVisibleToggle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/CurrentRoom/CurrentRoomIsVisibleToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/DocLinkButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/DocLinkButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/GameVersionField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/GameVersionField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/BoolInputField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/BoolInputField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/IntInputField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/IntInputField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/StringInputField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/StringInputField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/ToggleExpand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/Generic/ToggleExpand.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/LayoutElementMatchSize.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/LayoutElementMatchSize.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/NickNameField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/NickNameField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/OnlineDocButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/OnlineDocButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/SendRateField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/SendRateField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/SendRateOnSerializeField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Autonomous UI/SendRateOnSerializeField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Controllers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Controllers/PlayerDetailsController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Controllers/PlayerDetailsController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/InfosPanelPlaceholder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/InfosPanelPlaceholder.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/FriendListCell.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/FriendListCell.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/FriendListView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/FriendListView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/PlayerListCell.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/PlayerListCell.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/PlayerListView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/PlayerListView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/PropertyCell.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/PropertyCell.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RegionListCell.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RegionListCell.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RegionListView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RegionListView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RoomListCell.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RoomListCell.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RoomListView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RoomListView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/PropertyFields.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/PropertyFields/UserIdField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/PropertyFields/UserIdField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/AppVersionProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/AppVersionProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/BestRegionInPrefsProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/BestRegionInPrefsProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CloudRegionProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CloudRegionProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfPlayersInRoomProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfPlayersInRoomProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfPlayersOnMasterProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfPlayersOnMasterProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfPlayersProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfPlayersProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfRoomsProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CountOfRoomsProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomAutoCleanupProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomAutoCleanupProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomEmptyRoomTtlProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomEmptyRoomTtlProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomExpectedUsersProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomExpectedUsersProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomIsOfflineProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomIsOfflineProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomIsOpenProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomIsOpenProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomIsVisibleProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomIsVisibleProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomMasterClientIdProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomMasterClientIdProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomMaxPlayersProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomMaxPlayersProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomNameProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomNameProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomPlayerCountProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomPlayerCountProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomPlayerTtlProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomPlayerTtlProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomPropertiesListedInLobbyProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/CurrentRoomPropertiesListedInLobbyProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/GameVersionProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/GameVersionProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/IsConnectedAndReadyProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/IsConnectedAndReadyProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/IsConnectedProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/IsConnectedProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/OfflineModeProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/OfflineModeProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/PingProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/PingProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/PropertyListenerBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/PropertyListenerBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/ServerAddressProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/ServerAddressProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/ServerProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ReadOnlyProperties/ServerProperty.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ScoreHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ScoreHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ThirdParty.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ThirdParty/PunCockpitEmbed.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/ThirdParty/PunCockpitEmbed.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidCrouch.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidCrouch.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdle.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdle.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdleJumpUp.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdleJumpUp.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidJumpAndFall.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidJumpAndFall.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidMidAir.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidMidAir.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidRun.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidRun.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidRunTurn.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidRunTurn.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidRunTurnSharp.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidRunTurnSharp.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidStandTurn.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidStandTurn.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalk.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalk.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurn.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurn.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurnSharp.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurnSharp.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/Materials/EyesMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/Materials/EyesMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/Materials/SkinMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/Materials/SkinMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/Materials/SuitMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/Materials/SuitMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/Materials/TeethMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/Materials/TeethMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/Materials/TongueMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/Materials/TongueMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animator.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animator/ThirdPersonAnimatorController.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animator/ThirdPersonAnimatorController.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/Gradient.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/Gradient.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/PlayerDiamond.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/PlayerDiamond.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/Robot_Color.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/Robot_Color.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/UnitCircleMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/UnitCircleMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/UnitCircleTexture.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/UnitCircleTexture.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/UnitTextureBlue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/UnitTextureBlue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/UnitTextureBlue12x.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/UnitTextureBlue12x.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/UnitTextureRed.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/UnitTextureRed.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Models/Pointer.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Models/Pointer.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Models/Robot Kyle.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Models/Robot Kyle.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Prefabs/PointerPrefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Prefabs/PointerPrefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Prefabs/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Prefabs/UI/Button Regular.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Prefabs/UI/Button Regular.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Prefabs/UI/Toggle Regular.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Prefabs/UI/Toggle Regular.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Prefabs/UI/Tooltip.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Prefabs/UI/Tooltip.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts/DocLinks.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts/DocLinks.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts/ThirdPersonCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts/ThirdPersonCharacter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts/ThirdPersonUserControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Scripts/ThirdPersonUserControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/3dText.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/3dText.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/BoxBright.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/BoxBright.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/BoxOrange.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/BoxOrange.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/BoxOrangeRed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/BoxOrangeRed.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/BoxText.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/BoxText.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/BoxTextHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/BoxTextHover.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/DropDown Arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/DropDown Arrow.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/DropDown CheckMark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/DropDown CheckMark.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/Jura-Flat-Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/Jura-Flat-Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/Jura-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/Jura-Medium.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/Orbitron Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/Orbitron Black.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/RoundedBox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/RoundedBox.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/Toggle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/Toggle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/ToggleHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/ToggleHover.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/ToggleOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/ToggleOn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/ToggleOnHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/ToggleOnHover.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/eurof35.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/eurof35.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/eurof_tt.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/eurof_tt.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/Gradient.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/Gradient.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/Robot_Color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/Robot_Color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/Robot_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/Robot_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/UnitCircleTexture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/UnitCircleTexture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/UnitTexture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/UnitTexture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/UnitTextureBlue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/UnitTextureBlue.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/UnitTextureRed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/Shared Assets/Textures/UnitTextureRed.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/WebRpcImplementationExample.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Demos/WebRpcImplementationExample.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Icons/PunIcon-128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Icons/PunIcon-128.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Icons/PunIconApp128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Icons/PunIconApp128.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Icons/PunIconApp32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Icons/PunIconApp32.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Icons/PunIconApp48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Icons/PunIconApp48.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Icons/PunIconApp512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Icons/PunIconApp512.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Culling.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Culling/CullArea.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Culling/CullArea.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Culling/CullingHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Culling/CullingHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Culling/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Culling/Editor/CullAreaEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Culling/Editor/CullAreaEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Culling/Editor/PhotonUnityNetworking.Utilities.Culling.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Culling/Editor/PhotonUnityNetworking.Utilities.Culling.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Debugging.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PhotonLagSimulationGui.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PhotonLagSimulationGui.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PhotonStatsGui.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PhotonStatsGui.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PointedAtGameObjectInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PointedAtGameObjectInfo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/StatesGui.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/StatesGui.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PhotonTeamsManagerInspector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PhotonTeamsManagerInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PlayerNumberingInspector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PlayerNumberingInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PunTeamsInspector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/Editor/PunTeamsInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PhotonTeamsManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PhotonTeamsManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PlayerNumbering.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PlayerNumbering.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PunPlayerScores.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PunPlayerScores.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PunTeams.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PunTeams.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonUnityNetworking.Utilities.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonUnityNetworking.Utilities.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonView.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonView/SmoothSyncMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/PhotonView/SmoothSyncMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/ConnectAndJoinRandom.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/ConnectAndJoinRandom.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/MoveByKeys.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/MoveByKeys.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnClickDestroy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnClickDestroy.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnClickInstantiate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnClickInstantiate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnClickRpc.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnClickRpc.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnEscapeQuit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnEscapeQuit.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnJoinedInstantiate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnJoinedInstantiate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnStartDelete.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnStartDelete.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Room.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Room/CountdownTimer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/Room/CountdownTimer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/TurnBased.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/TurnBased/PunTurnManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/TurnBased/PunTurnManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/ButtonInsideScrollList.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/ButtonInsideScrollList.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/EventSystemSpawner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/EventSystemSpawner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/GraphicToggleIsOnTransition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/GraphicToggleIsOnTransition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/OnPointerOverTooltip.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/OnPointerOverTooltip.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/TabViewManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/TabViewManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextButtonTransition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextButtonTransition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextToggleIsOnTransition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextToggleIsOnTransition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/changelog.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/changelog.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/link.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/link.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/6.Plugins/Photon/PhotonUnityNetworking/readme.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,17 +1244,44 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.2.1/Unity.Mathematics/uint3x2.gen.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@5.0.4/Runtime/Triangle/Behavior.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file:///Applications/Unity/Hub/Editor/2021.1.0f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file:///Applications/Unity/Hub/Editor/2021.1.0f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Tests/Runtime/InputField/GenericInputFieldTests.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/2.Scripts/Config.cs" />
+      <option value="$PROJECT_DIR$/Assets/2.Scripts/SceneTransition.cs" />
+      <option value="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/PromotionWithCapture.cs" />
       <option value="$PROJECT_DIR$/Assets/2.Scripts/2.5.Moves/Move.cs" />
+      <option value="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/MenuUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/2.Scripts/2.4.Controllers/GameController.cs" />
+      <option value="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/SavedGamesUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/GameUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/2.Scripts/2.2.UI/SettingsUI.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wQ8RlXdAESgDarujamnHfv9lpU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34971997" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -69,8 +1323,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1628379445820</updated>
-      <workItem from="1628379454738" duration="863000" />
+      <workItem from="1628379454738" duration="4193000" />
+      <workItem from="1628536710330" duration="118000" />
     </task>
+    <task id="LOCAL-00001" summary="August update">
+      <created>1628381039397</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1628381039397</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,7 +1341,21 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="August update" />
+    <option name="LAST_COMMIT_MESSAGE" value="August update" />
   </component>
 </project>
