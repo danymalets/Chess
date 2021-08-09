@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac11adf054d846f4b527eb471ca490f, type: 3}
+  m_Name: SpriteManager
+  m_EditorClassIdentifier: Assembly-CSharp::MySpriteManager
+  _spritePacks:
+  - {fileID: 11400000, guid: e268dd0ee18924d91ae1a0d0da60c8b2, type: 2}
+  - {fileID: 11400000, guid: 1079f56bbf27945a3aaf839fe825852b, type: 2}
+  EasterEgg: {fileID: 11400000, guid: 4aaf7819c0e3a41718a99c5957ccb158, type: 2}
+  CurrentPack: {fileID: 11400000, guid: e268dd0ee18924d91ae1a0d0da60c8b2, type: 2}

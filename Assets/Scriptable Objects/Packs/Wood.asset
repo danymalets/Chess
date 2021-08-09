@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1f68a5791644f198bbda8b2aa7f2c1, type: 3}
+  m_Name: Wood
+  m_EditorClassIdentifier: 
+  Name: Wood
+  _board: {fileID: 21300000, guid: 16236f1b6b9894ed58ba2abfc1e10582, type: 3}
+  _whiteTile: {fileID: 21300000, guid: 6fb89f1ebb6114c5d98c7ce590136b9a, type: 3}
+  _blackTile: {fileID: 21300000, guid: be717d8c4abb348e1a8854b2f470af60, type: 3}
+  _whiteKing: {fileID: 21300000, guid: 1fff1d950db7f42879b5909eb8b17c15, type: 3}
+  _whiteQueen: {fileID: 21300000, guid: 6d92876bb4dbe46db9aeaa2566865142, type: 3}
+  _whiteRook: {fileID: 21300000, guid: 97a319be9693b4c8b846659c0e731291, type: 3}
+  _whiteBishop: {fileID: 21300000, guid: d24ca6c6baed54aa08f1954283b8eac6, type: 3}
+  _whiteKnight: {fileID: 21300000, guid: 18d8e5c40fe4c41d8bd9a5fae0498c5a, type: 3}
+  _whitePawn: {fileID: 21300000, guid: b863f34730bbe4f0993af304b05433f2, type: 3}
+  _blackKing: {fileID: 21300000, guid: 4f9711095fd594c2989e4ee9b5785574, type: 3}
+  _blackQueen: {fileID: 21300000, guid: 54acb40a0873c43e9b53dbea307f66f2, type: 3}
+  _blackRook: {fileID: 21300000, guid: 43f1167111db541ee89c7ba8c2b55f9d, type: 3}
+  _blackBishop: {fileID: 21300000, guid: c063e39565eff455f8a8d82b25081a29, type: 3}
+  _blackKnight: {fileID: 21300000, guid: 204767908f32b4cbe943ed92a5b33a43, type: 3}
+  _blackPawn: {fileID: 21300000, guid: 1eb178d1ada3c4e8c87840a5b8ade7e4, type: 3}
