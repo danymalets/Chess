@@ -20,13 +20,11 @@ public class TwoPlayers : GameController, IStorable
         _moveDuration = moveDuration;
     }
 
-    public override void Init(GameUI ui, Board board)
+    protected override void InternalInit()
     {
-        base.Init(ui, board);
-
         _ui.SetTitle("Два игрока");
 
-        _ui.UserTimeIsOver += OnUserTimeIsOver;
+        _timer.UserTimeIsOver += OnUserTimeIsOver;
 
         _board.InitPieces(_game.Position);
 
@@ -36,7 +34,7 @@ public class TwoPlayers : GameController, IStorable
         if (!_game.IsEnd)
         {
             _board.EnableMoves();
-            _ui.StartUserTimer(_moveDuration);
+            _timer.StartUserTimer(_moveDuration);
             if (_game.Position.WhoseMove == Color.Black)
             {
                 _board.SetRotation(180);
@@ -54,7 +52,7 @@ public class TwoPlayers : GameController, IStorable
     private void OnUserMoveSelected(Move move)
     {
         _game.MakeMove(move);
-        _ui.CanselCoundown();
+        _timer.CancelCountdown();
     }
 
     private void OnUserMoveShown()
@@ -64,11 +62,11 @@ public class TwoPlayers : GameController, IStorable
         {
             _board.SetRotation(_game.Position.WhoseMove == Color.White ? 0 : 180);
             _board.EnableMoves();
-            _ui.StartUserTimer(_moveDuration);
+            _timer.StartUserTimer(_moveDuration);
         }
         else
         {
-            _ui.Clear();
+            _timer.Clear();
         }
     }
 

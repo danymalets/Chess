@@ -5,23 +5,28 @@ using UnityEngine;
 
 public abstract class GameController
 {
-    public static int TotalMovesCount { get; set; }
-
-    public Game _game;
+    protected Game _game;
 
     protected GameUI _ui;
     protected Board _board;
+    protected Timer _timer;
+    protected MoveFinder _moveFinder;
 
-    public GameController()
+    protected GameController()
     {
         _game = new Game();
     }
 
-    public virtual void Init(GameUI ui, Board board)
+    public void Init(GameUI ui, Board board, Timer timer, MoveFinder moveFinder)
     {
         _ui = ui;
         _board = board;
+        _timer = timer;
+        _moveFinder = moveFinder;
+        InternalInit();
     }
+
+    protected virtual void InternalInit() {}
 
     public virtual bool QuickExit() => _game == null || _game.GetPositionsCount() == 1;
 
@@ -32,9 +37,8 @@ public abstract class GameController
 
     public virtual void Finish()
     {
-        TotalMovesCount = _game.TotalMovesCount;
         _board.Clear();
-        _ui.Clear();
+        _timer.Clear();
     }
 
     public void Save()

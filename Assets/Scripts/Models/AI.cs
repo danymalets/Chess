@@ -8,9 +8,9 @@ using ThreadPriority = System.Threading.ThreadPriority;
 
 public class AI 
 {
-    private static Random _random = new Random();
+    private static Random s_random = new Random();
 
-    private static int[] COUNTS = new int[]
+    private static int[] s_counts = new int[]
     {
         51,
         377,
@@ -20,12 +20,12 @@ public class AI
         2043788
     };
 
-    const int INF = (int)2e9;
-    const int CHECK_MATE = (int)1e9;
-    const int CHECK_MATE_HEIGHT = (int)1e7;
-    const int TRIPLE_REPETITION = -19;
-    const int STALE_MATE = -19;
-    const int USELESS_MOVES = -19;
+    private const int Inf = (int)2e9;
+    private const int CheckMate = (int)1e9;
+    private const int CheckMateHeight = (int)1e7;
+    private const int TripleRepetition = -19;
+    private const int StaleMate = -19;
+    private const int UselessMoves = -19;
 
     private Game _game;
     private int _level;
@@ -50,10 +50,10 @@ public class AI
         _solvedPart = 0;
         _count = 0;
         _solved = false;
-        _maxCount = COUNTS[_level - 1];
+        _maxCount = s_counts[_level - 1];
         Thread thread = new Thread(new ThreadStart(Solving))
         {
-            //Priority = ThreadPriority.Highest
+            Priority = ThreadPriority.Highest
         };
         thread.Start();
     }
@@ -136,7 +136,7 @@ public class AI
             position,
             0,
             maxHeight,
-            -INF - 1,
+            -Inf - 1,
             new List<Move>(),
             history,
             uselessMoves,
@@ -163,7 +163,7 @@ public class AI
         if (position.IsOpponentInCheck())
         {
             _solvedPart += part;
-            return (null, INF);
+            return (null, Inf);
         }
 
         if (height == maxHeight)
@@ -176,7 +176,7 @@ public class AI
 
         float childPart = part / moves.Count;
 
-        int bestValue = -INF;
+        int bestValue = -Inf;
         Move bestMove = null;
         List<Move> childrenBestMoves = new List<Move>();
 
@@ -237,13 +237,13 @@ public class AI
             {
                 _solvedPart += childPart;
                 childBestMove = null;
-                value = -TRIPLE_REPETITION;
+                value = -TripleRepetition;
             }
             else if (uselessMoves >= 50)
             {
                 _solvedPart += childPart;
                 childBestMove = null;
-                value = -USELESS_MOVES - GetValue(newPosition) / 20;
+                value = -UselessMoves - GetValue(newPosition) / 20;
             }
             else
             {
@@ -294,15 +294,15 @@ public class AI
                 }
             }
         }
-        if (bestValue == -INF)
+        if (bestValue == -Inf)
         {
             if (position.IsInCheck())
             {
-                return (null, -CHECK_MATE + CHECK_MATE_HEIGHT * height + GetValue(position));
+                return (null, -CheckMate + CheckMateHeight * height + GetValue(position));
             }
             else
             {
-                return (null, STALE_MATE);
+                return (null, StaleMate);
             }
         }
         else
@@ -315,7 +315,7 @@ public class AI
     {
         for (int i = 1; i < moves.Count; i++)
         {
-            int j = _random.Next(0, i);
+            int j = s_random.Next(0, i);
             (moves[i], moves[j]) = (moves[j], moves[i]);
         }
     }

@@ -12,15 +12,13 @@ public abstract class NetworkRival : GameController
     private bool _isEnd = false;
     private bool _gameStarted = false;
 
-    public NetworkRival(TimeSpan moveDuration) : base()
+    protected NetworkRival(TimeSpan moveDuration) : base()
     {
         _moveDuration = moveDuration;
     }
 
-    public override void Init(GameUI ui, Board board)
+    protected override void InternalInit()
     {
-        base.Init(ui, board);
-
         _ui.SetTitle(ToString());
 
         ConnectToServer();
@@ -38,8 +36,8 @@ public abstract class NetworkRival : GameController
         _provider.NetworkError += NetworkError;
         _provider.RivalDisconnected += OnRivalDisconnected;
 
-        _ui.UserTimeIsOver += OnUserTimeIsOver;
-        _ui.RivalTimeIsOver += OnRivalTimeIsOver;
+        _timer.UserTimeIsOver += OnUserTimeIsOver;
+        _timer.RivalTimeIsOver += OnRivalTimeIsOver;
 
         _board.MoveSelected += OnUserMoveSelected;
 
@@ -66,14 +64,14 @@ public abstract class NetworkRival : GameController
         if (_playerColor == Color.White)
         {
             _board.EnableMoves();
-            _ui.StartUserTimer(_moveDuration);
+            _timer.StartUserTimer(_moveDuration);
 
             _board.MoveShown += OnUserMoveShown;
         }
         else
         {
             _board.SetRotation(180);
-            _ui.StartRivalTimer(_moveDuration);
+            _timer.StartRivalTimer(_moveDuration);
 
             _board.MoveShown += OnRivalMoveShown;
         }
@@ -85,14 +83,14 @@ public abstract class NetworkRival : GameController
     {
         _game.MakeMove(move);
         _board.ShowMove(move);
-        _ui.CanselCoundown();
+        _timer.CancelCountdown();
     }
 
     private void OnUserMoveSelected(Move move)
     {
         _provider.SendMove(move);
         _game.MakeMove(move);
-        _ui.CanselCoundown();
+        _timer.CancelCountdown();
     }
 
     private void OnUserTimeIsOver()
@@ -115,9 +113,9 @@ public abstract class NetworkRival : GameController
 
     private void OnTimeIsOverReceived()
     {
-        _ui.SetTimeIsOver();
+        _timer.SetTimeIsOver();
         _provider.Disconnect();
-        _ui.CanselCoundown();
+        _timer.CancelCountdown();
         _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
         _isEnd = true;
         GameOver();
@@ -130,13 +128,13 @@ public abstract class NetworkRival : GameController
         _ui.SetStatus(_game.GetStatus());
         if (!_game.IsEnd)
         {
-            _ui.StartRivalTimer(_moveDuration);
+            _timer.StartRivalTimer(_moveDuration);
 
             _board.MoveShown += OnRivalMoveShown;
         }
         else
         {
-            _ui.Clear();
+            _timer.Clear();
             _provider.PreDisconnect();
 
             _isEnd = true;
@@ -152,13 +150,13 @@ public abstract class NetworkRival : GameController
         if (!_game.IsEnd)
         {
             _board.EnableMoves();
-            _ui.StartUserTimer(_moveDuration);
+            _timer.StartUserTimer(_moveDuration);
 
             _board.MoveShown += OnUserMoveShown;
         }
         else
         {
-            _ui.Clear();
+            _timer.Clear();
             _provider.Disconnect();
 
             _isEnd = true;
@@ -169,7 +167,7 @@ public abstract class NetworkRival : GameController
     private void UserLeft()
     {
         _ui.SetStatus($"Техническое поражение. Запрещено выходить из приложения во время игры");
-        _ui.Clear();
+        _timer.Clear();
         _board.DisableMoves();
         _isEnd = true;
         GameOver();
@@ -185,7 +183,7 @@ public abstract class NetworkRival : GameController
         {
             _ui.SetStatus($"Ошибка сети");
         }
-        _ui.Clear();
+        _timer.Clear();
         _board.DisableMoves();
         _isEnd = true;
         GameOver();
@@ -195,7 +193,7 @@ public abstract class NetworkRival : GameController
     {
         _provider.Disconnect();
         _ui.SetStatus($"{(_playerColor == Color.White ? "Чёрные" : "Белые")} сдались");
-        _ui.Clear();
+        _timer.Clear();
         _board.DisableMoves();
 
         _isEnd = true;

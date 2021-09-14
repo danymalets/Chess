@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SavedGamesUI : MonoBehaviour
+public class SavedGamesUI : MonoBehaviour, IUI
 {
     [SerializeField] private DeleteConfirmation _deleteConfirmation;
 
-    [SerializeField] private Animation _animation;
+    [SerializeField] private Animator _animator;
 
     [SerializeField] private Transform _savedGamesTransform;
 
@@ -19,10 +19,16 @@ public class SavedGamesUI : MonoBehaviour
 
     private void Start()
     {
-        _animation.Play();
 #if DEBUG
         if (!MenuUI.IsGameLoaded) { SceneManager.LoadScene(Scenes.MainMenu); return; }
 #endif
+        _animator.Play(UIAnimations.RightOpening);
+        
+        _deleteConfirmation.ConfirmDeleteButtonClicked += OnConfirmDeleteButtonClicked;
+    }
+
+    public void OnOpeningAnimationPlayed()
+    {
         _storedGames = Prefs.GetStoredGames();
         foreach (StoredGame storedGame in _storedGames)
         {
@@ -31,8 +37,6 @@ public class SavedGamesUI : MonoBehaviour
             savedGame.DeleteButtonClicked += OnDeleteButtonClicked;
             savedGame.RunButtonClicked += OnRunButtonClicked;
         }
-
-        _deleteConfirmation.ConfirmDeleteButtonClicked += OnConfirmDeleteButtonClicked;
     }
 
     private void OnDeleteButtonClicked(SavedGamePanel savedGame)
@@ -53,24 +57,19 @@ public class SavedGamesUI : MonoBehaviour
         Prefs.SetStoredGames(_storedGames);
         SceneTransition.GameController = storedGame.ToGameController();
 
-        _animation.Play("SavedGamesLeftClosing");
+        _animator.Play(UIAnimations.LeftClosing);
         _loading = SceneManager.LoadSceneAsync(Scenes.Game);
         _loading.allowSceneActivation = false;
     }
 
     public void OnButtonExitClicked()
     {
-        _animation.Play("SavedGamesRightClosing");
+        _animator.Play(UIAnimations.RightClosing);
         _loading = SceneManager.LoadSceneAsync(Scenes.MainMenu);
         _loading.allowSceneActivation = false;
     }
 
-    public void OnLeftClosingAnimationPlayed()
-    {
-        _loading.allowSceneActivation = true;
-    }
-
-    public void OnRightClosingAnimationPlayed()
+    public void OnClosingAnimationPlayed()
     {
         _loading.allowSceneActivation = true;
     }

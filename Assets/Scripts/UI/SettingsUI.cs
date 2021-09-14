@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SettingsUI : MonoBehaviour
+public class SettingsUI : MonoBehaviour, IUI
 {
     [SerializeField] private SpriteManager _spriteManager;
 
-    [SerializeField] private Animation _animation;
+    [SerializeField] private Animator _animator;
 
     [SerializeField] private BoardImage _board;
 
@@ -20,16 +20,20 @@ public class SettingsUI : MonoBehaviour
 #if DEBUG
         if (!MenuUI.IsGameLoaded) { SceneManager.LoadScene(Scenes.MainMenu); return; }
 #endif
-        _animation.Play();
         _board.InitBoard();
-        _board.InitPieces(new Position());
+        _animator.Play(UIAnimations.RightOpening);
     }
 
     public void OnExit()
     {
         _loading = SceneManager.LoadSceneAsync(Scenes.MainMenu);
         _loading.allowSceneActivation = false;
-        _animation.Play("SettingsClosing");
+        _animator.Play(UIAnimations.RightClosing);
+    }
+
+    public void OnOpeningAnimationPlayed()
+    {
+        _board.InitPieces(new Position());
     }
 
     public void OnClosingAnimationPlayed()

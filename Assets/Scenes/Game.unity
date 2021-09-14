@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 200526143}
   - component: {fileID: 200526142}
   - component: {fileID: 200526141}
+  - component: {fileID: 200526145}
   m_Layer: 0
   m_Name: ExitWindowWithSaving
   m_TagString: Untagged
@@ -645,6 +646,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200526139}
   m_CullTransparentMesh: 1
+--- !u!114 &200526145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200526139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f820d1a7831d4feea30c63b2594e2226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _window: {fileID: 1390366293}
 --- !u!850595691 &308291182
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -2108,6 +2122,8 @@ GameObject:
   - component: {fileID: 1057751299}
   - component: {fileID: 1057751298}
   - component: {fileID: 1057751301}
+  - component: {fileID: 1057751303}
+  - component: {fileID: 1057751302}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -2140,23 +2156,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!111 &1057751298
-Animation:
+--- !u!95 &1057751298
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057751296}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 5d47d21da9f864050a6c0db6882730ed, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 5d47d21da9f864050a6c0db6882730ed, type: 2}
-  - {fileID: 7400000, guid: 5818fbf8650a0468d9d90a7c67dcd9ae, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ee6e241f1b50411a847db21c2a400fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1057751299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2207,20 +2225,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4397ece43e94064bdcf34de2198a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _brainColor: {r: 0.08726415, g: 0.105610475, b: 0.5, a: 1}
-  _userTimerColor: {r: 0.5686275, g: 0, b: 0, a: 1}
-  _rivalTimerColor: {r: 0.43193647, g: 0.06452473, b: 0.5471698, a: 1}
   _board: {fileID: 348077272}
   _undo: {fileID: 2126131539}
   _title: {fileID: 148499062}
   _status: {fileID: 1835371790}
+  _animator: {fileID: 1057751298}
+  _simpleExitWindow: {fileID: 4170485028079973861}
+  _exitWindowWithSaving: {fileID: 200526145}
+  _gameOver: {fileID: 1377437083}
+--- !u!114 &1057751302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057751296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e38b32c29bf4720af7a4c8599c551c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _textTimer: {fileID: 1517349341}
   _lineTimer: {fileID: 527144007}
-  _maxNetworkDelay: 3
-  _animation: {fileID: 1057751298}
-  _exitWindow: {fileID: 4170485028079973880}
-  _exitWindowWithSaving: {fileID: 200526142}
-  _gameOver: {fileID: 1377437083}
+  _brainColor: {r: 0.08690815, g: 0.32813403, b: 0.5943396, a: 0}
+--- !u!114 &1057751303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057751296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c1cda941cc452da0679f117deb8bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textTimer: {fileID: 1517349341}
+  _lineTimer: {fileID: 527144007}
+  _maxPing: 2
+  _userTimerColor: {r: 0.23231293, g: 0.6132076, b: 0.2053667, a: 0}
+  _rivalTimerColor: {r: 0.6981132, g: 0.1284265, b: 0.1284265, a: 0}
 --- !u!1 &1261549987
 GameObject:
   m_ObjectHideFlags: 0
@@ -4843,8 +4887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4170485028079973863}
   - component: {fileID: 4170485028079973881}
-  - component: {fileID: 4170485028079973862}
-  - component: {fileID: 4170485028079973880}
+  - component: {fileID: 4170485028079973861}
   m_Layer: 0
   m_Name: ExitWindow
   m_TagString: Untagged
@@ -4852,7 +4895,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4170485028079973862
+--- !u!114 &4170485028079973861
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4861,24 +4904,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4170485028079973860}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: f820d1a7831d4feea30c63b2594e2226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 0
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 0}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+  _window: {fileID: 4170485026575322172}
 --- !u!224 &4170485028079973863
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4899,23 +4928,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 2500}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!111 &4170485028079973880
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4170485028079973860}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: c940b208154a34dada77688078b37ca4, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 57d152bffaf344c0299bbf83e883036c, type: 2}
-  - {fileID: 7400000, guid: c940b208154a34dada77688078b37ca4, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!222 &4170485028079973881
 CanvasRenderer:
   m_ObjectHideFlags: 0

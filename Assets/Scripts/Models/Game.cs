@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class Game
 {
-    public int TotalMovesCount = 0;
-    public Position Position;
-    public Dictionary<Position, int> History = new Dictionary<Position, int>();
+    public Position Position { get; private set; }
+    public readonly Dictionary<Position, int> History = new Dictionary<Position, int>();
 
-    public List<string> StringMoves;
-    public bool IsEnd = false;
-
-    private bool _tripleRepetition = false;
+    public readonly List<string> StringMoves;
+    public bool IsEnd { get; private set; }
+    
+    private bool _tripleRepetition;
 
     private List<Position> _positions;
 
@@ -109,8 +108,6 @@ public class Game
 
     public void MakeMove(Move move)
     {
-        TotalMovesCount++;
-
         move.Make(Position);
 
         Position copy = new Position(Position);

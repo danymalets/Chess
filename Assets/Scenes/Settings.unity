@@ -1123,8 +1123,8 @@ GameObject:
   - component: {fileID: 1057751297}
   - component: {fileID: 1057751300}
   - component: {fileID: 1057751299}
-  - component: {fileID: 1057751298}
   - component: {fileID: 1057751301}
+  - component: {fileID: 1057751298}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -1153,23 +1153,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!111 &1057751298
-Animation:
+--- !u!95 &1057751298
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057751296}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 568e729d9047a4804b530ff5912127e0, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 568e729d9047a4804b530ff5912127e0, type: 2}
-  - {fileID: 7400000, guid: b652067fa092c4e099dca80350e6c13b, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ee6e241f1b50411a847db21c2a400fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1057751299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1221,10 +1223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteManager: {fileID: 11400000, guid: b80ca82500dc34583832db72ce46c8b1, type: 2}
-  _animation: {fileID: 1057751298}
+  _animator: {fileID: 1057751298}
   _board: {fileID: 987888873}
-  _left: {fileID: 1198292427}
-  _right: {fileID: 954491180}
 --- !u!1 &1198292422
 GameObject:
   m_ObjectHideFlags: 0
