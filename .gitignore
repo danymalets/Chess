@@ -1,9 +1,3 @@
-# Mac OS
-.DS_Store
-
-# Visual Studio
-.vsconfig
-
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
@@ -64,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Rider
+.idea
+.vsconfig
