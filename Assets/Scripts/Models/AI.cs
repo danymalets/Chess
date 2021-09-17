@@ -323,9 +323,9 @@ public class AI
     private int GetValue(Position position)
     {
         int count = 0;
-        for (int x = 0; x < Position.SIZE; x++)
+        for (int x = 0; x < Position.Size; x++)
         {
-            for (int y = 0; y < Position.SIZE; y++)
+            for (int y = 0; y < Position.Size; y++)
             {
                 if (position.Board[x, y] != null) count++;
             }
@@ -333,9 +333,9 @@ public class AI
         int value = 0;
         if (count >= 16)
         {
-            for (int x = 0; x < Position.SIZE; x++)
+            for (int x = 0; x < Position.Size; x++)
             {
-                for (int y = 0; y < Position.SIZE; y++)
+                for (int y = 0; y < Position.Size; y++)
                 {
                     if (position.Board[x, y] != null)
                     {
@@ -353,9 +353,9 @@ public class AI
         }
         else
         {
-            for (int x = 0; x < Position.SIZE; x++)
+            for (int x = 0; x < Position.Size; x++)
             {
-                for (int y = 0; y < Position.SIZE; y++)
+                for (int y = 0; y < Position.Size; y++)
                 {
                     if (position.Board[x, y] != null)
                     {

@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Pawn : Piece
 {
-    const int VALUE = 20;
+    private const int Value = 20;
 
-    static readonly int[,] MAIN = new int[,]
+    private static readonly int[,] Main =
     {
         {   0,   0,   0,   0,   0,   0,   0,   0 },
         {  10,  10,  10,  10,  10,  10,  10,  10 },
@@ -19,7 +19,7 @@ public class Pawn : Piece
         {   0,   0,   0,   0,   0,   0,   0,   0 }
     };
 
-    static readonly int[,] END_GAME = new int[,]
+    private static readonly int[,] s_endGame = new int[,]
     {
         {   0,   0,   0,   0,   0,   0,   0,   0 },
         {  10,  10,  10,  10,  10,  10,  10,  10 },
@@ -31,7 +31,7 @@ public class Pawn : Piece
         {   0,   0,   0,   0,   0,   0,   0,   0 }
     };
 
-    private static Type[] _newPieces = new Type[]
+    private static Type[] s_newPieces = 
     {
         typeof(Queen),
         typeof(Rook),
@@ -39,7 +39,7 @@ public class Pawn : Piece
         typeof(Knight)
     };
 
-    private static int[] _offsets = new int[] { -1, 0, 1 };
+    private static int[] s_offsets = { -1, 0, 1 };
 
     public Pawn(Position position, Vector2Int square, Color color)
         : base(position, square, color) { }
@@ -49,11 +49,11 @@ public class Pawn : Piece
     {
         List<Move> moves = new List<Move>();
         int dx = Color == Color.White ? -1 : 1;
-        int steps = Color == Color.White ? Position.SIZE - 2 - Square.x : Square.x - 1;
+        int steps = Color == Color.White ? Position.Size - 2 - Square.x : Square.x - 1;
 
         if (steps == 5)
         {
-            foreach (int dy in _offsets)
+            foreach (int dy in s_offsets)
             {
                 if (!Position.OnBoard(Square + new Vector2Int(dx, dy))) continue;
                 bool move = dy == 0 && Position.Board[Square.x + dx, Square.y + dy] == null;
@@ -63,7 +63,7 @@ public class Pawn : Piece
                     && Position.Board[Square.x + dx, Square.y + dy].Color != Color;
                 if (move | capture)
                 {
-                    foreach (Type newPiece in _newPieces)
+                    foreach (Type newPiece in s_newPieces)
                     {
                         if (move)
                         {
@@ -85,7 +85,7 @@ public class Pawn : Piece
         }
         else
         {
-            foreach (int dy in _offsets)
+            foreach (int dy in s_offsets)
             {
                 if (!Position.OnBoard(Square + new Vector2Int(dx, dy))) continue;
                 if (dy == 0)
@@ -120,7 +120,7 @@ public class Pawn : Piece
 
         if (steps == 3 && Position.EnPassantAvailable)
         {
-            foreach (int dy in _offsets)
+            foreach (int dy in s_offsets)
             {
                 if (Square.y + dy == Position.PawnLine)
                 {
@@ -135,9 +135,9 @@ public class Pawn : Piece
         return moves;
     }
 
-    public override int GetMainValue() => VALUE + GetValue(MAIN);
+    public override int GetMainValue() => Value + GetValue(Main);
 
-    public override int GetEndgameValue() => VALUE + GetValue(END_GAME);
+    public override int GetEndgameValue() => Value + GetValue(s_endGame);
 
-    public override int GetNumber() => 1;
+    protected override int GetNumber() => 1;
 }

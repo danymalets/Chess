@@ -7,9 +7,9 @@ public abstract class Piece: ICloneable, IEquatable<Piece>
 {
     public Position Position;
     public Vector2Int Square;
-    public Color Color;
+    public readonly Color Color;
 
-    public Piece(Position position, Vector2Int square, Color color)
+    protected Piece(Position position, Vector2Int square, Color color)
     {
         Position = position;
         Square = square;
@@ -51,16 +51,16 @@ public abstract class Piece: ICloneable, IEquatable<Piece>
         }
         else
         {
-            return values[Position.SIZE - 1 - Square.x, Square.y];
+            return values[Position.Size - 1 - Square.x, Square.y];
         }
     }
 
     public override int GetHashCode() => (Color == Color.White ? 0 : 6) + GetNumber();
 
-    public abstract int GetNumber();
+    protected abstract int GetNumber();
 
     public bool Equals(Piece other)
     {
-        return GetType().Equals(other.GetType()) && Color.Equals(other.Color);
+        return GetType() == other.GetType() && Color.Equals(other.Color);
     }
 }

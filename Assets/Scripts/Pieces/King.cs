@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class King : Piece
 {
-    static readonly int[,] MAIN = new int[,]
+    public static readonly int[,] Main =
     {
         {  -6,  -8,  -8, -10, -10,  -8,  -8,  -6 },
         {  -6,  -8,  -8, -10, -10,  -8,  -8,  -6 },
@@ -16,7 +16,7 @@ public class King : Piece
         {   4,   6,   2,   0,   0,   2,   6,   4 }
     };
 
-    static readonly int[,] END_GAME = new int[,]
+    private static readonly int[,] s_endGame =
     {
         {  -1,   0,   0,   0,   0,   0,   0,  -1 },
         {   0,   1,   1,   1,   1,   1,   1,   0 },
@@ -31,7 +31,7 @@ public class King : Piece
     public King(Position position, Vector2Int location, Color color)
         : base(position, location, color) { }
 
-    public static List<Vector2Int> Offsets = new List<Vector2Int>()
+    public static readonly List<Vector2Int> Offsets = new List<Vector2Int>()
     {
         new Vector2Int(-1, -1),
         new Vector2Int(-1, 0),
@@ -63,7 +63,7 @@ public class King : Piece
         }
 
         Color atackingColor = Color == Color.White ? Color.Black : Color.White;
-        int x = Color == Color.White ? Position.SIZE - 1 : 0;
+        int x = Color == Color.White ? Position.Size - 1 : 0;
 
 
         if (Position.QueensideCastling[Color] && 
@@ -94,9 +94,9 @@ public class King : Piece
         return moves;
     }
 
-    public override int GetMainValue() => GetValue(MAIN);
+    public override int GetMainValue() => GetValue(Main);
 
-    public override int GetEndgameValue() => GetValue(END_GAME);
+    public override int GetEndgameValue() => GetValue(s_endGame);
 
-    public override int GetNumber() => 6;
+    protected override int GetNumber() => 6;
 }

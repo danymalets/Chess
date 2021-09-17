@@ -24,11 +24,6 @@ public class SavedGamesUI : MonoBehaviour, IUI
 #endif
         _animator.Play(UIAnimations.RightOpening);
         
-        _deleteConfirmation.ConfirmDeleteButtonClicked += OnConfirmDeleteButtonClicked;
-    }
-
-    public void OnOpeningAnimationPlayed()
-    {
         _storedGames = Prefs.GetStoredGames();
         foreach (StoredGame storedGame in _storedGames)
         {
@@ -37,6 +32,12 @@ public class SavedGamesUI : MonoBehaviour, IUI
             savedGame.DeleteButtonClicked += OnDeleteButtonClicked;
             savedGame.RunButtonClicked += OnRunButtonClicked;
         }
+        
+        _deleteConfirmation.ConfirmDeleteButtonClicked += OnConfirmDeleteButtonClicked;
+    }
+
+    public void OnOpeningAnimationPlayed()
+    {
     }
 
     private void OnDeleteButtonClicked(SavedGamePanel savedGame)

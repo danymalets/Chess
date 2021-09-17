@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PromotionWithCapture : Promotion, ICapture
 {
-    public Vector2Int CaptureSquare { get; set; }
+    public Vector2Int CaptureSquare { get; }
 
     public PromotionWithCapture(
         Vector2Int sourceSquare,

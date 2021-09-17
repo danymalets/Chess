@@ -5,64 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="672c5a90-b548-48af-bbe3-0145070c38b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MoveFinder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MoveFinder.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PopUpWindow.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PopUpWindow.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Timer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Timer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UI.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chess/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chess/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/LeftOpening.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/LeftOpening.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/LeftOpening.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/LeftOpening.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/UI.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/UI.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Game.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Game/GameClosing.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Game/GameClosing.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Game/GameOpening.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Game/GameOpening.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Menu.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Menu/MenuClosing.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Menu/MenuClosing.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Menu/MenuOpening.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Menu/MenuOpening.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/SavedGames.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/SavedGames/SavedGamesLeftClosing.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/SavedGames/SavedGamesLeftClosing.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/SavedGames/SavedGamesOpening.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/SavedGames/SavedGamesOpening.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/SavedGames/SavedGamesRightClosing.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/SavedGames/SavedGamesRightClosing.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Settings.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Settings/SettingsClosing.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Settings/SettingsClosing.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Settings/SettingsOpening.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Settings/SettingsOpening.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Window.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Window/WindowClosing.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Window/WindowClosing.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Window/WindowOpening.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/old/Window/WindowOpening.anim.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BotVsBot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BotVsBot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/NetworkRival.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/NetworkRival.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/SinglePlayers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/SinglePlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/SinglePlayers.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/SinglePlayer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TwoPlayers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TwoPlayers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SavedGames.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SavedGames.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/AI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Position.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Position.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MonoBehaviours/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MonoBehaviours/Board.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MonoBehaviours/BoardImage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MonoBehaviours/BoardImage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MonoBehaviours/DeleteConfirmation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MonoBehaviours/DeleteConfirmation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MonoBehaviours/Window.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MonoBehaviours/Window.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Moves/Capture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Moves/Capture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Moves/Castling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Moves/Castling.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Moves/ICapture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Moves/ICapture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Moves/Move.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Moves/Move.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Moves/Promotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Moves/Promotion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Moves/PromotionWithCapture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Moves/PromotionWithCapture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkFriendFacade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkFriendFacade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkRandomRivalFacade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkRandomRivalFacade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkRivalFacade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkRivalFacade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/SceneTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Others/SceneTransition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Bishop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Bishop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Khinght.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Khinght.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/King.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/King.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Pawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Pawn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Piece.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Piece.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Queen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Queen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Rook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Rook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefs/Prefs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prefs/Prefs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GameUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GameUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MenuUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MenuUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SavedGamesUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SavedGamesUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Others/large buttom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Others/large buttom.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Others/small buttom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Others/small buttom.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,10 +56,18 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@5.0.4/Runtime/Triangle/Behavior.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.5.2/DocCodeExamples/TimelineAttributesExamples.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///Applications/Unity/Hub/Editor/2021.1.0f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Dropdown.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file:///Applications/Unity/Hub/Editor/2021.1.0f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Tests/Runtime/InputField/GenericInputFieldTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.spriteshape@5.1.1/Samples~/Extras/Scripts/SimpleDraw.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ads@3.5.2/Runtime/Advertisement/Platform/Platform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///Applications/Unity/Hub/Editor/2021.1.0f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Animation/CoroutineTween.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file:///Applications/Unity/Hub/Editor/2021.1.0f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.2d.sprite/Editor/SpriteEditor/SpriteEditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@5.0.4/Runtime/Triangle/Behavior.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file:///Applications/Unity/Hub/Editor/2021.1.0f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Tests/Runtime/Canvas/CanvasScalerWithChildTextObjectDoesNotCrash.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/992585620d64427198ddf3a0e146773313e400/68/e210f310/Version.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.5.2/Runtime/TimelineAsset_CreateRemove.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.22/UnityEditor.TestRunner/GUI/Views/EditModeTestListGUI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file:///Applications/Unity/Hub/Editor/2021.1.0f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Tests/Runtime/InputField/GenericInputFieldTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///Applications/Unity/Hub/Editor/2021.1.0f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///Applications/Unity/Hub/Editor/2021.1.0f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.2.1/Unity.Mathematics/uint3x2.gen.cs" root0="SKIP_HIGHLIGHTING" />
@@ -127,6 +109,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -168,7 +151,9 @@
       <workItem from="1628379454738" duration="4193000" />
       <workItem from="1628536710330" duration="5361000" />
       <workItem from="1629005870993" duration="4842000" />
-      <workItem from="1631644504047" duration="4663000" />
+      <workItem from="1631644504047" duration="5366000" />
+      <workItem from="1631805151629" duration="1149000" />
+      <workItem from="1631905606113" duration="2211000" />
     </task>
     <task id="LOCAL-00001" summary="August update">
       <created>1628381039397</created>
@@ -184,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628537041452</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="code refactoring, animator update">
+      <created>1631653523938</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1631653523938</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +201,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="August update" />
     <MESSAGE value="renaming" />
-    <option name="LAST_COMMIT_MESSAGE" value="renaming" />
+    <MESSAGE value="code refactoring, animator update" />
+    <option name="LAST_COMMIT_MESSAGE" value="code refactoring, animator update" />
   </component>
 </project>

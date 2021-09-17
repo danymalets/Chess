@@ -6,60 +6,51 @@ using Random = UnityEngine.Random;
 
 public static class Prefs
 {
-    private const string SPRITE_PACK = "SpritePack";
-    private const string ROOM_NAME = "RoomName";
-    private const string LEVEL_SLIDER = "LevelSlider";
-    private const string MOVE_DURATION_SLIDER = "MoveDurationSlider";
-    private const string HISTORY = "History";
+    private const string SpritePackString = "SpritePack";
+    private const string RoomNameString = "RoomName";
+    private const string LevelSliderString = "LevelSlider";
+    private const string MoveDurationSliderString = "MoveDurationSlider";
+    private const string HistoryString = "History";
 
     public static string SpritePack
     {
-        get => PlayerPrefs.GetString(SPRITE_PACK, "default");
-        set => PlayerPrefs.SetString(SPRITE_PACK, value);
+        get => PlayerPrefs.GetString(SpritePackString, "default");
+        set => PlayerPrefs.SetString(SpritePackString, value);
     }
 
     public static string RoomName
     {
         get
         {
-            if (PlayerPrefs.HasKey(ROOM_NAME))
+            if (PlayerPrefs.HasKey(RoomNameString))
             {
-                return PlayerPrefs.GetString(ROOM_NAME);
+                return PlayerPrefs.GetString(RoomNameString);
             }
             else
             {
                 string name = Random.Range(0, 10).ToString()
                             + Random.Range(0, 10).ToString()
                             + Random.Range(0, 10).ToString();
-                PlayerPrefs.SetString(ROOM_NAME, name);
+                PlayerPrefs.SetString(RoomNameString, name);
                 return name;
             }
         }
-        set => PlayerPrefs.SetString(ROOM_NAME, value);
+        set => PlayerPrefs.SetString(RoomNameString, value);
     }
 
     public static int LevelSlider
     {
-        get => PlayerPrefs.GetInt(LEVEL_SLIDER, 4);
-        set => PlayerPrefs.SetInt(LEVEL_SLIDER, value);
+        get => PlayerPrefs.GetInt(LevelSliderString, 4);
+        set => PlayerPrefs.SetInt(LevelSliderString, value);
     }
 
     public static int MoveDurationSlider
     {
-        get => PlayerPrefs.GetInt(MOVE_DURATION_SLIDER, 4);
-        set => PlayerPrefs.SetInt(MOVE_DURATION_SLIDER, value);
+        get => PlayerPrefs.GetInt(MoveDurationSliderString, 4);
+        set => PlayerPrefs.SetInt(MoveDurationSliderString, value);
     }
 
-    [Serializable]
-    public struct History
-    {
-        public List<StoredGame> StoredGames;
-
-        public History(List<StoredGame> storedGames)
-        {
-            StoredGames = storedGames;
-        }
-    }
+    
     
     public static void AddGameController(IStorable controller)
     {
@@ -68,9 +59,9 @@ public static class Prefs
 
     public static List<StoredGame> GetStoredGames()
     {
-        if (PlayerPrefs.HasKey(HISTORY))
+        if (PlayerPrefs.HasKey(HistoryString))
         {
-            string json = PlayerPrefs.GetString(HISTORY);
+            string json = PlayerPrefs.GetString(HistoryString);
             History history = JsonUtility.FromJson<History>(json);
             return history.StoredGames;
         }
@@ -80,17 +71,28 @@ public static class Prefs
         }
     }
 
-    public static void SetStoredGames(List<StoredGame> StoredGames)
+    public static void SetStoredGames(List<StoredGame> storedGames)
     {
-        History history = new History(StoredGames);
+        History history = new History(storedGames);
         string json = JsonUtility.ToJson(history);
-        PlayerPrefs.SetString(HISTORY, json);
+        PlayerPrefs.SetString(HistoryString, json);
     }
 
-    private static void AddStoredGame(StoredGame StoredGame)
+    private static void AddStoredGame(StoredGame storedGame)
     {
-        List<StoredGame> StoredGames = GetStoredGames();
-        StoredGames.Add(StoredGame);
-        SetStoredGames(StoredGames);
+        List<StoredGame> storedGames = GetStoredGames();
+        storedGames.Add(storedGame);
+        SetStoredGames(storedGames);
+    }
+}
+
+[Serializable]
+public struct History
+{
+    public List<StoredGame> StoredGames;
+
+    public History(List<StoredGame> storedGames)
+    {
+        StoredGames = storedGames;
     }
 }

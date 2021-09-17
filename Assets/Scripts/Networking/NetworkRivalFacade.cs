@@ -7,10 +7,10 @@ using Random = UnityEngine.Random;
 
 public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEventCallback
 {
-    protected const string VERSION = "1.0";
+    protected const string Version = "1.0";
 
-    static protected RaiseEventOptions _eventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.Others };
-    static protected RoomOptions _roomOptions = new RoomOptions { MaxPlayers = 2 };
+    protected static readonly RaiseEventOptions EventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.Others };
+    protected static readonly RoomOptions RoomOptions = new RoomOptions { MaxPlayers = 2 };
 
     protected enum PhotonEvent : byte
     {
@@ -33,7 +33,6 @@ public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEvent
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        Debug.Log("player entered");
         PhotonNetwork.CurrentRoom.IsOpen = false;
         RivalFound?.Invoke();
         StartGame();
@@ -48,7 +47,6 @@ public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEvent
 
     public override void OnJoinedRoom()
     {
-        Debug.Log("on joined");
         if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;
@@ -63,10 +61,10 @@ public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEvent
 
     public void PreDisconnect()
     {
-        RivalDisconnected = () => PhotonNetwork.Disconnect();
+        RivalDisconnected = PhotonNetwork.Disconnect;
     }
 
-    public void OnApplicationPause()
+    public void OnApplicationPause(bool pauseStatus)
     {
         UserLeft?.Invoke(); 
         Disconnect();
@@ -92,20 +90,18 @@ public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEvent
 
     public void SendTimerIsOver()
     {
-        PhotonNetwork.RaiseEvent((byte)PhotonEvent.TimeIsOver, null, _eventOptions, SendOptions.SendReliable);
+        PhotonNetwork.RaiseEvent((byte)PhotonEvent.TimeIsOver, null, EventOptions, SendOptions.SendReliable);
     }
 
     protected void SendColor(Color playerColor)
     {
-        Debug.Log("send order " + playerColor);
-        PhotonNetwork.RaiseEvent((byte)PhotonEvent.Order, (int)playerColor, _eventOptions, SendOptions.SendReliable);
+        PhotonNetwork.RaiseEvent((byte)PhotonEvent.Order, (int)playerColor, EventOptions, SendOptions.SendReliable);
     }
 
 
     public void SendMove(Move move)
     {
-        Debug.Log("send move " + move);
-        PhotonNetwork.RaiseEvent((byte)PhotonEvent.Move, move.ToString(), _eventOptions, SendOptions.SendReliable);
+        PhotonNetwork.RaiseEvent((byte)PhotonEvent.Move, move.ToString(), EventOptions, SendOptions.SendReliable);
     }
 
     public virtual void OnEvent(EventData photonEvent)
@@ -133,6 +129,13 @@ public abstract class NetworkRivalProvider : MonoBehaviourPunCallbacks, IOnEvent
         }
     }
 
-    public override void OnEnable() => PhotonNetwork.AddCallbackTarget(this);
-    public override void OnDisable() => PhotonNetwork.RemoveCallbackTarget(this);
+    public override void OnEnable()
+    {
+        PhotonNetwork.AddCallbackTarget(this);
+    }
+
+    public override void OnDisable()
+    {
+        PhotonNetwork.RemoveCallbackTarget(this);
+    } 
 }

@@ -17,12 +17,12 @@ public class NetworkFriendFacade : NetworkRivalProvider
         _moveDuration = moveDuration;
         _roomName = roomName;
         PhotonNetwork.ConnectUsingSettings();
-        PhotonNetwork.GameVersion = VERSION + "f";
+        PhotonNetwork.GameVersion = Version + "f";
     }
 
     public override void OnConnectedToMaster()
     {
-        PhotonNetwork.JoinOrCreateRoom(_roomName, _roomOptions, null);
+        PhotonNetwork.JoinOrCreateRoom(_roomName, RoomOptions, null);
         ConnectedToServer?.Invoke();
     }
 
@@ -51,7 +51,7 @@ public class NetworkFriendFacade : NetworkRivalProvider
         PhotonNetwork.RaiseEvent(
             (byte)PhotonEvent.MoveDuration,
             (int)moveDuration.TotalSeconds,
-            _eventOptions,
+            EventOptions,
             SendOptions.SendReliable);
     }
 

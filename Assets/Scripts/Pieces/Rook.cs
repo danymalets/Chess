@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Rook : Piece
 {
-    const int VALUE = 100;
+    private const int Value = 100;
 
-    static readonly int[,] MAIN = new int[,]
+    private static readonly int[,] s_main = 
     {
         {   0,   0,   0,   0,   0,   0,   0,   0 },
         {   1,   2,   2,   2,   2,   2,   2,   1 },
@@ -18,7 +18,7 @@ public class Rook : Piece
         {   0,  -1,   0,   1,   1,   0,  -1,   0 }
     };
 
-    static readonly int[,] END_GAME = new int[,]
+    private static readonly int[,] s_endGame = 
     {
         {   0,   0,   0,   0,   0,   0,   0,   0 },
         {   0,   0,   0,   0,   0,   0,   0,   0 },
@@ -33,7 +33,7 @@ public class Rook : Piece
     public Rook(Position position, Vector2Int location, Color color)
         : base(position, location, color) { }
 
-    public static List<Vector2Int> Offsets = new List<Vector2Int>()
+    public static readonly List<Vector2Int> Offsets = new List<Vector2Int>()
     {
         new Vector2Int(-1, 0),
         new Vector2Int(1, 0),
@@ -72,9 +72,9 @@ public class Rook : Piece
         return moves;
     }
 
-    public override int GetMainValue() => VALUE + GetValue(MAIN);
+    public override int GetMainValue() => Value + GetValue(s_main);
 
-    public override int GetEndgameValue() => VALUE + GetValue(END_GAME);
+    public override int GetEndgameValue() => Value + GetValue(s_endGame);
 
-    public override int GetNumber() => 4;
+    protected override int GetNumber() => 4;
 }

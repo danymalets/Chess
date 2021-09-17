@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Promotion: Move
 {
-    public Type NewPiece;
+    public Type NewPiece { get; }
 
     public Promotion(
         Vector2Int sourceSquare,

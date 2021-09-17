@@ -21,7 +21,7 @@ public class DeleteConfirmation : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void OnCanselButtonClicked()
+    public void OnCancelButtonClicked()
     {
         gameObject.SetActive(false);
     }

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Move : IEquatable<Move>
 {
-    public Vector2Int SourceSquare { get; set; }
-    public Vector2Int TargetSquare { get; set;  }
+    public Vector2Int SourceSquare { get; }
+    public Vector2Int TargetSquare { get; }
 
     public Move(
         Vector2Int sourceSquare,
@@ -18,13 +18,13 @@ public class Move : IEquatable<Move>
 
     public virtual void Make(Position position)
     {
-        if (SourceSquare == new Vector2Int(Position.SIZE - 1, 0)
-            || TargetSquare == new Vector2Int(Position.SIZE - 1, 0))
+        if (SourceSquare == new Vector2Int(Position.Size - 1, 0)
+            || TargetSquare == new Vector2Int(Position.Size - 1, 0))
         {
             position.QueensideCastling[Color.White] = false;
         }
-        if (SourceSquare == new Vector2Int(Position.SIZE - 1, Position.SIZE - 1)
-            || TargetSquare == new Vector2Int(Position.SIZE - 1, 0))
+        if (SourceSquare == new Vector2Int(Position.Size - 1, Position.Size - 1)
+            || TargetSquare == new Vector2Int(Position.Size - 1, 0))
         {
             position.KingsideCastling[Color.White] = false;
         }
@@ -33,8 +33,8 @@ public class Move : IEquatable<Move>
         {
             position.QueensideCastling[Color.Black] = false;
         }
-        if (SourceSquare == new Vector2Int(0, Position.SIZE - 1)
-            || TargetSquare == new Vector2Int(0, Position.SIZE - 1))
+        if (SourceSquare == new Vector2Int(0, Position.Size - 1)
+            || TargetSquare == new Vector2Int(0, Position.Size - 1))
         {
             position.KingsideCastling[Color.Black] = false;
         }
@@ -131,11 +131,11 @@ public class Move : IEquatable<Move>
     protected static string SquareToString(Vector2Int square)
     {
         return ((char)('a' + square.y)).ToString() +
-            (Position.SIZE - square.x).ToString();
+            (Position.Size - square.x).ToString();
     }
 
     private static Vector2Int StringToSquare(string s)
     {
-        return new Vector2Int(Position.SIZE - int.Parse(s[1].ToString()), s[0] - 'a');
+        return new Vector2Int(Position.Size - int.Parse(s[1].ToString()), s[0] - 'a');
     }
 }

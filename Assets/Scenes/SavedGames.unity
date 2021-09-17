@@ -1248,24 +1248,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!111 &1057751298
-Animation:
+--- !u!95 &1057751298
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057751296}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 7bec03b8fe55c464a879c52608aed6b4, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 7bec03b8fe55c464a879c52608aed6b4, type: 2}
-  - {fileID: 7400000, guid: 665d1f38b7cc042339132795a5cb9503, type: 2}
-  - {fileID: 7400000, guid: 5af466bb380854124b36b24569417afa, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ee6e241f1b50411a847db21c2a400fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1057751299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1317,7 +1318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deleteConfirmation: {fileID: 371631698}
-  _animation: {fileID: 1057751298}
+  _animator: {fileID: 1057751298}
   _savedGamesTransform: {fileID: 1479715556}
   _savedGamePanelPrefab: {fileID: 6750667316320486024, guid: ecbc43a3f25594d168c50bb95f8c4d86,
     type: 3}
@@ -1406,7 +1407,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 371631698}
         m_TargetAssemblyTypeName: DeleteConfirmation, Assembly-CSharp
-        m_MethodName: OnCanselButtonClicked
+        m_MethodName: OnCancelButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Bishop : Piece
 {
-    const int VALUE = 60;
+    private const int Value = 60;
 
-    static readonly int[,] MAIN = new int[,]
+    private static readonly int[,] Main =
     {
         {  -4,  -2,  -2,  -2,  -2,  -2,  -2,  -4 },
         {  -2,   0,   0,   0,   0,   0,   0,  -2 },
@@ -18,7 +18,7 @@ public class Bishop : Piece
         {  -4,  -2,  -2,  -2,  -2,  -2,  -2,  -4 }
     };
 
-    static readonly int[,] END_GAME = new int[,]
+    private static readonly int[,] EndGame = 
     {
         {  -4,  -2,  -2,  -2,  -2,  -2,  -2,  -4 },
         {  -2,   0,   0,   0,   0,   0,   0,  -2 },
@@ -33,7 +33,7 @@ public class Bishop : Piece
     public Bishop(Position position, Vector2Int location, Color color)
         : base(position, location, color) { }
 
-    public static List<Vector2Int> Offsets = new List<Vector2Int>()
+    public static readonly List<Vector2Int> Offsets = new List<Vector2Int>()
     {
         new Vector2Int(-1, -1),
         new Vector2Int(-1, 1),
@@ -72,9 +72,9 @@ public class Bishop : Piece
         return moves;
     }
 
-    public override int GetMainValue() => VALUE + GetValue(MAIN);
+    public override int GetMainValue() => Value + GetValue(Main);
 
-    public override int GetEndgameValue() => VALUE + GetValue(END_GAME);
+    public override int GetEndgameValue() => Value + GetValue(EndGame);
 
-    public override int GetNumber() => 3;
+    protected override int GetNumber() => 3;
 }

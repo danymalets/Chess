@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Castling: Move
 {
-    public Move RookMove;
+    public Move RookMove { get; }
 
     public Castling(
         Vector2Int startPosition,
@@ -23,9 +23,9 @@ public class Castling: Move
         if (position.Board[RookMove.SourceSquare.x, RookMove.SourceSquare.y] == null)
         {
             string s = "";
-            for (int x = 0; x < Position.SIZE; x++)
+            for (int x = 0; x < Position.Size; x++)
             {
-                for (int y = 0; y < Position.SIZE; y++)
+                for (int y = 0; y < Position.Size; y++)
                 {
                     Piece piece = position.Board[x, y];
                     if (piece == null) s += ".";
@@ -60,6 +60,6 @@ public class Castling: Move
 
     public override string ToString()
     {
-        return base.ToString() + "&" + RookMove.ToString();
+        return base.ToString() + "&" + RookMove;
     }
 }

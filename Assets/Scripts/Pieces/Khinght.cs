@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Knight : Piece
 {
-    const int VALUE = 60;
+    private const int Value = 60;
 
-    static readonly int[,] MAIN = new int[,]
+    private static readonly int[,] s_main = 
     {
         { -10,  -8,  -6,  -6,  -6,  -6,  -8, -10 },
         {  -8,  -4,   0,   0,   0,   0,  -4,  -8 },
@@ -18,7 +18,7 @@ public class Knight : Piece
         { -10,  -8,  -6,  -6,  -6,  -6,  -8, -10 }
     };
 
-    static readonly int[,] END_GAME = new int[,]
+    private static readonly int[,] s_endGame = 
     {
         { -10,  -8,  -6,  -6,  -6,  -6,  -8, -10 },
         {  -8,  -4,   0,   0,   0,   0,  -4,  -8 },
@@ -33,7 +33,7 @@ public class Knight : Piece
     public Knight(Position position, Vector2Int location, Color color)
         : base(position, location, color) { }
 
-    public static List<Vector2Int> Offsets = new List<Vector2Int>()
+    public static readonly List<Vector2Int> Offsets = new List<Vector2Int>()
     {
         new Vector2Int(-2, -1),
         new Vector2Int(-2, 1),
@@ -66,8 +66,8 @@ public class Knight : Piece
         return moves;
     }
 
-    public override int GetMainValue() => VALUE + GetValue(MAIN);
-    public override int GetEndgameValue() => VALUE + GetValue(END_GAME);
+    public override int GetMainValue() => Value + GetValue(s_main);
+    public override int GetEndgameValue() => Value + GetValue(s_endGame);
 
-    public override int GetNumber() => 2;
+    protected override int GetNumber() => 2;
 }

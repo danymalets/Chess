@@ -26,19 +26,19 @@ public class BoardImage : MonoBehaviour
 
     protected (GameObject, GameObject) _lastMoveHighlights;
     protected GameObject _checkHighlight;
-    protected GameObject _stalemateHighlight;
-    protected GameObject _checkmateHighlight;
+    private GameObject _stalemateHighlight;
+    private GameObject _checkmateHighlight;
 
     protected Position _position;
 
-    protected Transform[,] _tiles = new Transform[Position.SIZE, Position.SIZE];
-    protected Transform[,] _pieces = new Transform[Position.SIZE, Position.SIZE];
+    protected readonly Transform[,] _tiles = new Transform[Position.Size, Position.Size];
+    protected readonly Transform[,] _pieces = new Transform[Position.Size, Position.Size];
 
     public void InitBoard()
     {
-        for (int x = 0; x < Position.SIZE; x++)
+        for (int x = 0; x < Position.Size; x++)
         {
-            for (int y = 0; y < Position.SIZE; y++)
+            for (int y = 0; y < Position.Size; y++)
             {
                 _tiles[x, y] = Instantiate(_tile, _fieldTransform).transform;
             }
@@ -56,9 +56,9 @@ public class BoardImage : MonoBehaviour
         Sprite white = _spritePack.GetTile(Color.White);
         Sprite black = _spritePack.GetTile(Color.Black);
 
-        for (int x = 0; x < Position.SIZE; x++)
+        for (int x = 0; x < Position.Size; x++)
         {
-            for (int y = 0; y < Position.SIZE; y++)
+            for (int y = 0; y < Position.Size; y++)
             {
                 _tiles[x, y].GetComponent<Image>().sprite = x % 2 == y % 2 ? white : black;
             }
@@ -69,9 +69,9 @@ public class BoardImage : MonoBehaviour
     {
         _position = position;
 
-        for (int x = 0; x < Position.SIZE; x++)
+        for (int x = 0; x < Position.Size; x++)
         {
-            for (int y = 0; y < Position.SIZE; y++)
+            for (int y = 0; y < Position.Size; y++)
             {
                 if (_position.Board[x, y] != null)
                 {
@@ -110,9 +110,9 @@ public class BoardImage : MonoBehaviour
     public virtual void SetRotation(int angle)
     {
         _boardTransform.localRotation = Quaternion.Euler(0, 0, angle);
-        for (int x = 0; x < Position.SIZE; x++)
+        for (int x = 0; x < Position.Size; x++)
         {
-            for (int y = 0; y < Position.SIZE; y++)
+            for (int y = 0; y < Position.Size; y++)
             {
                 _tiles[x, y].localRotation = Quaternion.Euler(0, 0, angle);
             }
@@ -125,9 +125,9 @@ public class BoardImage : MonoBehaviour
         else if (_checkmateHighlight != null) Destroy(_checkmateHighlight);
         else if (_checkHighlight != null) Destroy(_checkHighlight);
 
-        for (int x = 0; x < Position.SIZE; x++)
+        for (int x = 0; x < Position.Size; x++)
         {
-            for (int y = 0; y < Position.SIZE; y++)
+            for (int y = 0; y < Position.Size; y++)
             {
                 if (_pieces[x, y] != null) Destroy(_pieces[x, y].gameObject);
             }

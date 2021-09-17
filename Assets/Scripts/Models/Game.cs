@@ -152,9 +152,9 @@ public class Game
         bool whiteBishop = false;
         bool blackBishop = false;
         int knights = 0;
-        for (int x = 0; x < Position.SIZE; x++)
+        for (int x = 0; x < Position.Size; x++)
         {
-            for (int y = 0; y < Position.SIZE; y++)
+            for (int y = 0; y < Position.Size; y++)
             {
                 if (Position.Board[x, y] != null && Position.Board[x, y].Color == color)
                 {

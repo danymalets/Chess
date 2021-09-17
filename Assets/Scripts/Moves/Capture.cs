@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Capture: Move, ICapture
 {
-    public Vector2Int CaptureSquare { get; set; }
+    public Vector2Int CaptureSquare { get; }
 
     public Capture(
         Vector2Int sourceSquare,

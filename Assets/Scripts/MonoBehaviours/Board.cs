@@ -32,7 +32,7 @@ public class Board : BoardImage
     private bool _isSquareSelected = false;
     private Vector2Int _selectedSquare;
 
-    private List<Move>[,] _moves = new List<Move>[Position.SIZE, Position.SIZE];
+    private List<Move>[,] _moves = new List<Move>[Position.Size, Position.Size];
 
     public event Action<Move> MoveSelected;
     public event Action MoveShown;
@@ -45,9 +45,9 @@ public class Board : BoardImage
 
         _pieceSelection.PieceSelected += OnPieceSelected;
 
-        for (int x = 0; x < Position.SIZE; x++)
+        for (int x = 0; x < Position.Size; x++)
         {
-            for (int y = 0; y < Position.SIZE; y++)
+            for (int y = 0; y < Position.Size; y++)
             {
                 _moves[x, y] = new List<Move>();
 
@@ -166,9 +166,9 @@ public class Board : BoardImage
             {
                 _moves[move.TargetSquare.x, move.TargetSquare.y].Add(move);
             }
-            for (int x = 0; x < Position.SIZE; x++)
+            for (int x = 0; x < Position.Size; x++)
             {
-                for (int y = 0; y < Position.SIZE; y++)
+                for (int y = 0; y < Position.Size; y++)
                 {
                     if (_moves[x, y].Count != 0)
                     {
@@ -223,9 +223,9 @@ public class Board : BoardImage
         {
             Destroy(highlight);
         }
-        for (int x = 0; x < Position.SIZE; x++)
+        for (int x = 0; x < Position.Size; x++)
         {
-            for (int y = 0; y < Position.SIZE; y++)
+            for (int y = 0; y < Position.Size; y++)
             {
                 _moves[x, y].Clear();
             }

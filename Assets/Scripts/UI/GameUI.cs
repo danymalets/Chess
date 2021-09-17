@@ -44,7 +44,7 @@ public class GameUI : MonoBehaviour, IUI
         {
             Destroy(_undo.gameObject);
         }
-        _animator.Play(UIAnimations.LeftOpening);
+        _animator.Play(UIAnimations.RightOpening);
     }
 
     public void OnOpeningAnimationPlayed()
@@ -67,9 +67,9 @@ public class GameUI : MonoBehaviour, IUI
     {
         if (_loading != null) return;
 
-        if (_gameController is SinglePlayer singlePlayer)
+        if (_gameController is IUndoable undoable)
         {
-            singlePlayer.Undo();
+            undoable.Undo();
         }
     }
 
@@ -81,7 +81,7 @@ public class GameUI : MonoBehaviour, IUI
         {
             _gameController.Finish();
             _loading = SceneManager.LoadSceneAsync(Scenes.MainMenu);
-            _animator.Play(UIAnimations.LeftClosing);
+            _animator.Play(UIAnimations.RightClosing);
             _loading.allowSceneActivation = false;
         }
         else

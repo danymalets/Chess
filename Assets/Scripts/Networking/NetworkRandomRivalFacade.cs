@@ -10,7 +10,7 @@ public class NetworkRandomRivalFacade : NetworkRivalProvider
     public void ConnectToServer()
     {
         PhotonNetwork.ConnectUsingSettings();
-        PhotonNetwork.GameVersion = VERSION + "r";
+        PhotonNetwork.GameVersion = Version + "r";
     }
 
     public override void OnConnectedToMaster()
@@ -21,7 +21,7 @@ public class NetworkRandomRivalFacade : NetworkRivalProvider
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        PhotonNetwork.CreateRoom(null, _roomOptions);
+        PhotonNetwork.CreateRoom(null, RoomOptions);
     }
 
     protected override void StartGame()
