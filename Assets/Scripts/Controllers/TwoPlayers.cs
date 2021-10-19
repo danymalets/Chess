@@ -22,7 +22,7 @@ public class TwoPlayers : GameController, IStorable
 
     protected override void InternalInit()
     {
-        _ui.SetTitle("Два игрока");
+        View.SetTitle("Два игрока");
 
         _timer.UserTimeIsOver += OnUserTimeIsOver;
 
@@ -40,13 +40,13 @@ public class TwoPlayers : GameController, IStorable
                 _board.SetRotation(180);
             }
         }
-        _ui.SetStatus(_game.GetStatus());
+        View.SetStatus(_game.GetStatus());
     }
 
     private void OnUserTimeIsOver()
     {
         _board.DisableMoves();
-        _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
+        View.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
     }
 
     private void OnUserMoveSelected(Move move)
@@ -57,7 +57,7 @@ public class TwoPlayers : GameController, IStorable
 
     private void OnUserMoveShown()
     {
-        _ui.SetStatus(_game.GetStatus());
+        View.SetStatus(_game.GetStatus());
         if (!_game.IsEnd)
         {
             _board.SetRotation(_game.Position.WhoseMove == Color.White ? 0 : 180);

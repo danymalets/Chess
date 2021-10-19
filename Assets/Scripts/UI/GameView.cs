@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Timer))]
 [RequireComponent(typeof(MoveFinder))]
-public class GameUI : MonoBehaviour, IUI
+public class GameView : MonoBehaviour, IView
 {
     [Header("Scene objects")]
     [SerializeField] private Board _board;
@@ -33,7 +33,7 @@ public class GameUI : MonoBehaviour, IUI
 
     private void Start()
     {
-        if (!MenuUI.IsGameLoaded)
+        if (!MenuView.IsGameLoaded)
         {
             SceneManager.LoadScene(Scenes.MainMenu);
             return;
@@ -61,7 +61,6 @@ public class GameUI : MonoBehaviour, IUI
     {
         _status.text = newStatus;
     }
-
 
     public void OnUndoButtonClicked()
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SavedGamesUI : MonoBehaviour, IUI
+public class SavedGamesView : MonoBehaviour, IView
 {
     [SerializeField] private DeleteConfirmation _deleteConfirmation;
 
@@ -20,7 +20,7 @@ public class SavedGamesUI : MonoBehaviour, IUI
     private void Start()
     {
 #if DEBUG
-        if (!MenuUI.IsGameLoaded) { SceneManager.LoadScene(Scenes.MainMenu); return; }
+        if (!MenuView.IsGameLoaded) { SceneManager.LoadScene(Scenes.MainMenu); return; }
 #endif
         _animator.Play(UIAnimations.RightOpening);
         

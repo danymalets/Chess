@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SettingsUI : MonoBehaviour, IUI
+public class SettingsView : MonoBehaviour, IView
 {
     [SerializeField] private SpriteManager _spriteManager;
 
@@ -18,7 +18,7 @@ public class SettingsUI : MonoBehaviour, IUI
     private void Start()
     {
 #if DEBUG
-        if (!MenuUI.IsGameLoaded) { SceneManager.LoadScene(Scenes.MainMenu); return; }
+        if (!MenuView.IsGameLoaded) { SceneManager.LoadScene(Scenes.MainMenu); return; }
 #endif
         _board.InitBoard();
         _animator.Play(UIAnimations.RightOpening);

@@ -19,7 +19,7 @@ public abstract class NetworkRival : GameController
 
     protected override void InternalInit()
     {
-        _ui.SetTitle(ToString());
+        View.SetTitle(ToString());
 
         ConnectToServer();
 
@@ -41,26 +41,26 @@ public abstract class NetworkRival : GameController
 
         _board.MoveSelected += OnUserMoveSelected;
 
-        _ui.SetStatus("Подключение");
+        View.SetStatus("Подключение");
     }
 
     protected abstract void ConnectToServer();
 
-    private void OnConnectedToServer() => _ui.SetStatus("Проверка");
-    private void OnRoomCreated() => _ui.SetStatus("Ожидание соперника");
-    private void OnRivalFound() => _ui.SetStatus("Соперник найден");
+    private void OnConnectedToServer() => View.SetStatus("Проверка");
+    private void OnRoomCreated() => View.SetStatus("Ожидание соперника");
+    private void OnRivalFound() => View.SetStatus("Соперник найден");
 
     protected void OnGameStarted(Color playerColor)
     {
         _gameStarted = true;
 
-        _ui.SetTitle($"{ToString()}, за {(playerColor == Color.White ? "белых" : "чёрных")}");
+        View.SetTitle($"{ToString()}, за {(playerColor == Color.White ? "белых" : "чёрных")}");
 
         _playerColor = playerColor;
 
         _board.InitPiecesWithSound(_game.Position);
 
-        _ui.SetStatus(_game.GetStatus());
+        View.SetStatus(_game.GetStatus());
         if (_playerColor == Color.White)
         {
             _board.EnableMoves();
@@ -76,7 +76,7 @@ public abstract class NetworkRival : GameController
             _board.MoveShown += OnRivalMoveShown;
         }
 
-        _ui.SetStatus(_game.GetStatus());
+        View.SetStatus(_game.GetStatus());
     }
 
     private void OnMoveReceived(Move move)
@@ -98,7 +98,7 @@ public abstract class NetworkRival : GameController
         _provider.SendTimerIsOver();
         _provider.PreDisconnect();
         _board.DisableMoves();
-        _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
+        View.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
         _isEnd = true;
         GameOver();
     }
@@ -106,7 +106,7 @@ public abstract class NetworkRival : GameController
     private void OnRivalTimeIsOver()
     {
         _provider.Disconnect();
-        _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время (но это не точно)");
+        View.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время (но это не точно)");
         _isEnd = true;
         GameOver();
     }
@@ -116,7 +116,7 @@ public abstract class NetworkRival : GameController
         _timer.SetTimeIsOver();
         _provider.Disconnect();
         _timer.CancelCountdown();
-        _ui.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
+        View.SetStatus($"У {(_game.Position.WhoseMove == Color.White ? "белых" : "чёрных")} вышло время");
         _isEnd = true;
         GameOver();
     }
@@ -125,7 +125,7 @@ public abstract class NetworkRival : GameController
     {
         _board.MoveShown -= OnUserMoveShown;
 
-        _ui.SetStatus(_game.GetStatus());
+        View.SetStatus(_game.GetStatus());
         if (!_game.IsEnd)
         {
             _timer.StartRivalTimer(_moveDuration);
@@ -146,7 +146,7 @@ public abstract class NetworkRival : GameController
     {
         _board.MoveShown -= OnRivalMoveShown;
 
-        _ui.SetStatus(_game.GetStatus());
+        View.SetStatus(_game.GetStatus());
         if (!_game.IsEnd)
         {
             _board.EnableMoves();
@@ -166,7 +166,7 @@ public abstract class NetworkRival : GameController
 
     private void UserLeft()
     {
-        _ui.SetStatus($"Техническое поражение. Запрещено выходить из приложения во время игры");
+        View.SetStatus($"Техническое поражение. Запрещено выходить из приложения во время игры");
         _timer.Clear();
         _board.DisableMoves();
         _isEnd = true;
@@ -177,11 +177,11 @@ public abstract class NetworkRival : GameController
     {
         if (_gameStarted && !_isEnd)
         {
-            _ui.SetStatus($"Техническое поражение. Ошибка сети");
+            View.SetStatus($"Техническое поражение. Ошибка сети");
         }
         else if (!_isEnd)
         {
-            _ui.SetStatus($"Ошибка сети");
+            View.SetStatus($"Ошибка сети");
         }
         _timer.Clear();
         _board.DisableMoves();
@@ -192,7 +192,7 @@ public abstract class NetworkRival : GameController
     private void OnRivalDisconnected()
     {
         _provider.Disconnect();
-        _ui.SetStatus($"{(_playerColor == Color.White ? "Чёрные" : "Белые")} сдались");
+        View.SetStatus($"{(_playerColor == Color.White ? "Чёрные" : "Белые")} сдались");
         _timer.Clear();
         _board.DisableMoves();
 

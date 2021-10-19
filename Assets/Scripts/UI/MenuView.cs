@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 using UnityEngine.Advertisements;
 using UnityEngine.Serialization;
 
-public class MenuUI : MonoBehaviour, IUI
+public class MenuView : MonoBehaviour, IView
 {
     private static TimeSpan[] s_moveDurations = 
     {

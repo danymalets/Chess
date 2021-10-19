@@ -17,14 +17,14 @@ public class BotVsBot : GameController
     {
         _ai = new AI(_game, _level);
 
-        _ui.SetTitle($"Бот против бота, {_level} уровень");
+        View.SetTitle($"Бот против бота, {_level} уровень");
 
         _board.InitPieces(_game.Position);
 
         _moveFinder.MoveFound += OnMoveFound;
         _board.MoveShown += OnRivalMoveShown;
 
-        _ui.SetStatus(_game.GetStatus());
+        View.SetStatus(_game.GetStatus());
         _moveFinder.StartSearchMove(_ai);
     }
 
@@ -36,7 +36,7 @@ public class BotVsBot : GameController
 
     private void OnRivalMoveShown()
     {
-        _ui.SetStatus(_game.GetStatus());
+        View.SetStatus(_game.GetStatus());
         if (!_game.IsEnd)
         {
             _moveFinder.StartSearchMove(_ai);

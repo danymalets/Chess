@@ -7,7 +7,7 @@ public abstract class GameController
 {
     protected Game _game;
 
-    protected GameUI _ui;
+    protected GameView View;
     protected Board _board;
     protected Timer _timer;
     protected MoveFinder _moveFinder;
@@ -17,9 +17,9 @@ public abstract class GameController
         _game = new Game();
     }
 
-    public void Init(GameUI ui, Board board, Timer timer, MoveFinder moveFinder)
+    public void Init(GameView view, Board board, Timer timer, MoveFinder moveFinder)
     {
-        _ui = ui;
+        View = view;
         _board = board;
         _timer = timer;
         _moveFinder = moveFinder;
@@ -32,7 +32,7 @@ public abstract class GameController
 
     protected void GameOver()
     {
-        _ui.PlayGameOver();
+        View.PlayGameOver();
     }
 
     public virtual void Finish()

@@ -61,7 +61,6 @@ public class Timer : MonoBehaviour
         _textTimer.text = "время вышло";
     }
     
-    
     public void Clear()
     {
         if (_countdown != null) StopCoroutine(_countdown);

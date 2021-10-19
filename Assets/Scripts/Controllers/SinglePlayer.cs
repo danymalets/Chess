@@ -30,14 +30,14 @@ public class SinglePlayer : GameController, IStorable, IUndoable
     {
         _ai = new AI(_game, _level);
 
-        _ui.SetTitle($"Один игрок, {_level} уровень, за {(_playerColor == Color.White ? "белых" : "чёрных")}");
+        View.SetTitle($"Один игрок, {_level} уровень, за {(_playerColor == Color.White ? "белых" : "чёрных")}");
 
         _board.InitPieces(_game.Position);
 
         _board.MoveSelected += OnUserMoveSelected;
         _moveFinder.MoveFound += OnMoveFound;
 
-        _ui.SetStatus(_game.GetStatus());
+        View.SetStatus(_game.GetStatus());
         if (!_game.IsEnd)
         {
             if (_playerColor == _game.Position.WhoseMove)
@@ -67,7 +67,7 @@ public class SinglePlayer : GameController, IStorable, IUndoable
     {
         _board.MoveShown -= OnUserMoveShown;
 
-        _ui.SetStatus(_game.GetStatus());
+        View.SetStatus(_game.GetStatus());
         if (!_game.IsEnd)
         {
             Debug.Log("R " + _game.Position.WhoseMove);
@@ -90,7 +90,7 @@ public class SinglePlayer : GameController, IStorable, IUndoable
     {
         _board.MoveShown -= OnRivalMoveShown;
 
-        _ui.SetStatus(_game.GetStatus());
+        View.SetStatus(_game.GetStatus());
         if (!_game.IsEnd)
         {
             _board.EnableMoves();
@@ -116,7 +116,7 @@ public class SinglePlayer : GameController, IStorable, IUndoable
         _board.InitPieces(_game.Position);
         _board.EnableMoves();
 
-        _ui.SetStatus(_game.GetStatus());
+        View.SetStatus(_game.GetStatus());
 
         _board.MoveShown -= OnUserMoveShown;
         _board.MoveShown -= OnRivalMoveShown;

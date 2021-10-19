@@ -8,9 +8,9 @@ using ThreadPriority = System.Threading.ThreadPriority;
 
 public class AI 
 {
-    private static Random s_random = new Random();
+    private Random _random = new Random();
 
-    private static int[] s_counts = new int[]
+    private static int[] s_counts =
     {
         51,
         377,
@@ -315,7 +315,7 @@ public class AI
     {
         for (int i = 1; i < moves.Count; i++)
         {
-            int j = s_random.Next(0, i);
+            int j = _random.Next(0, i);
             (moves[i], moves[j]) = (moves[j], moves[i]);
         }
     }
